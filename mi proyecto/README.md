@@ -1,2505 +1,2516 @@
-# CentrodeSaludIntegralbelen2025.git.io
-Centro de Saud Integral "BELEN"
-[Untitled-1.html](https://github.com/user-attachments/files/22586627/Untitled-1.html)
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Centro de Salud Integral BELÉN - Página Completa</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;           
-            box-sizing: border-box;
-        }
-
-        :root {
-            --color-primary: #dc2626;
-            --color-primary-dark: #991b1b;
-            --color-white: #ffffff;
-            --color-gray-100: #f3f4f6;
-            --color-gray-200: #e5e7eb;
-            --color-gray-600: #6b7280;
-            --color-gray-800: #374151;
-            --color-gray-900: #111827;
-        }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            margin: 0;
-            padding: 0;
-            scroll-behavior: smooth;
-        }
-
-        /* Navigation */
-        .navigation {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 50;
-            background: rgba(220, 38, 38, 0.95);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .nav-container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
-
-        .nav-content {
-            display: flex;
-            height: 4rem;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .nav-logo {
-            display: flex;
-            align-items: center;
-            flex-shrink: 0;
-        }
-
-        .nav-logo p {
-            font-size: 1.125rem;
-            font-weight: 700;
-            color: white;
-        }
-
-        .nav-links {
-            display: none;
-            align-items: center;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            font-size: 0.875rem;
-            font-weight: 500;
-            color: white;
-            text-decoration: none;
-            transition: color 0.2s;
-            padding: 0.5rem 1rem;
-            border-radius: 0.25rem;
-        }
-
-        .nav-links a:hover {
-            color: rgba(255, 255, 255, 0.8);
-            background: rgba(255, 255, 255, 0.1);
-        }
-
-        @media (min-width: 640px) {
-            .nav-links {
-                display: flex;
-            }
-        }
-
-        /* Main Hero Section con imagen de fondo */
-        .main-section {
-            position: relative;
-            width: 100%;
-            overflow: hidden;
-            /* Fondo multicapa: imagen tramada + gradientes */
-            background-image: 
-                /* Imagen de fondo con opacidad tramada */
-                url('AdobeStock_512307383_Preview.jpeg'),
-                /* Overlay de patrones para efecto tramado */
-                radial-gradient(circle at 20% 80%, rgba(255,255,255,0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(255,255,255,0.1) 0%, transparent 50%),
-                /* Gradiente rojo base */
-                linear-gradient(135deg, rgba(220, 38, 38, 0.85), rgba(153, 27, 27, 0.9)),
-                /* Gradiente de respaldo */
-                linear-gradient(to bottom right, #dc2626, #991b1b);
-            
-            background-size: 
-                cover,           /* Imagen de fondo */
-                400px 400px,     /* Patrón 1 */
-                600px 600px,     /* Patrón 2 */
-                100% 100%,       /* Gradiente rojo */
-                100% 100%;       /* Gradiente respaldo */
-            
-            background-position: 
-                center center,   /* Imagen centrada */
-                0 0,             /* Patrón 1 */
-                100% 100%,       /* Patrón 2 */
-                0 0,             /* Gradiente rojo */
-                0 0;             /* Gradiente respaldo */
-            
-            background-repeat: 
-                no-repeat,       /* Imagen */
-                repeat,          /* Patrón 1 */
-                repeat,          /* Patrón 2 */
-                no-repeat,       /* Gradiente rojo */
-                no-repeat;       /* Gradiente respaldo */
-            
-            background-attachment: fixed;
-            min-height: 100vh;
-        }
-
-        /* Overlay adicional para efecto tramado */
-        .main-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: 
-                repeating-linear-gradient(
-                    45deg,
-                    transparent,
-                    transparent 2px,
-                    rgba(255, 255, 255, 0.03) 2px,
-                    rgba(255, 255, 255, 0.03) 4px
-                ),
-                repeating-linear-gradient(
-                    -45deg,
-                    transparent,
-                    transparent 2px,
-                    rgba(255, 255, 255, 0.02) 2px,
-                    rgba(255, 255, 255, 0.02) 4px
-                );
-            pointer-events: none;
-            z-index: 1;
-        }
-
-        .hero-container {
-            position: relative;
-            z-index: 2;
-            max-width: 1280px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr;
-            align-items: center;
-            gap: 2.5rem;
-            min-height: 100vh;
-            overflow: hidden;
-            padding: 6rem 1rem 3rem;
-        }
-
-        @media (min-width: 1024px) {
-            .hero-container {
-                grid-template-columns: 2fr 1fr;
-                padding: 5rem 1rem 0;
-            }
-        }
-
-        .hero-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 2.5rem 1rem;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 1rem;
-            backdrop-filter: blur(5px);
-        }
-
-        @media (min-width: 640px) {
-            .hero-content {
-                align-items: flex-start;
-                padding: 2rem;
-                background: rgba(255, 255, 255, 0.08);
-            }
-        }
-
-        /* Logo SVG */
-        .medical-logo {
-            width: 8rem;
-            height: 8rem;
-        }
-
-        @media (min-width: 768px) {
-            .medical-logo {
-                width: 10rem;
-                height: 10rem;
-            }
-        }
-
-        .hero-title {
-            margin-top: 1.5rem;
-            text-align: center;
-            font-size: 2.25rem;
-            font-weight: 800;
-            letter-spacing: -0.025em;
-            color: rgb(255, 1, 1);
-        }
-
-        @media (min-width: 640px) {
-            .hero-title {
-                text-align: left;
-                font-size: 3rem;
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .hero-title {
-                font-size: 3.75rem;
-            }
-        }
-
-        .hero-subtitle {
-            margin-top: 1.5rem;
-            max-width: 32rem;
-            text-align: center;
-            font-size: 1.125rem;
-            color: rgba(252, 3, 3, 0.9);
-        }
-
-        @media (min-width: 640px) {
-            .hero-subtitle {
-                text-align: left;
-                font-size: 1.25rem;
-            }
-        }
-
-        /* Registration Form */
-        .form-container {
-            position: relative;
-            display: flex;
-            width: 100%;
-            align-items: center;
-            justify-content: center;
-            padding: 0 1rem;
-        }
-
-        @media (min-width: 768px) {
-            .form-container {
-                justify-content: flex-end;
-            }
-        }
-
-        .registration-form {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 1rem;
-            padding: 2rem;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-            backdrop-filter: blur(10px);
-            width: 100%;
-            max-width: 400px;
-        }
-
-        .form-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--color-primary);
-            margin-bottom: 1.5rem;
-            text-align: center;
-        }
-
-        .form-group {
-            margin-bottom: 1rem;
-        }
-
-        .form-group label {
-            display: block;
-            color: var(--color-gray-800);
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            font-size: 0.875rem;
-        }
-
-        .form-group input,
-        .form-group select {
-            width: 100%;
-            padding: 0.75rem;
-            border: 2px solid var(--color-gray-200);
-            border-radius: 0.5rem;
-            font-size: 1rem;
-            transition: border-color 0.2s;
-        }
-
-        .form-group input:focus,
-        .form-group select:focus {
-            outline: none;
-            border-color: var(--color-primary);
-        }
-
-        .form-submit {
-            width: 100%;
-            background: var(--color-primary);
-            color: white;
-            padding: 0.75rem;
-            border: none;
-            border-radius: 0.5rem;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background-color 0.2s;
-        }
-
-        .form-submit:hover {
-            background: var(--color-primary-dark);
-        }
-
-        /* Statistics Section */
-        .statistics-section {
-            max-width: 64rem;
-            margin: 0 auto;
-            padding: 4rem 1rem;
-        }
-
-        .section-title {
-            font-size: 1.875rem;
-            font-weight: 700;
-            color: rgb(253, 3, 3);
-            margin-bottom: 1.5rem;
-        }
-
-        .stats-container {
-            border-radius: 0.5rem;
-            background: rgba(255, 255, 255, 0.8);
-            padding: 1.5rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .stat-card {
-            background: white;
-            border-radius: 0.75rem;
-            padding: 1.5rem;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-
-        .stat-icon {
-            width: 3rem;
-            height: 3rem;
-            background: var(--color-primary);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            margin: 0 auto 1rem;
-        }
-
-        .stat-number {
-            font-size: 2rem;
-            font-weight: 800;
-            color: var(--color-primary);
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-label {
-            color: var(--color-gray-600);
-            font-size: 0.875rem;
-        }
-
-        /* Services Section */
-        .services-section {
-            max-width: 96rem;
-            margin: 0 auto;
-            padding: 4rem 1rem;
-        }
-
-        .services-title {
-            font-size: 2.25rem;
-            font-weight: 800;
-            text-align: center;
-            margin-bottom: 1.5rem;
-            text-transform: uppercase;
-            letter-spacing: 0.025em;
-            color: rgb(252, 2, 2);
-        }
-
-        @media (min-width: 768px) {
-            .services-title {
-                font-size: 2.5rem;
-            }
-        }
-
-        .services-container {
-            border-radius: 0.75rem;
-            background: #ededed;
-            padding: 2.5rem 0.5rem;
-            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        @media (min-width: 768px) {
-            .services-container {
-                padding: 2.5rem 3rem;
-            }
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2.5rem;
-            justify-items: center;
-        }
-
-        @media (min-width: 768px) {
-            .services-grid {
-                grid-template-columns: repeat(4, 1fr);
-                gap: 2rem;
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .services-grid {
-                gap: 3rem;
-            }
-        }
-
-        .service-card {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            max-width: 18rem;
-        }
-
-        .service-image {
-            width: 7rem;
-            height: 7rem;
-            border-radius: 0.75rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            margin-bottom: 0.5rem;
-        }
-
-        .service-info {
-            text-align: center;
-        }
-
-        .service-name {
-            font-weight: 600;
-            color: var(--color-primary);
-            font-size: 1.125rem;
-            letter-spacing: -0.025em;
-        }
-
-        .service-hours {
-            margin-top: 0.5rem;
-            font-size: 0.875rem;
-        }
-
-        .service-hours .time-label {
-            font-weight: 700;
-            color: var(--color-primary);
-        }
-
-        .service-hours .time-text {
-            color: var(--color-gray-800);
-        }
-
-        .service-24h {
-            margin-top: 0.5rem;
-            font-weight: 700;
-            color: var(--color-primary);
-            font-size: 0.875rem;
-        }
-
-        /* Reclamos Section */
-        .reclamos-section {
-            max-width: 64rem;
-            margin: 0 auto;
-            padding: 4rem 1rem 2rem;
-        }
-
-        .reclamos-container {
-            border-radius: 0.5rem;
-            background: rgba(255, 255, 255, 0.8);
-            padding: 1.5rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .reclamos-form {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .reclamos-input {
-            width: 100%;
-            border-radius: 0.25rem;
-            border: 1px solid rgba(220, 38, 38, 0.2);
-            background: white;
-            padding: 0.5rem 1rem;
-            color: var(--color-gray-900);
-            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-        }
-
-        .reclamos-input::placeholder {
-            color: var(--color-gray-600);
-        }
-
-        .reclamos-textarea {
-            min-height: 6rem;
-            resize: vertical;
-        }
-
-        .reclamos-submit {
-            width: 100%;
-            border-radius: 0.25rem;
-            background: var(--color-primary);
-            padding: 0.5rem;
-            font-weight: 600;
-            color: rgb(250, 2, 2);
-            border: none;
-            cursor: pointer;
-            transition: background-color 0.2s;
-        }
-
-        .reclamos-submit:hover {
-            background: rgba(220, 38, 38, 0.9);
-        }
-
-        .map-section {
-            margin-top: 2rem;
-        }
-
-        .map-title {
-            font-size: 1.125rem;
-            font-weight: 600;
-            color: var(--color-primary);
-            margin-bottom: 0.5rem;
-        }
-
-        .map-container {
-            overflow: hidden;
-            border-radius: 0.5rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            height: 18rem;
-        }
-
-        .map-iframe {
-            border: 0;
-            width: 100%;
-            height: 100%;
-        }
-
-        /* Enhanced Features */
-        .enhanced-features {
-            background: white;
-            border-radius: 1rem;
-            padding: 2rem;
-            margin-top: 2rem;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .features-title {
-            color: var(--color-primary);
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            text-align: center;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .feature-item {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            padding: 1rem;
-            background: var(--color-gray-100);
-            border-radius: 0.5rem;
-        }
-
-        .feature-icon {
-            font-size: 1.5rem;
-        }
-
-        .feature-text {
-            font-weight: 600;
-            color: var(--color-gray-800);
-        }
-
-        /* Responsive improvements */
-        @media (max-width: 768px) {
-            .hero-container {
-                padding-top: 5rem;
-            }
-            
-            .services-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 1.5rem;
-            }
-            
-            .service-card {
-                max-width: none;
-            }
-            
-            .service-image {
-                width: 5rem;
-                height: 5rem;
-            }
-            
-            .service-name {
-                font-size: 1rem;
-            }
-            
-            .service-hours {
-                font-size: 0.75rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* Animation */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInUp 0.8s ease forwards;
-        }
-
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .scroll-animation {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease;
-        }
-
-        .scroll-animation.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    </style>
-</head>
-<body>
-    <!-- Navigation -->
-    <header class="navigation">
-        <nav class="nav-container">
-            <div class="nav-content">
-                <div class="nav-logo">
-                    <p>CENTRO DE SALUD INTEGRAL "BELEN"</p>
-                </div>
-                <div class="nav-links">
-                    <a href="#estadistica">ESTADISTICA</a>
-                    <a href="#servicios">SERVICIOS</a>
-                    <a href="#reclamos">RECLAMOS Y SUGERENCIAS</a>
-                </div>
-            </div>
-        </nav>
-    </header>
-
-    <!-- Main Content -->
-    <main class="main-section">
-        <!-- Hero Section -->
-        <div class="hero-container">
-            <div class="hero-content fade-in">
-                <!-- Logo SVG -->
-                <svg class="medical-logo" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Logo del Centro de Salud Integral Belen">
-                    <defs>
-                        <path id="logo-circular-path" d="M 100,30 a 70,70 0 1,1 0,140 a 70,70 0 1,1 0,-140" fill="none"/>
-                    </defs>
-                    <circle cx="100" cy="100" r="95" fill="#ffffff" stroke="#dc2626" stroke-width="10"/>
-                    <circle cx="100" cy="100" r="42" fill="#dc2626"/>
-                    <rect x="82" y="94" width="36" height="12" fill="#ffffff" rx="1"/>
-                    <rect x="94" y="82" width="12" height="36" fill="#ffffff" rx="1"/>
-                    <text style="font-family: Inter, sans-serif; font-size: 17.5px; font-weight: 600; letter-spacing: 1.5px; fill: #dc2626;" text-anchor="middle">
-                        <textPath href="#logo-circular-path" startOffset="35%">CENTRO DE SALUD INTEGRAL</textPath>
-                    </text>
-                    <text style="font-family: Inter, sans-serif; font-size: 17.5px; font-weight: 900; letter-spacing: 5px; fill: #dc2626;" text-anchor="middle">
-                        <textPath href="#logo-circular-path" startOffset="85%">"BELEN"</textPath>
-                    </text>
-                </svg>
-
-                <h1 class="hero-title">CENTRO DE SALUD INTEGRAL "BELEN"</h1>
-                <p class="hero-subtitle">Atención las 24 horas</p>
-            </div>
-                <div class="registration-form fade-in">
-                    <h2 class="form-title">📋 Registro de Pacientes</h2>
-                    <form id="registrationForm">
-                        <div class="form-group">
-                            <label for="nombreCompleto">Nombre Completo *</label>
-                            <input type="text" id="nombreCompleto" name="nombreCompleto" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="ci">Carnet de Identidad *</label>
-                            <input type="text" id="ci" name="ci" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="telefono">Teléfono *</label>
-                            <input type="tel" id="telefono" name="telefono" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="servicio">Servicio Solicitado *</label>
-                            <select id="servicio" name="servicio" required>
-                                <option value="">Seleccionar servicio</option>
-                                <option value="odontologia">Odontología</option>
-                                <option value="Ginecologia">Ginecología</option>
-                                <option value="Pediatria">Pediatría</option>
-                                <option value="Laboratorio">Laboratorio</option>
-                                <option value="Ecografia">Ecografia</option>
-                                <option value="Medicina General">Medicina General</option>
-                                <option value="Vacunas PAI">Vacunas PAI</option>
-                                <option value="Emergencia">Emergencia</option>
-
-                                <!-- ... más opciones ... -->
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="seguro">Verificacion de Seguro *</label>
-                            <select id="seguro" name="seguro" required>
-                                <option value="">Seleccionar Seguro</option>
-                                <option value="SUS">SUS</option>
-                                <option value="Caja Privada">Caja Privada</option>
-                                <option value="Ninguno">Ninguno</option>
-                                <!-- ... más opciones ... -->
-                            </select>
-                        </div>
-                        <button type="submit" class="form-submit">Registrar Paciente</button>
-                    </form>
-                </div>
-            </div>
-        </section>
-        <!-- Statistics Section -->
-        <section id="estadistica" class="statistics-section scroll-animation">
-            <h2 class="section-title">Estadística</h2>
-            <div class="stats-container">
-                <p style="color: #374151; font-size: 1rem;">Indicadores estadísticos relevantes del centro de salud</p>
-                
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <div class="stat-icon">👥</div>
-                        <div class="stat-number">2,847</div>
-                        <div class="stat-label">Pacientes Atendidos</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-icon">⭐</div>
-                        <div class="stat-number">98%</div>
-                        <div class="stat-label">Satisfacción</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-icon">🚑</div>
-                        <div class="stat-number">456</div>
-                        <div class="stat-label">Emergencias</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-icon">⏱️</div>
-                        <div class="stat-number">15 min</div>
-                        <div class="stat-label">Tiempo Promedio</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-       <!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Servicios Médicos - Gestión de Fichas</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            padding: 20px;
-        }
-
-        .services-section {
-            max-width: 1200px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 20px;
-            padding: 30px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-        }
-
-        .services-title {
-            text-align: center;
-            font-size: 2.5rem;
-            color: #333;
-            margin-bottom: 40px;
-            background: linear-gradient(45deg, #ff0000, #eb0505);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 25px;
-        }
-
-        .service-card {
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            border-radius: 15px;
-            padding: 25px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-            transition: left 0.5s;
-        }
-
-        .service-card:hover::before {
-            left: 100%;
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-        }
-
-        .service-icon-container {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 15px;
-        }
-
-        .service-icon {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, #dc3545, #c82333);
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.5rem;
-            box-shadow: 0 8px 25px rgba(220, 53, 69, 0.3);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .service-icon::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
-            transform: rotate(45deg);
-            transition: all 0.3s ease;
-        }
-
-        .service-card:hover .service-icon {
-            transform: scale(1.1) rotate(5deg);
-            box-shadow: 0 15px 35px rgba(220, 53, 69, 0.4);
-        }
-
-        .service-card:hover .service-icon::before {
-            animation: shine 0.6s ease-in-out;
-        }
-
-        @keyframes shine {
-            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
-            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
-        }
-
-        .service-image {
-            width: 80px;
-            height: 80px;
-            object-fit: cover;
-            border-radius: 50%;
-            margin-bottom: 15px;
-            border: 3px solid #667eea;
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
-        }
-
-        .service-name {
-            font-size: 1.4rem;
-            font-weight: bold;
-            color: #333;
-            margin-bottom: 15px;
-            text-align: center;
-        }
-
-        .service-hours {
-            color: #666;
-            line-height: 1.6;
-        }
-
-        .service-24h {
-            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
-            color: white;
-            padding: 10px;
-            border-radius: 8px;
-            text-align: center;
-            font-weight: bold;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-
-        .time-label {
-            font-weight: bold;
-            color: #667eea;
-        }
-
-        .time-text {
-            color: #333;
-        }
-
-        .view-appointments-btn {
-            background: linear-gradient(45deg, #667eea, #764ba2);
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: bold;
-            margin-top: 15px;
-            width: 100%;
-            transition: all 0.3s ease;
-        }
-
-        .view-appointments-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 5px 15px rgba(221, 4, 4, 0.4);
-        }
-
-        /* Modal Styles */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.5);
-            backdrop-filter: blur(5px);
-        }
-
-        .modal-content {
-            background: white;
-            margin: 2% auto;
-            padding: 0;
-            border-radius: 20px;
-            width: 90%;
-            max-width: 900px;
-            max-height: 90vh;
-            overflow-y: auto;
-            animation: modalSlideIn 0.3s ease;
-        }
-
-        @keyframes modalSlideIn {
-            from { transform: translateY(-100px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-
-        .modal-header {
-            background: linear-gradient(45deg, #667eea, #764ba2);
-            color: white;
-            padding: 20px 30px;
-            border-radius: 20px 20px 0 0;
-            position: relative;
-        }
-
-        .modal-title {
-            font-size: 1.8rem;
-            margin: 0;
-        }
-
-        .close {
-            color: white;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-            cursor: pointer;
-            position: absolute;
-            right: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-        }
-
-        .close:hover {
-            opacity: 0.7;
-        }
-
-        .modal-body {
-            padding: 30px;
-        }
-
-        .shift-tabs {
-            display: flex;
-            margin-bottom: 20px;
-            background: #f8f9fa;
-            border-radius: 10px;
-            padding: 5px;
-        }
-
-        .shift-tab {
-            flex: 1;
-            padding: 12px 20px;
-            background: transparent;
-            border: none;
-            cursor: pointer;
-            border-radius: 8px;
-            font-weight: bold;
-            transition: all 0.3s ease;
-        }
-
-        .shift-tab.active {
-            background: linear-gradient(45deg, #667eea, #764ba2);
-            color: white;
-        }
-
-        .appointments-container {
-            background: #f8f9fa;
-            border-radius: 15px;
-            padding: 20px;
-        }
-
-        .appointments-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-
-        .available-slots {
-            background: linear-gradient(45deg, #20bf6b, #26d0ce);
-            color: white;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-weight: bold;
-        }
-
-        .appointment-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 15px;
-            margin-bottom: 20px;
-        }
-
-        .appointment-slot {
-            background: white;
-            border-radius: 10px;
-            padding: 15px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-            border-left: 4px solid #667eea;
-        }
-
-        .appointment-slot.occupied {
-            border-left-color: #ff6b6b;
-            background: #fff5f5;
-        }
-
-        .slot-number {
-            font-weight: bold;
-            color: #ea6666;
-            margin-bottom: 5px;
-        }
-
-        .patient-info {
-            color: #333;
-            font-size: 0.9rem;
-        }
-
-        .patient-info.empty {
-            color: #999;
-            font-style: italic;
-        }
-
-        .add-patient-btn {
-            background: linear-gradient(45deg, #f30202, #dd7575);
-            color: white;
-            border: none;
-            padding: 5px 10px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 0.8rem;
-            margin-top: 5px;
-        }
-
-        .patient-form {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            margin-top: 20px;
-            border: 2px dashed #ddd;
-        }
-
-        .form-group {
-            margin-bottom: 15px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-            color: #333;
-        }
-
-        .form-group input {
-            width: 100%;
-            padding: 10px;
-            border: 2px solid #e9ecef;
-            border-radius: 8px;
-            font-size: 1rem;
-            transition: border-color 0.3s ease;
-        }
-
-        .form-group input:focus {
-            border-color: #667eea;
-            outline: none;
-        }
-
-        .form-actions {
-            display: flex;
-            gap: 10px;
-            justify-content: flex-end;
-        }
-
-        .btn {
-            padding: 10px 20px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: all 0.3s ease;
-        }
-
-        .btn-primary {
-            background: linear-gradient(45deg, #667eea, #764ba2);
-            color: white;
-        }
-
-        .btn-secondary {
-            background: #6c757d;
-            color: white;
-        }
-
-        .btn:hover {
-            transform: scale(1.05);
-        }
-
-        @media (max-width: 768px) {
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .modal-content {
-                width: 95%;
-                margin: 5% auto;
-            }
-            
-            .appointment-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
-</head>
-<body>
- <!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Servicios Médicos - Gestión de Fichas</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            padding: 20px;
-        }
-
-        .services-section {
-            max-width: 1200px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 20px;
-            padding: 30px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-        }
-
-        .services-title {
-            text-align: center;
-            font-size: 2.5rem;
-            color: #333;
-            margin-bottom: 40px;
-            background: linear-gradient(45deg, #667eea, #764ba2);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 25px;
-        }
-
-        .service-card {
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            border-radius: 15px;
-            padding: 25px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-            transition: left 0.5s;
-        }
-
-        .service-card:hover::before {
-            left: 100%;
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-        }
-
-        .service-icon-container {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 15px;
-        }
-
-        .service-icon {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, #dc3545, #c82333);
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.5rem;
-            box-shadow: 0 8px 25px rgba(220, 53, 69, 0.3);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .service-icon::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
-            transform: rotate(45deg);
-            transition: all 0.3s ease;
-        }
-
-        .service-card:hover .service-icon {
-            transform: scale(1.1) rotate(5deg);
-            box-shadow: 0 15px 35px rgba(220, 53, 69, 0.4);
-        }
-
-        .service-card:hover .service-icon::before {
-            animation: shine 0.6s ease-in-out;
-        }
-
-        @keyframes shine {
-            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
-            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
-        }
-
-        /* Login Styles */
-        .login-form {
-            padding: 20px 0;
-        }
-
-        .login-form .form-group input {
-            background: #f8f9fa;
-            border: 2px solid #e9ecef;
-            padding: 12px 15px;
-            font-size: 1rem;
-        }
-
-        .login-form .form-group input:focus {
-            background: white;
-            border-color: #667eea;
-            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
-        }
-
-        .login-security-note {
-            background: linear-gradient(135deg, #e8f5e8, #f0f8f0);
-            border-left: 4px solid #28a745;
-            padding: 15px;
-            margin: 20px 0;
-            border-radius: 0 8px 8px 0;
-            font-size: 0.9rem;
-            color: #155724;
-        }
-
-        .public-access-note {
-            background: linear-gradient(135deg, #d4edda, #c3e6cb);
-            border-left: 4px solid #28a745;
-            padding: 15px;
-            margin-bottom: 20px;
-            border-radius: 0 8px 8px 0;
-            color: #155724;
-        }
-
-        .staff-only-action {
-            background: #fff3cd;
-            border: 1px solid #ffeaa7;
-            color: #856404;
-            padding: 8px 12px;
-            border-radius: 5px;
-            font-size: 0.8rem;
-            margin-top: 5px;
-        }
-
-        .visitor-info {
-            background: linear-gradient(135deg, #cce5ff, #b3d9ff);
-            color: #004085;
-            padding: 10px 15px;
-            border-radius: 20px;
-            margin-bottom: 20px;
-            text-align: center;
-            font-weight: bold;
-        }
-
-        .add-patient-btn.public-view {
-            background: #6c757d;
-            cursor: pointer;
-        }
-
-        .add-patient-btn.public-view:hover {
-            background: #5a6268;
-        }
-
-        .service-name {
-            font-size: 1.4rem;
-            font-weight: bold;
-            color: #333;
-            margin-bottom: 15px;
-            text-align: center;
-        }
-
-        .service-hours {
-            color: #666;
-            line-height: 1.6;
-        }
-
-        .service-24h {
-            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
-            color: white;
-            padding: 10px;
-            border-radius: 8px;
-            text-align: center;
-            font-weight: bold;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-
-        .time-label {
-            font-weight: bold;
-            color: #667eea;
-        }
-
-        .time-text {
-            color: #333;
-        }
-
-        .view-appointments-btn {
-            background: linear-gradient(45deg, #667eea, #764ba2);
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: bold;
-            margin-top: 15px;
-            width: 100%;
-            transition: all 0.3s ease;
-        }
-
-        .view-appointments-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
-        }
-
-        /* Modal Styles */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.5);
-            backdrop-filter: blur(5px);
-        }
-
-        .modal-content {
-            background: white;
-            margin: 2% auto;
-            padding: 0;
-            border-radius: 20px;
-            width: 90%;
-            max-width: 900px;
-            max-height: 90vh;
-            overflow-y: auto;
-            animation: modalSlideIn 0.3s ease;
-        }
-
-        @keyframes modalSlideIn {
-            from { transform: translateY(-100px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-
-        .modal-header {
-            background: linear-gradient(45deg, #667eea, #764ba2);
-            color: white;
-            padding: 20px 30px;
-            border-radius: 20px 20px 0 0;
-            position: relative;
-        }
-
-        .modal-title {
-            font-size: 1.8rem;
-            margin: 0;
-        }
-
-        .close {
-            color: white;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-            cursor: pointer;
-            position: absolute;
-            right: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-        }
-
-        .close:hover {
-            opacity: 0.7;
-        }
-
-        .modal-body {
-            padding: 30px;
-        }
-
-        .shift-tabs {
-            display: flex;
-            margin-bottom: 20px;
-            background: #f8f9fa;
-            border-radius: 10px;
-            padding: 5px;
-        }
-
-        .shift-tab {
-            flex: 1;
-            padding: 12px 20px;
-            background: transparent;
-            border: none;
-            cursor: pointer;
-            border-radius: 8px;
-            font-weight: bold;
-            transition: all 0.3s ease;
-        }
-
-        .shift-tab.active {
-            background: linear-gradient(45deg, #667eea, #764ba2);
-            color: white;
-        }
-
-        .appointments-container {
-            background: #f8f9fa;
-            border-radius: 15px;
-            padding: 20px;
-        }
-
-        .appointments-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-
-        .available-slots {
-            background: linear-gradient(45deg, #20bf6b, #26d0ce);
-            color: white;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-weight: bold;
-        }
-
-        .appointment-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 15px;
-            margin-bottom: 20px;
-        }
-
-        .appointment-slot {
-            background: white;
-            border-radius: 10px;
-            padding: 15px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-            border-left: 4px solid #667eea;
-        }
-
-        .appointment-slot.occupied {
-            border-left-color: #ff6b6b;
-            background: #fff5f5;
-        }
-
-        .slot-number {
-            font-weight: bold;
-            color: #667eea;
-            margin-bottom: 5px;
-        }
-
-        .patient-info {
-            color: #333;
-            font-size: 0.9rem;
-        }
-
-        .patient-info.empty {
-            color: #999;
-            font-style: italic;
-        }
-
-        .add-patient-btn {
-            background: linear-gradient(45deg, #20bf6b, #26d0ce);
-            color: white;
-            border: none;
-            padding: 5px 10px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 0.8rem;
-            margin-top: 5px;
-        }
-
-        .patient-form {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            margin-top: 20px;
-            border: 2px dashed #ddd;
-        }
-
-        .form-group {
-            margin-bottom: 15px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-            color: #333;
-        }
-
-        .form-group input {
-            width: 100%;
-            padding: 10px;
-            border: 2px solid #e9ecef;
-            border-radius: 8px;
-            font-size: 1rem;
-            transition: border-color 0.3s ease;
-        }
-
-        .form-group input:focus {
-            border-color: #667eea;
-            outline: none;
-        }
-
-        .form-actions {
-            display: flex;
-            gap: 10px;
-            justify-content: flex-end;
-        }
-
-        .btn {
-            padding: 10px 20px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: all 0.3s ease;
-        }
-
-        .btn-primary {
-            background: linear-gradient(45deg, #667eea, #764ba2);
-            color: white;
-        }
-
-        .btn-secondary {
-            background: #6c757d;
-            color: white;
-        }
-
-        .btn:hover {
-            transform: scale(1.05);
-        }
-
-        @media (max-width: 768px) {
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .modal-content {
-                width: 95%;
-                margin: 5% auto;
-            }
-            
-            .appointment-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
-</head>
-<body>
-    <!-- Services Section -->
-    <!-- User Info Display - Solo cuando esté logueado -->
-    <div id="userInfo" class="logged-user-info" style="display: none;">
-        <span id="loggedUser">👤 Personal: </span>
-        <button class="logout-btn" onclick="logout()">🚪 Salir</button>
-    </div>
-
-    <!-- Login Modal - Solo para añadir pacientes -->
-    <div id="loginModal" class="modal" style="display: none;">
-        <div class="modal-content" style="max-width: 400px; margin: 15% auto;">
-            <div class="modal-header">
-                <h3 class="modal-title">🔐 Acceso para Personal Médico</h3>
-                <span class="close" onclick="closeLoginModal()">&times;</span>
-            </div>
-            <div class="modal-body">
-                <div class="login-form">
-                    <div style="background: #fff3cd; padding: 15px; border-radius: 8px; margin-bottom: 20px; border-left: 4px solid #ffc107;">
-                        <strong>⚠️ Acceso Restringido</strong><br>
-                        Solo personal autorizado puede registrar pacientes
-                    </div>
-                    <div class="form-group">
-                        <label for="username">👤 Usuario:</label>
-                        <input type="text" id="username" placeholder="Ingrese su usuario" autocomplete="username">
-                    </div>
-                    <div class="form-group">
-                        <label for="password">🔑 Contraseña:</label>
-                        <input type="password" id="password" placeholder="Ingrese su contraseña" autocomplete="current-password">
-                    </div>
-                    <div class="login-error" id="loginError" style="display: none; color: #dc3545; text-align: center; margin: 10px 0; font-weight: bold;"></div>
-                    <div class="form-actions">
-                        <button class="btn btn-secondary" onclick="closeLoginModal()" style="width: 48%;">
-                            ❌ Cancelar
-                        </button>
-                        <button class="btn btn-primary" onclick="authenticate()" style="width: 48%;">
-                            🚀 Acceder
-                        </button>
-                    </div>
-                    <div style="margin-top: 20px; padding: 15px; background: #e3f2fd; border-radius: 8px; font-size: 0.9rem;">
-                        <strong>💡 Credenciales de Personal:</strong><br>
-                        <strong>Usuario:</strong> admin | <strong>Pass:</strong> medico2024<br>
-                        <strong>Usuario:</strong> doctor | <strong>Pass:</strong> salud123<br>
-                        <strong>Usuario:</strong> enfermera | <strong>Pass:</strong> cuidados2024
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <section id="servicios" class="services-section">
-        <h2 class="services-title">Atención de Servicios de Lunes a Viernes</h2>
-        <div class="services-container">
-            <div class="services-grid">
-                <!-- Odontología -->
-                <div class="service-card" onclick="openAppointmentModal('ODONTOLOGIA')">
-                    <div class="service-icon-container">
-                        <div class="service-icon tooth-icon">🦷</div>
-                    </div>
-                    <div class="service-info">
-                        <div class="service-name">ODONTOLOGIA</div>
-                        <div class="service-hours">
-                            <div><span class="time-label">Mañana:</span> <span class="time-text">Hrs. de atención: de 07:00 a 13:00</span></div>
-                            <div><span class="time-label">Tarde:</span> <span class="time-text">Hrs. de atención: de 13:00 a 19:00</span></div>
-                        </div>
-                        <button class="view-appointments-btn">Ver Fichas y Pacientes</button>
-                    </div>
-                </div>
-
-                <!-- Vacunas PAI -->
-                <div class="service-card" onclick="openAppointmentModal('VACUNAS PAI')">
-                    <div class="service-icon-container">
-                        <div class="service-icon vaccine-icon">💉</div>
-                    </div>
-                    <div class="service-info">
-                        <div class="service-name">VACUNAS PAI</div>
-                        <div class="service-hours">
-                            <div><span class="time-label">Mañana:</span> <span class="time-text">Hrs. de atención: de 07:00 a 13:00</span></div>
-                            <div><span class="time-label">Tarde:</span> <span class="time-text">Hrs. de atención: de 13:00 a 19:00</span></div>
-                        </div>
-                        <button class="view-appointments-btn">Ver Fichas y Pacientes</button>
-                    </div>
-                </div>
-
-                <!-- Urgencias -->
-                <div class="service-card" onclick="openAppointmentModal('URGENCIAS')">
-                    <div class="service-icon-container">
-                        <div class="service-icon emergency-icon">🚑</div>
-                    </div>
-                    <div class="service-info">
-                        <div class="service-name">URGENCIAS</div>
-                        <div class="service-24h">ATENCIÓN LAS 24 HORAS</div>
-                        <button class="view-appointments-btn">Ver Fichas y Pacientes</button>
-                    </div>
-                </div>
-
-                <!-- Consulta Externa -->
-                <div class="service-card" onclick="openAppointmentModal('CONSULTA EXTERNA')">
-                    <div class="service-icon-container">
-                        <div class="service-icon stethoscope-icon">🩺</div>
-                    </div>
-                    <div class="service-info">
-                        <div class="service-name">CONSULTA EXTERNA</div>
-                        <div class="service-hours">
-                            <div><span class="time-label">Mañana:</span> <span class="time-text">Hrs. de atención: de 07:00 a 13:00</span></div>
-                            <div><span class="time-label">Tarde:</span> <span class="time-text">Hrs. de atención: de 13:00 a 19:00</span></div>
-                        </div>
-                        <button class="view-appointments-btn">Ver Fichas y Pacientes</button>
-                    </div>
-                </div>
-
-                <!-- Laboratorio -->
-                <div class="service-card" onclick="openAppointmentModal('LABORATORIO')">
-                    <div class="service-icon-container">
-                        <div class="service-icon lab-icon">🔬</div>
-                    </div>
-                    <div class="service-info">
-                        <div class="service-name">LABORATORIO</div>
-                        <div class="service-hours">
-                            <div><span class="time-label">Mañana:</span> <span class="time-text">Hrs. de atención: de 07:00 a 13:00</span></div>
-                            <div><span class="time-label">Tarde:</span> <span class="time-text">Hrs. de atención: de 13:00 a 19:00</span></div>
-                        </div>
-                        <button class="view-appointments-btn">Ver Fichas y Pacientes</button>
-                    </div>
-                </div>
-
-                <!-- Ginecología -->
-                <div class="service-card" onclick="openAppointmentModal('GINECOLOGIA')">
-                    <div class="service-icon-container">
-                        <div class="service-icon gynecology-icon">🤱</div>
-                    </div>
-                    <div class="service-info">
-                        <div class="service-name">GINECOLOGIA</div>
-                        <div class="service-hours">
-                            <div><span class="time-label">Mañana:</span> <span class="time-text">Hrs. de atención: de 08:00 a 11:00</span></div>
-                            <div><span class="time-label">Tarde:</span> <span class="time-text">Hrs. de atención: de 13:00 a 15:00</span></div>
-                        </div>
-                        <button class="view-appointments-btn">Ver Fichas y Pacientes</button>
-                    </div>
-                </div>
-
-                <!-- Pediatría -->
-                <div class="service-card" onclick="openAppointmentModal('PEDIATRIA')">
-                    <div class="service-icon-container">
-                        <div class="service-icon pediatrics-icon">👶</div>
-                    </div>
-                    <div class="service-info">
-                        <div class="service-name">PEDIATRIA</div>
-                        <div class="service-hours">
-                            <div><span class="time-label">Mañana:</span> <span class="time-text">Hrs. de atención: de 08:00 a 11:00</span></div>
-                            <div><span class="time-label">Tarde:</span> <span class="time-text">Hrs. de atención: de 14:00 a 17:00</span></div>
-                        </div>
-                        <button class="view-appointments-btn">Ver Fichas y Pacientes</button>
-                    </div>
-                </div>
-
-                <!-- Ecografía -->
-                <div class="service-card" onclick="openAppointmentModal('ECOGRAFIA')">
-                    <div class="service-icon-container">
-                        <div class="service-icon ultrasound-icon">📡</div>
-                    </div>
-                    <div class="service-info">
-                        <div class="service-name">ECOGRAFIA</div>
-                        <div class="service-hours">
-                            <div><span class="time-label">Mañana:</span> <span class="time-text">Hrs. de atención: de 07:00 a 13:00</span></div>
-                            <div><span class="time-label">Tarde:</span> <span class="time-text">Hrs. de atención: de 13:00 a 19:00</span></div>
-                        </div>
-                        <button class="view-appointments-btn">Ver Fichas y Pacientes</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Modal for Appointments -->
-    <div id="appointmentModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3 class="modal-title" id="modalTitle">Gestión de Fichas</h3>
-                <span class="close" onclick="closeAppointmentModal()">&times;</span>
-            </div>
-            <div class="modal-body">
-                <div class="shift-tabs">
-                    <button class="shift-tab active" onclick="switchShift('morning')">Turno Mañana</button>
-                    <button class="shift-tab" onclick="switchShift('afternoon')">Turno Tarde</button>
-                </div>
-                
-                <div class="appointments-container">
-                    <div class="appointments-header">
-                        <h4 id="shiftTitle">Turno Mañana</h4>
-                        <div class="available-slots" id="availableSlots">20 fichas disponibles</div>
-                    </div>
-                    
-                    <div class="appointment-grid" id="appointmentGrid">
-                        <!-- Las fichas se generan dinámicamente con JavaScript -->
-                    </div>
-                    
-                    <div class="patient-form" id="patientForm" style="display: none;">
-                        <h5>Registrar Nuevo Paciente</h5>
-                        <div class="form-group">
-                            <label for="patientName">Nombre Completo:</label>
-                            <input type="text" id="patientName" placeholder="Ingrese el nombre completo">
-                        </div>
-                        <div class="form-group">
-                            <label for="patientCI">Cédula de Identidad:</label>
-                            <input type="text" id="patientCI" placeholder="Ingrese la CI">
-                        </div>
-                        <div class="form-group">
-                            <label for="patientPhone">Teléfono:</label>
-                            <input type="text" id="patientPhone" placeholder="Ingrese el teléfono">
-                        </div>
-                        <div class="form-actions">
-                            <button class="btn btn-secondary" onclick="cancelPatientForm()">Cancelar</button>
-                            <button class="btn btn-primary" onclick="savePatient()">Guardar Paciente</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        // Sistema de autenticación - Solo para registrar pacientes
-        let isAuthenticated = false;
-        let currentUser = '';
-        let pendingSlot = null; // Para recordar qué ficha se quiere asignar
-
-        // Credenciales válidas (en un sistema real, esto estaría en el backend)
-        const validCredentials = {
-            'admin': 'medico2024',
-            'doctor': 'salud123',
-            'enfermera': 'cuidados2024'
-        };
-
-        function authenticate() {
-            const username = document.getElementById('username').value.trim();
-            const password = document.getElementById('password').value;
-            const loginError = document.getElementById('loginError');
-
-            // Validar campos vacíos
-            if (!username || !password) {
-                showLoginError('⚠️ Por favor, complete todos los campos');
-                return;
-            }
-
-            // Verificar credenciales
-            if (validCredentials[username] && validCredentials[username] === password) {
-                isAuthenticated = true;
-                currentUser = username;
-                
-                // Cerrar modal de login
-                closeLoginModal();
-                
-                // Mostrar información del usuario logueado
-                document.getElementById('userInfo').style.display = 'block';
-                document.getElementById('loggedUser').textContent = `👤 Personal: ${username}`;
-                
-                // Si hay una ficha pendiente, mostrar el formulario de paciente
-                if (pendingSlot) {
-                    showPatientFormAfterAuth(pendingSlot);
-                    pendingSlot = null;
-                }
-                
-                // Mensaje de éxito
-                alert(`✅ Acceso concedido, ${username}!\n🏥 Ahora puede registrar nuevos pacientes.`);
-                
-            } else {
-                showLoginError('❌ Usuario o contraseña incorrectos');
-                document.getElementById('password').value = '';
-            }
-        }
-
-        function closeLoginModal() {
-            document.getElementById('loginModal').style.display = 'none';
-            document.getElementById('username').value = '';
-            document.getElementById('password').value = '';
-            document.getElementById('loginError').style.display = 'none';
-            pendingSlot = null;
-        }
-
-        function showLoginError(message) {
-            const loginError = document.getElementById('loginError');
-            loginError.textContent = message;
-            loginError.style.display = 'block';
-            
-            // Efecto de shake
-            const loginModal = document.getElementById('loginModal').querySelector('.modal-content');
-            loginModal.style.animation = 'shake 0.5s ease-in-out';
-            setTimeout(() => {
-                loginModal.style.animation = '';
-            }, 500);
-        }
-
-        function logout() {
-            if (confirm('🔐 ¿Cerrar sesión como personal médico?\n\n💡 Podrá seguir viendo las fichas, pero no podrá registrar nuevos pacientes.')) {
-                isAuthenticated = false;
-                currentUser = '';
-                document.getElementById('userInfo').style.display = 'none';
-                closeAppointmentModal();
-                alert('👋 Sesión cerrada. Ahora en modo visitante.');
-            }
-        }
-
-        // Sistema de gestión de citas y fichas
-        let currentService = '';
-        let currentShift = 'morning';
-        let currentSlot = null;
-        
-        // Base de datos simulada en memoria
-        const appointmentsData = {};
-
-        // Inicializar datos para todos los servicios
-        const services = ['ODONTOLOGIA', 'VACUNAS PAI', 'URGENCIAS', 'CONSULTA EXTERNA', 'LABORATORIO', 'GINECOLOGIA', 'PEDIATRIA', 'ECOGRAFIA'];
-        
-        services.forEach(service => {
-            appointmentsData[service] = {
-                morning: Array.from({length: 20}, (_, i) => ({
-                    slotNumber: i + 1,
-                    patient: null
-                })),
-                afternoon: Array.from({length: 20}, (_, i) => ({
-                    slotNumber: i + 1,
-                    patient: null
-                }))
-            };
-        });
-
-        // Agregar algunos pacientes de ejemplo
-        appointmentsData['ODONTOLOGIA'].morning[0].patient = {
-            name: 'María González',
-            ci: '12345678',
-            phone: '70123456'
-        };
-        appointmentsData['ODONTOLOGIA'].morning[2].patient = {
-            name: 'Juan Pérez',
-            ci: '87654321',
-            phone: '71234567'
-        };
-
-        function openAppointmentModal(serviceName) {
-            // Los visitantes pueden ver las fichas sin problemas
-            currentService = serviceName;
-            document.getElementById('modalTitle').textContent = `Fichas de ${serviceName}`;
-            document.getElementById('appointmentModal').style.display = 'block';
-            
-            // Resetear a turno mañana
-            currentShift = 'morning';
-            document.querySelectorAll('.shift-tab').forEach(tab => tab.classList.remove('active'));
-            document.querySelectorAll('.shift-tab')[0].classList.add('active');
-            
-            updateAppointmentView();
-        }
-
-        function closeAppointmentModal() {
-            document.getElementById('appointmentModal').style.display = 'none';
-            document.getElementById('patientForm').style.display = 'none';
-        }
-
-        function switchShift(shift) {
-            currentShift = shift;
-            document.querySelectorAll('.shift-tab').forEach(tab => tab.classList.remove('active'));
-            event.target.classList.add('active');
-            
-            document.getElementById('shiftTitle').textContent = 
-                shift === 'morning' ? 'Turno Mañana' : 'Turno Tarde';
-                
-            updateAppointmentView();
-        }
-
-        function updateAppointmentView() {
-            const appointmentGrid = document.getElementById('appointmentGrid');
-            const appointments = appointmentsData[currentService][currentShift];
-            
-            // Contar fichas disponibles
-            const availableCount = appointments.filter(apt => !apt.patient).length;
-            document.getElementById('availableSlots').textContent = 
-                `${availableCount} fichas disponibles de 20`;
-
-            // Agregar información para visitantes
-            appointmentGrid.innerHTML = `
-                <div class="visitor-info">
-                    ${isAuthenticated ? 
-                        `👨‍⚕️ Personal autorizado: ${currentUser} - Puede registrar pacientes` : 
-                        `👥 Modo visitante - Solo visualización de fichas`
-                    }
-                </div>
-            `;
-
-            // Generar HTML para las fichas
-            appointments.forEach(appointment => {
-                const slotDiv = document.createElement('div');
-                slotDiv.className = `appointment-slot ${appointment.patient ? 'occupied' : ''}`;
-                
-                // Mostrar información del paciente o ficha disponible
-                const patientInfo = appointment.patient ? 
-                    `<strong>${appointment.patient.name}</strong><br>
-                     CI: ${appointment.patient.ci}<br>
-                     Tel: ${appointment.patient.phone}
-                     ${appointment.patient.registeredBy ? `<br><small>👤 Por: ${appointment.patient.registeredBy}</small>` : ''}` : 
-                    'Ficha disponible';
-
-                // Botones según el estado de autenticación
-                let actionButtons = '';
-                if (!appointment.patient) {
-                    // Ficha disponible
-                    actionButtons = isAuthenticated ? 
-                        `<button class="add-patient-btn" onclick="showPatientForm(${appointment.slotNumber})">
-                            Asignar Paciente
-                        </button>` :
-                        `<button class="add-patient-btn public-view" onclick="requestAuth(${appointment.slotNumber})">
-                            🔐 Asignar Paciente (Personal)
-                        </button>`;
-                } else {
-                    // Ficha ocupada - solo personal puede liberar
-                    if (isAuthenticated) {
-                        actionButtons = `<button class="add-patient-btn" style="background: #ff6b6b;" onclick="removePatient(${appointment.slotNumber})">
-                            Liberar Ficha
-                        </button>`;
-                    } else {
-                        actionButtons = `<div class="staff-only-action">
-                            🔒 Solo personal puede liberar fichas
-                        </div>`;
-                    }
-                }
-
-                slotDiv.innerHTML = `
-                    <div class="slot-number">Ficha #${appointment.slotNumber}</div>
-                    <div class="patient-info ${!appointment.patient ? 'empty' : ''}">
-                        ${patientInfo}
-                    </div>
-                    ${actionButtons}
-                `;
-                
-                appointmentGrid.appendChild(slotDiv);
-            });
-        }
-
-        // Función para solicitar autenticación al tratar de asignar
-        function requestAuth(slotNumber) {
-            pendingSlot = slotNumber;
-            document.getElementById('loginModal').style.display = 'block';
-            document.getElementById('username').focus();
-        }
-
-        function showPatientForm(slotNumber) {
-            // Solo mostrar si está autenticado
-            if (!isAuthenticated) {
-                requestAuth(slotNumber);
-                return;
-            }
-            
-            currentSlot = slotNumber;
-            document.getElementById('patientForm').style.display = 'block';
-            document.getElementById('patientName').focus();
-        }
-
-        function showPatientFormAfterAuth(slotNumber) {
-            currentSlot = slotNumber;
-            document.getElementById('patientForm').style.display = 'block';
-            document.getElementById('patientName').focus();
-        }
-
-        function cancelPatientForm() {
-            document.getElementById('patientForm').style.display = 'none';
-            document.getElementById('patientName').value = '';
-            document.getElementById('patientCI').value = '';
-            document.getElementById('patientPhone').value = '';
-            currentSlot = null;
-        }
-
-        function savePatient() {
-            // Verificar autenticación al guardar
-            if (!isAuthenticated) {
-                alert('🔒 Error: Sesión no válida. Inicie sesión nuevamente.');
-                closeAppointmentModal();
-                return;
-            }
-            
-            const name = document.getElementById('patientName').value.trim();
-            const ci = document.getElementById('patientCI').value.trim();
-            const phone = document.getElementById('patientPhone').value.trim();
-
-            if (!name || !ci || !phone) {
-                alert('⚠️ Por favor, complete todos los campos');
-                return;
-            }
-
-            // Verificar si la CI ya existe en el turno actual
-            const existingPatient = appointmentsData[currentService][currentShift].find(
-                apt => apt.patient && apt.patient.ci === ci
-            );
-
-            if (existingPatient) {
-                alert('❌ Ya existe un paciente registrado con esta CI en este turno');
-                return;
-            }
-
-            // Guardar el paciente con información del usuario que lo registró
-            const slotIndex = currentSlot - 1;
-            appointmentsData[currentService][currentShift][slotIndex].patient = {
-                name,
-                ci,
-                phone,
-                registeredBy: currentUser,
-                registeredAt: new Date().toLocaleString('es-ES')
-            };
-
-            // Limpiar formulario y actualizar vista
-            cancelPatientForm();
-            updateAppointmentView();
-            
-            alert(`✅ Paciente ${name} registrado exitosamente en la ficha #${currentSlot}\n👤 Registrado por: ${currentUser}`);
-        }
-
-        function removePatient(slotNumber) {
-            if (!isAuthenticated) {
-                alert('🔒 Solo el personal autorizado puede liberar fichas.\nSi es personal médico, inicie sesión primero.');
-                return;
-            }
-            
-            if (confirm('🔐 ¿Está seguro de que desea liberar esta ficha?\n\n⚠️ Esta acción no se puede deshacer.')) {
-                const slotIndex = slotNumber - 1;
-                appointmentsData[currentService][currentShift][slotIndex].patient = null;
-                updateAppointmentView();
-                alert(`✅ Ficha #${slotNumber} liberada exitosamente\n👤 Acción realizada por: ${currentUser}`);
-            }
-        }
-
-        // Cerrar modal al hacer clic fuera de él
-        window.onclick = function(event) {
-            const modal = document.getElementById('appointmentModal');
-            if (event.target == modal) {
-                closeAppointmentModal();
-            }
-        }
-
-        // Manejar Enter en el formulario de login
-        document.addEventListener('DOMContentLoaded', function() {
-            ['username', 'password'].forEach(id => {
-                document.getElementById(id).addEventListener('keypress', function(e) {
-                    if (e.key === 'Enter') {
-                        authenticate();
-                    }
-                });
-            });
-
-            // Manejar Enter en los campos del formulario de pacientes
-            ['patientName', 'patientCI', 'patientPhone'].forEach(id => {
-                document.getElementById(id).addEventListener('keypress', function(e) {
-                    if (e.key === 'Enter') {
-                        savePatient();
-                    }
-                });
-            });
-        });
-
-        // Agregar animación de shake para errores
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes shake {
-                0%, 100% { transform: translateX(0); }
-                10%, 30%, 50%, 70%, 90% { transform: translateX(-10px); }
-                20%, 40%, 60%, 80% { transform: translateX(10px); }
-            }
-        `;
-        document.head.appendChild(style);
-    </script>
-</body>
-</html>
-        <!-- Reclamos y Sugerencias Section -->
-        <section id="reclamos" class="reclamos-section scroll-animation">
-            <h2 class="section-title">Reclamos y Sugerencias</h2>
-            <div class="reclamos-container">
-                <p style="margin-bottom: 1rem; color: #374151;">¿Tienes algún reclamo o sugerencia? Por favor déjanos tu comentario:</p>
-                
-                <form class="reclamos-form" id="reclamosForm">
-                    <input type="text" placeholder="Nombre (opcional)" class="reclamos-input">
-                    <textarea required placeholder="¿Cuál es tu reclamo o sugerencia?" rows="4" class="reclamos-input reclamos-textarea"></textarea>
-                    <button type="submit" class="reclamos-submit">Enviar</button>
-                </form>
-
-                <!-- Mapa virtual de ubicación -->
-                <div class="map-section">
-                    <h3 class="map-title">Ubicación del establecimiento</h3>
-                    <div class="map-container">
-                        <iframe
-                            title="Ubicación Centro de Salud Belén"
-                            class="map-iframe"
-                            loading="lazy"
-                            allowfullscreen
-                            src="https://www.google.com/maps?q=-19.02495338,-65.3015633&z=17&output=embed">
-                        </iframe>
-                    </div>
-                </div>
-
-                <!-- Enhanced Features Section -->
-                <div class="enhanced-features">
-                    <h3 class="features-title">💬 Más Formas de Contacto</h3>
-                    <div class="features-grid">
-                        <div class="feature-item">
-                            <span class="feature-icon">📞</span>
-                            <span class="feature-text">+591 4-123-4567</span>
-                        </div>
-                        <div class="feature-item">
-                            <span class="feature-icon">🚑</span>
-                            <span class="feature-text">Emergencias 24/7</span>
-                        </div>
-                        <div class="feature-item">
-                            <span class="feature-icon">📧</span>
-                            <span class="feature-text">info@centrosaludbelen.bo</span>
-                        </div>
-                        <div class="feature-item">
-                            <span class="feature-icon">💬</span>
-                            <span class="feature-text">WhatsApp: +591 70317124</span>
-                        </div>
-                        <div class="feature-item">
-                            <span class="feature-icon">🕒</span>
-                            <span class="feature-text">Lun-Vie: 7:00-19:00</span>
-                        </div>
-                        <div class="feature-item">
-                            <span class="feature-icon">📍</span>
-                            <span class="feature-text">Barrio Belén, Sucre-Bolivia</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <script>
-        // Scroll animations
-        function animateOnScroll() {
-            const elements = document.querySelectorAll('.scroll-animation');
-            const windowHeight = window.innerHeight;
-
-            elements.forEach(element => {
-                const elementTop = element.getBoundingClientRect().top;
-                const elementVisible = 150;
-
-                if (elementTop < windowHeight - elementVisible) {
-                    element.classList.add('visible');
-                }
-            });
-        }
-
-        window.addEventListener('scroll', animateOnScroll);
-        window.addEventListener('load', animateOnScroll);
-
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Registration form handler
-        document.getElementById('registrationForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(this);
-            const data = Object.fromEntries(formData);
-            
-            // Simulate form submission
-            const submitBtn = this.querySelector('.form-submit');
-            const originalText = submitBtn.textContent;
-            
-            submitBtn.textContent = 'Registrando...';
-            submitBtn.disabled = true;
-            
-            setTimeout(() => {
-                alert(`¡Paciente registrado exitosamente!\n\nNombre: ${data.nombreCompleto}\nCI: ${data.ci}\nTeléfono: ${data.telefono}\nServicio: ${data.servicio}`);
-                this.reset();
-                submitBtn.textContent = originalText;
-                submitBtn.disabled = false;
-            }, 2000);
-        });
-
-        // Reclamos form handler
-        document.getElementById('reclamosForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const submitBtn = this.querySelector('.reclamos-submit');
-            const originalText = submitBtn.textContent;
-            
-            submitBtn.textContent = 'Enviando...';
-            submitBtn.disabled = true;
-            
-            setTimeout(() => {
-                alert('¡Mensaje enviado exitosamente! Te contactaremos pronto.');
-                this.reset();
-                submitBtn.textContent = originalText;
-                submitBtn.disabled = false;
-            }, 2000);
-        });
-
-        // Phone number formatting
-        document.getElementById('telefono').addEventListener('input', function() {
-            let value = this.value.replace(/\D/g, '');
-            if (value.length > 0 && !value.startsWith('591')) {
-                if (value.length <= 8) {
-                    value = '591' + value;
-                }
-            }
-            
-            // Format as +591 XXXX XXXX
-            if (value.length >= 3) {
-                value = '+' + value.slice(0, 3) + ' ' + value.slice(3);
-            }
-            
-            this.value = value;
-        });
-
-        // Stats counter animation
-        function animateCounters() {
-            const counters = document.querySelectorAll('.stat-number');
-            const speed = 200;
-
-            counters.forEach(counter => {
-                const animate = () => {
-                    const value = counter.getAttribute('data-target') || counter.innerText;
-                    const data = +value.replace(/[^\d]/g, '');
-                    const time = value.replace(/[\d]/g, '').trim();
-                    
-                    counter.setAttribute('data-target', value);
-                    
-                    const increment = data / speed;
-                    let current = 0;
-
-                    if (current < data) {
-                        const timer = setInterval(() => {
-                            current += increment;
-                            if (current >= data) {
-                                current = data;
-                                clearInterval(timer);
-                            }
-                            counter.innerText = Math.floor(current) + (time || '');
-                        }, 1);
-                    }
-                };
-
-                // Trigger animation when element is visible
-                const observer = new IntersectionObserver((entries) => {
-                    if (entries[0].isIntersecting) {
-                        animate();
-                        observer.unobserve(counter);
-                    }
-                });
-
-                observer.observe(counter);
-            });
-        }
-
-        // Initialize counters
-        animateCounters();
-
-        // Add loading effect
-        window.addEventListener('load', () => {
-            document.body.style.opacity = '0';
-            document.body.style.transition = 'opacity 0.5s ease';
-            setTimeout(() => {
-                document.body.style.opacity = '1';
-            }, 100);
-        });
-
-        // Add hover effects for service cards
-        document.querySelectorAll('.service-card').forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-5px)';
-                this.style.transition = 'transform 0.3s ease';
-            });
-
-            card.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0)';
-            });
-        });
-
-        // Add click to call functionality
-        document.querySelectorAll('.feature-item').forEach(item => {
-            const text = item.querySelector('.feature-text').textContent;
-            if (text.includes('+591')) {
-                item.style.cursor = 'pointer';
-                item.addEventListener('click', () => {
-                    window.location.href = 'tel:' + text.replace(/\s/g, '');
-                });
-            } else if (text.includes('@')) {
-                item.style.cursor = 'pointer';
-                item.addEventListener('click', () => {
-                    window.location.href = 'mailto:' + text;
-                });
-            }
-        });
-    </script>
-</body>
-</html>
+commit f0b2e0840b69848a349aa4651b8f1a6e73f90e6f
+Author: alexander2928-11 <alpinogigantografias00@gmail.com>
+Date:   Sun Sep 28 21:19:15 2025 -0400
+
+    Update README.md
+
+diff --git a/README.md b/README.md
+index c5dd7fb..3f0a338 100644
+--- a/README.md
++++ b/README.md
+@@ -1,2 +1,2505 @@
+ # CentrodeSaludIntegralbelen2025.git.io
+ Centro de Saud Integral "BELEN"
++[Untitled-1.html](https://github.com/user-attachments/files/22586627/Untitled-1.html)
++<!DOCTYPE html>
++<html lang="es">
++<head>
++    <meta charset="UTF-8">
++    <meta name="viewport" content="width=device-width, initial-scale=1.0">
++    <title>Centro de Salud Integral BELÉN - Página Completa</title>
++    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap">
++    <style>
++        * {
++            margin: 0;
++            padding: 0;           
++            box-sizing: border-box;
++        }
++
++        :root {
++            --color-primary: #dc2626;
++            --color-primary-dark: #991b1b;
++            --color-white: #ffffff;
++            --color-gray-100: #f3f4f6;
++            --color-gray-200: #e5e7eb;
++            --color-gray-600: #6b7280;
++            --color-gray-800: #374151;
++            --color-gray-900: #111827;
++        }
++
++        body {
++            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
++            margin: 0;
++            padding: 0;
++            scroll-behavior: smooth;
++        }
++
++        /* Navigation */
++        .navigation {
++            position: fixed;
++            top: 0;
++            left: 0;
++            right: 0;
++            z-index: 50;
++            background: rgba(220, 38, 38, 0.95);
++            backdrop-filter: blur(10px);
++            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
++        }
++
++        .nav-container {
++            max-width: 1280px;
++            margin: 0 auto;
++            padding: 0 1rem;
++        }
++
++        .nav-content {
++            display: flex;
++            height: 4rem;
++            align-items: center;
++            justify-content: space-between;
++        }
++
++        .nav-logo {
++            display: flex;
++            align-items: center;
++            flex-shrink: 0;
++        }
++
++        .nav-logo p {
++            font-size: 1.125rem;
++            font-weight: 700;
++            color: white;
++        }
++
++        .nav-links {
++            display: none;
++            align-items: center;
++            gap: 2rem;
++        }
++
++        .nav-links a {
++            font-size: 0.875rem;
++            font-weight: 500;
++            color: white;
++            text-decoration: none;
++            transition: color 0.2s;
++            padding: 0.5rem 1rem;
++            border-radius: 0.25rem;
++        }
++
++        .nav-links a:hover {
++            color: rgba(255, 255, 255, 0.8);
++            background: rgba(255, 255, 255, 0.1);
++        }
++
++        @media (min-width: 640px) {
++            .nav-links {
++                display: flex;
++            }
++        }
++
++        /* Main Hero Section con imagen de fondo */
++        .main-section {
++            position: relative;
++            width: 100%;
++            overflow: hidden;
++            /* Fondo multicapa: imagen tramada + gradientes */
++            background-image: 
++                /* Imagen de fondo con opacidad tramada */
++                url('AdobeStock_512307383_Preview.jpeg'),
++                /* Overlay de patrones para efecto tramado */
++                radial-gradient(circle at 20% 80%, rgba(255,255,255,0.1) 0%, transparent 50%),
++                radial-gradient(circle at 80% 20%, rgba(255,255,255,0.1) 0%, transparent 50%),
++                /* Gradiente rojo base */
++                linear-gradient(135deg, rgba(220, 38, 38, 0.85), rgba(153, 27, 27, 0.9)),
++                /* Gradiente de respaldo */
++                linear-gradient(to bottom right, #dc2626, #991b1b);
++            
++            background-size: 
++                cover,           /* Imagen de fondo */
++                400px 400px,     /* Patrón 1 */
++                600px 600px,     /* Patrón 2 */
++                100% 100%,       /* Gradiente rojo */
++                100% 100%;       /* Gradiente respaldo */
++            
++            background-position: 
++                center center,   /* Imagen centrada */
++                0 0,             /* Patrón 1 */
++                100% 100%,       /* Patrón 2 */
++                0 0,             /* Gradiente rojo */
++                0 0;             /* Gradiente respaldo */
++            
++            background-repeat: 
++                no-repeat,       /* Imagen */
++                repeat,          /* Patrón 1 */
++                repeat,          /* Patrón 2 */
++                no-repeat,       /* Gradiente rojo */
++                no-repeat;       /* Gradiente respaldo */
++            
++            background-attachment: fixed;
++            min-height: 100vh;
++        }
++
++        /* Overlay adicional para efecto tramado */
++        .main-section::before {
++            content: '';
++            position: absolute;
++            top: 0;
++            left: 0;
++            right: 0;
++            bottom: 0;
++            background-image: 
++                repeating-linear-gradient(
++                    45deg,
++                    transparent,
++                    transparent 2px,
++                    rgba(255, 255, 255, 0.03) 2px,
++                    rgba(255, 255, 255, 0.03) 4px
++                ),
++                repeating-linear-gradient(
++                    -45deg,
++                    transparent,
++                    transparent 2px,
++                    rgba(255, 255, 255, 0.02) 2px,
++                    rgba(255, 255, 255, 0.02) 4px
++                );
++            pointer-events: none;
++            z-index: 1;
++        }
++
++        .hero-container {
++            position: relative;
++            z-index: 2;
++            max-width: 1280px;
++            margin: 0 auto;
++            display: grid;
++            grid-template-columns: 1fr;
++            align-items: center;
++            gap: 2.5rem;
++            min-height: 100vh;
++            overflow: hidden;
++            padding: 6rem 1rem 3rem;
++        }
++
++        @media (min-width: 1024px) {
++            .hero-container {
++                grid-template-columns: 2fr 1fr;
++                padding: 5rem 1rem 0;
++            }
++        }
++
++        .hero-content {
++            display: flex;
++            flex-direction: column;
++            align-items: center;
++            padding: 2.5rem 1rem;
++            background: rgba(255, 255, 255, 0.05);
++            border-radius: 1rem;
++            backdrop-filter: blur(5px);
++        }
++
++        @media (min-width: 640px) {
++            .hero-content {
++                align-items: flex-start;
++                padding: 2rem;
++                background: rgba(255, 255, 255, 0.08);
++            }
++        }
++
++        /* Logo SVG */
++        .medical-logo {
++            width: 8rem;
++            height: 8rem;
++        }
++
++        @media (min-width: 768px) {
++            .medical-logo {
++                width: 10rem;
++                height: 10rem;
++            }
++        }
++
++        .hero-title {
++            margin-top: 1.5rem;
++            text-align: center;
++            font-size: 2.25rem;
++            font-weight: 800;
++            letter-spacing: -0.025em;
++            color: rgb(255, 1, 1);
++        }
++
++        @media (min-width: 640px) {
++            .hero-title {
++                text-align: left;
++                font-size: 3rem;
++            }
++        }
++
++        @media (min-width: 1024px) {
++            .hero-title {
++                font-size: 3.75rem;
++            }
++        }
++
++        .hero-subtitle {
++            margin-top: 1.5rem;
++            max-width: 32rem;
++            text-align: center;
++            font-size: 1.125rem;
++            color: rgba(252, 3, 3, 0.9);
++        }
++
++        @media (min-width: 640px) {
++            .hero-subtitle {
++                text-align: left;
++                font-size: 1.25rem;
++            }
++        }
++
++        /* Registration Form */
++        .form-container {
++            position: relative;
++            display: flex;
++            width: 100%;
++            align-items: center;
++            justify-content: center;
++            padding: 0 1rem;
++        }
++
++        @media (min-width: 768px) {
++            .form-container {
++                justify-content: flex-end;
++            }
++        }
++
++        .registration-form {
++            background: rgba(255, 255, 255, 0.95);
++            border-radius: 1rem;
++            padding: 2rem;
++            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
++            backdrop-filter: blur(10px);
++            width: 100%;
++            max-width: 400px;
++        }
++
++        .form-title {
++            font-size: 1.5rem;
++            font-weight: 700;
++            color: var(--color-primary);
++            margin-bottom: 1.5rem;
++            text-align: center;
++        }
++
++        .form-group {
++            margin-bottom: 1rem;
++        }
++
++        .form-group label {
++            display: block;
++            color: var(--color-gray-800);
++            font-weight: 600;
++            margin-bottom: 0.5rem;
++            font-size: 0.875rem;
++        }
++
++        .form-group input,
++        .form-group select {
++            width: 100%;
++            padding: 0.75rem;
++            border: 2px solid var(--color-gray-200);
++            border-radius: 0.5rem;
++            font-size: 1rem;
++            transition: border-color 0.2s;
++        }
++
++        .form-group input:focus,
++        .form-group select:focus {
++            outline: none;
++            border-color: var(--color-primary);
++        }
++
++        .form-submit {
++            width: 100%;
++            background: var(--color-primary);
++            color: white;
++            padding: 0.75rem;
++            border: none;
++            border-radius: 0.5rem;
++            font-size: 1rem;
++            font-weight: 600;
++            cursor: pointer;
++            transition: background-color 0.2s;
++        }
++
++        .form-submit:hover {
++            background: var(--color-primary-dark);
++        }
++
++        /* Statistics Section */
++        .statistics-section {
++            max-width: 64rem;
++            margin: 0 auto;
++            padding: 4rem 1rem;
++        }
++
++        .section-title {
++            font-size: 1.875rem;
++            font-weight: 700;
++            color: rgb(253, 3, 3);
++            margin-bottom: 1.5rem;
++        }
++
++        .stats-container {
++            border-radius: 0.5rem;
++            background: rgba(255, 255, 255, 0.8);
++            padding: 1.5rem;
++            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
++        }
++
++        .stats-grid {
++            display: grid;
++            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
++            gap: 1.5rem;
++            margin-top: 2rem;
++        }
++
++        .stat-card {
++            background: white;
++            border-radius: 0.75rem;
++            padding: 1.5rem;
++            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
++            text-align: center;
++        }
++
++        .stat-icon {
++            width: 3rem;
++            height: 3rem;
++            background: var(--color-primary);
++            color: white;
++            border-radius: 50%;
++            display: flex;
++            align-items: center;
++            justify-content: center;
++            font-size: 1.5rem;
++            margin: 0 auto 1rem;
++        }
++
++        .stat-number {
++            font-size: 2rem;
++            font-weight: 800;
++            color: var(--color-primary);
++            margin-bottom: 0.5rem;
++        }
++
++        .stat-label {
++            color: var(--color-gray-600);
++            font-size: 0.875rem;
++        }
++
++        /* Services Section */
++        .services-section {
++            max-width: 96rem;
++            margin: 0 auto;
++            padding: 4rem 1rem;
++        }
++
++        .services-title {
++            font-size: 2.25rem;
++            font-weight: 800;
++            text-align: center;
++            margin-bottom: 1.5rem;
++            text-transform: uppercase;
++            letter-spacing: 0.025em;
++            color: rgb(252, 2, 2);
++        }
++
++        @media (min-width: 768px) {
++            .services-title {
++                font-size: 2.5rem;
++            }
++        }
++
++        .services-container {
++            border-radius: 0.75rem;
++            background: #ededed;
++            padding: 2.5rem 0.5rem;
++            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
++        }
++
++        @media (min-width: 768px) {
++            .services-container {
++                padding: 2.5rem 3rem;
++            }
++        }
++
++        .services-grid {
++            display: grid;
++            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
++            gap: 2.5rem;
++            justify-items: center;
++        }
++
++        @media (min-width: 768px) {
++            .services-grid {
++                grid-template-columns: repeat(4, 1fr);
++                gap: 2rem;
++            }
++        }
++
++        @media (min-width: 1024px) {
++            .services-grid {
++                gap: 3rem;
++            }
++        }
++
++        .service-card {
++            display: flex;
++            flex-direction: column;
++            align-items: center;
++            max-width: 18rem;
++        }
++
++        .service-image {
++            width: 7rem;
++            height: 7rem;
++            border-radius: 0.75rem;
++            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
++            margin-bottom: 0.5rem;
++        }
++
++        .service-info {
++            text-align: center;
++        }
++
++        .service-name {
++            font-weight: 600;
++            color: var(--color-primary);
++            font-size: 1.125rem;
++            letter-spacing: -0.025em;
++        }
++
++        .service-hours {
++            margin-top: 0.5rem;
++            font-size: 0.875rem;
++        }
++
++        .service-hours .time-label {
++            font-weight: 700;
++            color: var(--color-primary);
++        }
++
++        .service-hours .time-text {
++            color: var(--color-gray-800);
++        }
++
++        .service-24h {
++            margin-top: 0.5rem;
++            font-weight: 700;
++            color: var(--color-primary);
++            font-size: 0.875rem;
++        }
++
++        /* Reclamos Section */
++        .reclamos-section {
++            max-width: 64rem;
++            margin: 0 auto;
++            padding: 4rem 1rem 2rem;
++        }
++
++        .reclamos-container {
++            border-radius: 0.5rem;
++            background: rgba(255, 255, 255, 0.8);
++            padding: 1.5rem;
++            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
++        }
++
++        .reclamos-form {
++            display: flex;
++            flex-direction: column;
++            gap: 1rem;
++        }
++
++        .reclamos-input {
++            width: 100%;
++            border-radius: 0.25rem;
++            border: 1px solid rgba(220, 38, 38, 0.2);
++            background: white;
++            padding: 0.5rem 1rem;
++            color: var(--color-gray-900);
++            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
++        }
++
++        .reclamos-input::placeholder {
++            color: var(--color-gray-600);
++        }
++
++        .reclamos-textarea {
++            min-height: 6rem;
++            resize: vertical;
++        }
++
++        .reclamos-submit {
++            width: 100%;
++            border-radius: 0.25rem;
++            background: var(--color-primary);
++            padding: 0.5rem;
++            font-weight: 600;
++            color: rgb(250, 2, 2);
++            border: none;
++            cursor: pointer;
++            transition: background-color 0.2s;
++        }
++
++        .reclamos-submit:hover {
++            background: rgba(220, 38, 38, 0.9);
++        }
++
++        .map-section {
++            margin-top: 2rem;
++        }
++
++        .map-title {
++            font-size: 1.125rem;
++            font-weight: 600;
++            color: var(--color-primary);
++            margin-bottom: 0.5rem;
++        }
++
++        .map-container {
++            overflow: hidden;
++            border-radius: 0.5rem;
++            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
++            width: 100%;
++            height: 18rem;
++        }
++
++        .map-iframe {
++            border: 0;
++            width: 100%;
++            height: 100%;
++        }
++
++        /* Enhanced Features */
++        .enhanced-features {
++            background: white;
++            border-radius: 1rem;
++            padding: 2rem;
++            margin-top: 2rem;
++            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
++        }
++
++        .features-title {
++            color: var(--color-primary);
++            font-size: 1.5rem;
++            font-weight: 700;
++            margin-bottom: 1.5rem;
++            text-align: center;
++        }
++
++        .features-grid {
++            display: grid;
++            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
++            gap: 1.5rem;
++        }
++
++        .feature-item {
++            display: flex;
++            align-items: center;
++            gap: 0.75rem;
++            padding: 1rem;
++            background: var(--color-gray-100);
++            border-radius: 0.5rem;
++        }
++
++        .feature-icon {
++            font-size: 1.5rem;
++        }
++
++        .feature-text {
++            font-weight: 600;
++            color: var(--color-gray-800);
++        }
++
++        /* Responsive improvements */
++        @media (max-width: 768px) {
++            .hero-container {
++                padding-top: 5rem;
++            }
++            
++            .services-grid {
++                grid-template-columns: repeat(2, 1fr);
++                gap: 1.5rem;
++            }
++            
++            .service-card {
++                max-width: none;
++            }
++            
++            .service-image {
++                width: 5rem;
++                height: 5rem;
++            }
++            
++            .service-name {
++                font-size: 1rem;
++            }
++            
++            .service-hours {
++                font-size: 0.75rem;
++            }
++        }
++
++        @media (max-width: 480px) {
++            .services-grid {
++                grid-template-columns: 1fr;
++            }
++        }
++
++        /* Animation */
++        .fade-in {
++            opacity: 0;
++            transform: translateY(20px);
++            animation: fadeInUp 0.8s ease forwards;
++        }
++
++        @keyframes fadeInUp {
++            to {
++                opacity: 1;
++                transform: translateY(0);
++            }
++        }
++
++        .scroll-animation {
++            opacity: 0;
++            transform: translateY(30px);
++            transition: all 0.6s ease;
++        }
++
++        .scroll-animation.visible {
++            opacity: 1;
++            transform: translateY(0);
++        }
++    </style>
++</head>
++<body>
++    <!-- Navigation -->
++    <header class="navigation">
++        <nav class="nav-container">
++            <div class="nav-content">
++                <div class="nav-logo">
++                    <p>CENTRO DE SALUD INTEGRAL "BELEN"</p>
++                </div>
++                <div class="nav-links">
++                    <a href="#estadistica">ESTADISTICA</a>
++                    <a href="#servicios">SERVICIOS</a>
++                    <a href="#reclamos">RECLAMOS Y SUGERENCIAS</a>
++                </div>
++            </div>
++        </nav>
++    </header>
++
++    <!-- Main Content -->
++    <main class="main-section">
++        <!-- Hero Section -->
++        <div class="hero-container">
++            <div class="hero-content fade-in">
++                <!-- Logo SVG -->
++                <svg class="medical-logo" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Logo del Centro de Salud Integral Belen">
++                    <defs>
++                        <path id="logo-circular-path" d="M 100,30 a 70,70 0 1,1 0,140 a 70,70 0 1,1 0,-140" fill="none"/>
++                    </defs>
++                    <circle cx="100" cy="100" r="95" fill="#ffffff" stroke="#dc2626" stroke-width="10"/>
++                    <circle cx="100" cy="100" r="42" fill="#dc2626"/>
++                    <rect x="82" y="94" width="36" height="12" fill="#ffffff" rx="1"/>
++                    <rect x="94" y="82" width="12" height="36" fill="#ffffff" rx="1"/>
++                    <text style="font-family: Inter, sans-serif; font-size: 17.5px; font-weight: 600; letter-spacing: 1.5px; fill: #dc2626;" text-anchor="middle">
++                        <textPath href="#logo-circular-path" startOffset="35%">CENTRO DE SALUD INTEGRAL</textPath>
++                    </text>
++                    <text style="font-family: Inter, sans-serif; font-size: 17.5px; font-weight: 900; letter-spacing: 5px; fill: #dc2626;" text-anchor="middle">
++                        <textPath href="#logo-circular-path" startOffset="85%">"BELEN"</textPath>
++                    </text>
++                </svg>
++
++                <h1 class="hero-title">CENTRO DE SALUD INTEGRAL "BELEN"</h1>
++                <p class="hero-subtitle">Atención las 24 horas</p>
++            </div>
++                <div class="registration-form fade-in">
++                    <h2 class="form-title">📋 Registro de Pacientes</h2>
++                    <form id="registrationForm">
++                        <div class="form-group">
++                            <label for="nombreCompleto">Nombre Completo *</label>
++                            <input type="text" id="nombreCompleto" name="nombreCompleto" required>
++                        </div>
++                        <div class="form-group">
++                            <label for="ci">Carnet de Identidad *</label>
++                            <input type="text" id="ci" name="ci" required>
++                        </div>
++                        <div class="form-group">
++                            <label for="telefono">Teléfono *</label>
++                            <input type="tel" id="telefono" name="telefono" required>
++                        </div>
++                        <div class="form-group">
++                            <label for="servicio">Servicio Solicitado *</label>
++                            <select id="servicio" name="servicio" required>
++                                <option value="">Seleccionar servicio</option>
++                                <option value="odontologia">Odontología</option>
++                                <option value="Ginecologia">Ginecología</option>
++                                <option value="Pediatria">Pediatría</option>
++                                <option value="Laboratorio">Laboratorio</option>
++                                <option value="Ecografia">Ecografia</option>
++                                <option value="Medicina General">Medicina General</option>
++                                <option value="Vacunas PAI">Vacunas PAI</option>
++                                <option value="Emergencia">Emergencia</option>
++
++                                <!-- ... más opciones ... -->
++                            </select>
++                        </div>
++                        <div class="form-group">
++                            <label for="seguro">Verificacion de Seguro *</label>
++                            <select id="seguro" name="seguro" required>
++                                <option value="">Seleccionar Seguro</option>
++                                <option value="SUS">SUS</option>
++                                <option value="Caja Privada">Caja Privada</option>
++                                <option value="Ninguno">Ninguno</option>
++                                <!-- ... más opciones ... -->
++                            </select>
++                        </div>
++                        <button type="submit" class="form-submit">Registrar Paciente</button>
++                    </form>
++                </div>
++            </div>
++        </section>
++        <!-- Statistics Section -->
++        <section id="estadistica" class="statistics-section scroll-animation">
++            <h2 class="section-title">Estadística</h2>
++            <div class="stats-container">
++                <p style="color: #374151; font-size: 1rem;">Indicadores estadísticos relevantes del centro de salud</p>
++                
++                <div class="stats-grid">
++                    <div class="stat-card">
++                        <div class="stat-icon">👥</div>
++                        <div class="stat-number">2,847</div>
++                        <div class="stat-label">Pacientes Atendidos</div>
++                    </div>
++                    <div class="stat-card">
++                        <div class="stat-icon">⭐</div>
++                        <div class="stat-number">98%</div>
++                        <div class="stat-label">Satisfacción</div>
++                    </div>
++                    <div class="stat-card">
++                        <div class="stat-icon">🚑</div>
++                        <div class="stat-number">456</div>
++                        <div class="stat-label">Emergencias</div>
++                    </div>
++                    <div class="stat-card">
++                        <div class="stat-icon">⏱️</div>
++                        <div class="stat-number">15 min</div>
++                        <div class="stat-label">Tiempo Promedio</div>
++                    </div>
++                </div>
++            </div>
++        </section>
++
++       <!DOCTYPE html>
++<html lang="es">
++<head>
++    <meta charset="UTF-8">
++    <meta name="viewport" content="width=device-width, initial-scale=1.0">
++    <title>Servicios Médicos - Gestión de Fichas</title>
++    <style>
++        * {
++            margin: 0;
++            padding: 0;
++            box-sizing: border-box;
++        }
++
++        body {
++            font-family: 'Arial', sans-serif;
++            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
++            min-height: 100vh;
++            padding: 20px;
++        }
++
++        .services-section {
++            max-width: 1200px;
++            margin: 0 auto;
++            background: white;
++            border-radius: 20px;
++            padding: 30px;
++            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
++        }
++
++        .services-title {
++            text-align: center;
++            font-size: 2.5rem;
++            color: #333;
++            margin-bottom: 40px;
++            background: linear-gradient(45deg, #ff0000, #eb0505);
++            -webkit-background-clip: text;
++            -webkit-text-fill-color: transparent;
++            background-clip: text;
++        }
++
++        .services-grid {
++            display: grid;
++            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
++            gap: 25px;
++        }
++
++        .service-card {
++            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
++            border-radius: 15px;
++            padding: 25px;
++            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
++            transition: all 0.3s ease;
++            cursor: pointer;
++            position: relative;
++            overflow: hidden;
++        }
++
++        .service-card::before {
++            content: '';
++            position: absolute;
++            top: 0;
++            left: -100%;
++            width: 100%;
++            height: 100%;
++            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
++            transition: left 0.5s;
++        }
++
++        .service-card:hover::before {
++            left: 100%;
++        }
++
++        .service-card:hover {
++            transform: translateY(-5px);
++            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
++        }
++
++        .service-icon-container {
++            display: flex;
++            justify-content: center;
++            margin-bottom: 15px;
++        }
++
++        .service-icon {
++            width: 80px;
++            height: 80px;
++            background: linear-gradient(135deg, #dc3545, #c82333);
++            border-radius: 15px;
++            display: flex;
++            align-items: center;
++            justify-content: center;
++            font-size: 2.5rem;
++            box-shadow: 0 8px 25px rgba(220, 53, 69, 0.3);
++            transition: all 0.3s ease;
++            position: relative;
++            overflow: hidden;
++        }
++
++        .service-icon::before {
++            content: '';
++            position: absolute;
++            top: -50%;
++            left: -50%;
++            width: 200%;
++            height: 200%;
++            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
++            transform: rotate(45deg);
++            transition: all 0.3s ease;
++        }
++
++        .service-card:hover .service-icon {
++            transform: scale(1.1) rotate(5deg);
++            box-shadow: 0 15px 35px rgba(220, 53, 69, 0.4);
++        }
++
++        .service-card:hover .service-icon::before {
++            animation: shine 0.6s ease-in-out;
++        }
++
++        @keyframes shine {
++            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
++            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
++        }
++
++        .service-image {
++            width: 80px;
++            height: 80px;
++            object-fit: cover;
++            border-radius: 50%;
++            margin-bottom: 15px;
++            border: 3px solid #667eea;
++            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
++        }
++
++        .service-name {
++            font-size: 1.4rem;
++            font-weight: bold;
++            color: #333;
++            margin-bottom: 15px;
++            text-align: center;
++        }
++
++        .service-hours {
++            color: #666;
++            line-height: 1.6;
++        }
++
++        .service-24h {
++            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
++            color: white;
++            padding: 10px;
++            border-radius: 8px;
++            text-align: center;
++            font-weight: bold;
++            animation: pulse 2s infinite;
++        }
++
++        @keyframes pulse {
++            0% { transform: scale(1); }
++            50% { transform: scale(1.05); }
++            100% { transform: scale(1); }
++        }
++
++        .time-label {
++            font-weight: bold;
++            color: #667eea;
++        }
++
++        .time-text {
++            color: #333;
++        }
++
++        .view-appointments-btn {
++            background: linear-gradient(45deg, #667eea, #764ba2);
++            color: white;
++            border: none;
++            padding: 10px 20px;
++            border-radius: 8px;
++            cursor: pointer;
++            font-weight: bold;
++            margin-top: 15px;
++            width: 100%;
++            transition: all 0.3s ease;
++        }
++
++        .view-appointments-btn:hover {
++            transform: scale(1.05);
++            box-shadow: 0 5px 15px rgba(221, 4, 4, 0.4);
++        }
++
++        /* Modal Styles */
++        .modal {
++            display: none;
++            position: fixed;
++            z-index: 1000;
++            left: 0;
++            top: 0;
++            width: 100%;
++            height: 100%;
++            background-color: rgba(0,0,0,0.5);
++            backdrop-filter: blur(5px);
++        }
++
++        .modal-content {
++            background: white;
++            margin: 2% auto;
++            padding: 0;
++            border-radius: 20px;
++            width: 90%;
++            max-width: 900px;
++            max-height: 90vh;
++            overflow-y: auto;
++            animation: modalSlideIn 0.3s ease;
++        }
++
++        @keyframes modalSlideIn {
++            from { transform: translateY(-100px); opacity: 0; }
++            to { transform: translateY(0); opacity: 1; }
++        }
++
++        .modal-header {
++            background: linear-gradient(45deg, #667eea, #764ba2);
++            color: white;
++            padding: 20px 30px;
++            border-radius: 20px 20px 0 0;
++            position: relative;
++        }
++
++        .modal-title {
++            font-size: 1.8rem;
++            margin: 0;
++        }
++
++        .close {
++            color: white;
++            float: right;
++            font-size: 28px;
++            font-weight: bold;
++            cursor: pointer;
++            position: absolute;
++            right: 20px;
++            top: 50%;
++            transform: translateY(-50%);
++        }
++
++        .close:hover {
++            opacity: 0.7;
++        }
++
++        .modal-body {
++            padding: 30px;
++        }
++
++        .shift-tabs {
++            display: flex;
++            margin-bottom: 20px;
++            background: #f8f9fa;
++            border-radius: 10px;
++            padding: 5px;
++        }
++
++        .shift-tab {
++            flex: 1;
++            padding: 12px 20px;
++            background: transparent;
++            border: none;
++            cursor: pointer;
++            border-radius: 8px;
++            font-weight: bold;
++            transition: all 0.3s ease;
++        }
++
++        .shift-tab.active {
++            background: linear-gradient(45deg, #667eea, #764ba2);
++            color: white;
++        }
++
++        .appointments-container {
++            background: #f8f9fa;
++            border-radius: 15px;
++            padding: 20px;
++        }
++
++        .appointments-header {
++            display: flex;
++            justify-content: space-between;
++            align-items: center;
++            margin-bottom: 20px;
++        }
++
++        .available-slots {
++            background: linear-gradient(45deg, #20bf6b, #26d0ce);
++            color: white;
++            padding: 8px 16px;
++            border-radius: 20px;
++            font-weight: bold;
++        }
++
++        .appointment-grid {
++            display: grid;
++            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
++            gap: 15px;
++            margin-bottom: 20px;
++        }
++
++        .appointment-slot {
++            background: white;
++            border-radius: 10px;
++            padding: 15px;
++            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
++            border-left: 4px solid #667eea;
++        }
++
++        .appointment-slot.occupied {
++            border-left-color: #ff6b6b;
++            background: #fff5f5;
++        }
++
++        .slot-number {
++            font-weight: bold;
++            color: #ea6666;
++            margin-bottom: 5px;
++        }
++
++        .patient-info {
++            color: #333;
++            font-size: 0.9rem;
++        }
++
++        .patient-info.empty {
++            color: #999;
++            font-style: italic;
++        }
++
++        .add-patient-btn {
++            background: linear-gradient(45deg, #f30202, #dd7575);
++            color: white;
++            border: none;
++            padding: 5px 10px;
++            border-radius: 5px;
++            cursor: pointer;
++            font-size: 0.8rem;
++            margin-top: 5px;
++        }
++
++        .patient-form {
++            background: white;
++            padding: 20px;
++            border-radius: 10px;
++            margin-top: 20px;
++            border: 2px dashed #ddd;
++        }
++
++        .form-group {
++            margin-bottom: 15px;
++        }
++
++        .form-group label {
++            display: block;
++            margin-bottom: 5px;
++            font-weight: bold;
++            color: #333;
++        }
++
++        .form-group input {
++            width: 100%;
++            padding: 10px;
++            border: 2px solid #e9ecef;
++            border-radius: 8px;
++            font-size: 1rem;
++            transition: border-color 0.3s ease;
++        }
++
++        .form-group input:focus {
++            border-color: #667eea;
++            outline: none;
++        }
++
++        .form-actions {
++            display: flex;
++            gap: 10px;
++            justify-content: flex-end;
++        }
++
++        .btn {
++            padding: 10px 20px;
++            border: none;
++            border-radius: 8px;
++            cursor: pointer;
++            font-weight: bold;
++            transition: all 0.3s ease;
++        }
++
++        .btn-primary {
++            background: linear-gradient(45deg, #667eea, #764ba2);
++            color: white;
++        }
++
++        .btn-secondary {
++            background: #6c757d;
++            color: white;
++        }
++
++        .btn:hover {
++            transform: scale(1.05);
++        }
++
++        @media (max-width: 768px) {
++            .services-grid {
++                grid-template-columns: 1fr;
++            }
++            
++            .modal-content {
++                width: 95%;
++                margin: 5% auto;
++            }
++            
++            .appointment-grid {
++                grid-template-columns: 1fr;
++            }
++        }
++    </style>
++</head>
++<body>
++ <!DOCTYPE html>
++<html lang="es">
++<head>
++    <meta charset="UTF-8">
++    <meta name="viewport" content="width=device-width, initial-scale=1.0">
++    <title>Servicios Médicos - Gestión de Fichas</title>
++    <style>
++        * {
++            margin: 0;
++            padding: 0;
++            box-sizing: border-box;
++        }
++
++        body {
++            font-family: 'Arial', sans-serif;
++            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
++            min-height: 100vh;
++            padding: 20px;
++        }
++
++        .services-section {
++            max-width: 1200px;
++            margin: 0 auto;
++            background: white;
++            border-radius: 20px;
++            padding: 30px;
++            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
++        }
++
++        .services-title {
++            text-align: center;
++            font-size: 2.5rem;
++            color: #333;
++            margin-bottom: 40px;
++            background: linear-gradient(45deg, #667eea, #764ba2);
++            -webkit-background-clip: text;
++            -webkit-text-fill-color: transparent;
++            background-clip: text;
++        }
++
++        .services-grid {
++            display: grid;
++            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
++            gap: 25px;
++        }
++
++        .service-card {
++            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
++            border-radius: 15px;
++            padding: 25px;
++            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
++            transition: all 0.3s ease;
++            cursor: pointer;
++            position: relative;
++            overflow: hidden;
++        }
++
++        .service-card::before {
++            content: '';
++            position: absolute;
++            top: 0;
++            left: -100%;
++            width: 100%;
++            height: 100%;
++            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
++            transition: left 0.5s;
++        }
++
++        .service-card:hover::before {
++            left: 100%;
++        }
++
++        .service-card:hover {
++            transform: translateY(-5px);
++            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
++        }
++
++        .service-icon-container {
++            display: flex;
++            justify-content: center;
++            margin-bottom: 15px;
++        }
++
++        .service-icon {
++            width: 80px;
++            height: 80px;
++            background: linear-gradient(135deg, #dc3545, #c82333);
++            border-radius: 15px;
++            display: flex;
++            align-items: center;
++            justify-content: center;
++            font-size: 2.5rem;
++            box-shadow: 0 8px 25px rgba(220, 53, 69, 0.3);
++            transition: all 0.3s ease;
++            position: relative;
++            overflow: hidden;
++        }
++
++        .service-icon::before {
++            content: '';
++            position: absolute;
++            top: -50%;
++            left: -50%;
++            width: 200%;
++            height: 200%;
++            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
++            transform: rotate(45deg);
++            transition: all 0.3s ease;
++        }
++
++        .service-card:hover .service-icon {
++            transform: scale(1.1) rotate(5deg);
++            box-shadow: 0 15px 35px rgba(220, 53, 69, 0.4);
++        }
++
++        .service-card:hover .service-icon::before {
++            animation: shine 0.6s ease-in-out;
++        }
++
++        @keyframes shine {
++            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
++            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
++        }
++
++        /* Login Styles */
++        .login-form {
++            padding: 20px 0;
++        }
++
++        .login-form .form-group input {
++            background: #f8f9fa;
++            border: 2px solid #e9ecef;
++            padding: 12px 15px;
++            font-size: 1rem;
++        }
++
++        .login-form .form-group input:focus {
++            background: white;
++            border-color: #667eea;
++            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
++        }
++
++        .login-security-note {
++            background: linear-gradient(135deg, #e8f5e8, #f0f8f0);
++            border-left: 4px solid #28a745;
++            padding: 15px;
++            margin: 20px 0;
++            border-radius: 0 8px 8px 0;
++            font-size: 0.9rem;
++            color: #155724;
++        }
++
++        .public-access-note {
++            background: linear-gradient(135deg, #d4edda, #c3e6cb);
++            border-left: 4px solid #28a745;
++            padding: 15px;
++            margin-bottom: 20px;
++            border-radius: 0 8px 8px 0;
++            color: #155724;
++        }
++
++        .staff-only-action {
++            background: #fff3cd;
++            border: 1px solid #ffeaa7;
++            color: #856404;
++            padding: 8px 12px;
++            border-radius: 5px;
++            font-size: 0.8rem;
++            margin-top: 5px;
++        }
++
++        .visitor-info {
++            background: linear-gradient(135deg, #cce5ff, #b3d9ff);
++            color: #004085;
++            padding: 10px 15px;
++            border-radius: 20px;
++            margin-bottom: 20px;
++            text-align: center;
++            font-weight: bold;
++        }
++
++        .add-patient-btn.public-view {
++            background: #6c757d;
++            cursor: pointer;
++        }
++
++        .add-patient-btn.public-view:hover {
++            background: #5a6268;
++        }
++
++        .service-name {
++            font-size: 1.4rem;
++            font-weight: bold;
++            color: #333;
++            margin-bottom: 15px;
++            text-align: center;
++        }
++
++        .service-hours {
++            color: #666;
++            line-height: 1.6;
++        }
++
++        .service-24h {
++            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
++            color: white;
++            padding: 10px;
++            border-radius: 8px;
++            text-align: center;
++            font-weight: bold;
++            animation: pulse 2s infinite;
++        }
++
++        @keyframes pulse {
++            0% { transform: scale(1); }
++            50% { transform: scale(1.05); }
++            100% { transform: scale(1); }
++        }
++
++        .time-label {
++            font-weight: bold;
++            color: #667eea;
++        }
++
++        .time-text {
++            color: #333;
++        }
++
++        .view-appointments-btn {
++            background: linear-gradient(45deg, #667eea, #764ba2);
++            color: white;
++            border: none;
++            padding: 10px 20px;
++            border-radius: 8px;
++            cursor: pointer;
++            font-weight: bold;
++            margin-top: 15px;
++            width: 100%;
++            transition: all 0.3s ease;
++        }
++
++        .view-appointments-btn:hover {
++            transform: scale(1.05);
++            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
++        }
++
++        /* Modal Styles */
++        .modal {
++            display: none;
++            position: fixed;
++            z-index: 1000;
++            left: 0;
++            top: 0;
++            width: 100%;
++            height: 100%;
++            background-color: rgba(0,0,0,0.5);
++            backdrop-filter: blur(5px);
++        }
++
++        .modal-content {
++            background: white;
++            margin: 2% auto;
++            padding: 0;
++            border-radius: 20px;
++            width: 90%;
++            max-width: 900px;
++            max-height: 90vh;
++            overflow-y: auto;
++            animation: modalSlideIn 0.3s ease;
++        }
++
++        @keyframes modalSlideIn {
++            from { transform: translateY(-100px); opacity: 0; }
++            to { transform: translateY(0); opacity: 1; }
++        }
++
++        .modal-header {
++            background: linear-gradient(45deg, #667eea, #764ba2);
++            color: white;
++            padding: 20px 30px;
++            border-radius: 20px 20px 0 0;
++            position: relative;
++        }
++
++        .modal-title {
++            font-size: 1.8rem;
++            margin: 0;
++        }
++
++        .close {
++            color: white;
++            float: right;
++            font-size: 28px;
++            font-weight: bold;
++            cursor: pointer;
++            position: absolute;
++            right: 20px;
++            top: 50%;
++            transform: translateY(-50%);
++        }
++
++        .close:hover {
++            opacity: 0.7;
++        }
++
++        .modal-body {
++            padding: 30px;
++        }
++
++        .shift-tabs {
++            display: flex;
++            margin-bottom: 20px;
++            background: #f8f9fa;
++            border-radius: 10px;
++            padding: 5px;
++        }
++
++        .shift-tab {
++            flex: 1;
++            padding: 12px 20px;
++            background: transparent;
++            border: none;
++            cursor: pointer;
++            border-radius: 8px;
++            font-weight: bold;
++            transition: all 0.3s ease;
++        }
++
++        .shift-tab.active {
++            background: linear-gradient(45deg, #667eea, #764ba2);
++            color: white;
++        }
++
++        .appointments-container {
++            background: #f8f9fa;
++            border-radius: 15px;
++            padding: 20px;
++        }
++
++        .appointments-header {
++            display: flex;
++            justify-content: space-between;
++            align-items: center;
++            margin-bottom: 20px;
++        }
++
++        .available-slots {
++            background: linear-gradient(45deg, #20bf6b, #26d0ce);
++            color: white;
++            padding: 8px 16px;
++            border-radius: 20px;
++            font-weight: bold;
++        }
++
++        .appointment-grid {
++            display: grid;
++            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
++            gap: 15px;
++            margin-bottom: 20px;
++        }
++
++        .appointment-slot {
++            background: white;
++            border-radius: 10px;
++            padding: 15px;
++            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
++            border-left: 4px solid #667eea;
++        }
++
++        .appointment-slot.occupied {
++            border-left-color: #ff6b6b;
++            background: #fff5f5;
++        }
++
++        .slot-number {
++            font-weight: bold;
++            color: #667eea;
++            margin-bottom: 5px;
++        }
++
++        .patient-info {
++            color: #333;
++            font-size: 0.9rem;
++        }
++
++        .patient-info.empty {
++            color: #999;
++            font-style: italic;
++        }
++
++        .add-patient-btn {
++            background: linear-gradient(45deg, #20bf6b, #26d0ce);
++            color: white;
++            border: none;
++            padding: 5px 10px;
++            border-radius: 5px;
++            cursor: pointer;
++            font-size: 0.8rem;
++            margin-top: 5px;
++        }
++
++        .patient-form {
++            background: white;
++            padding: 20px;
++            border-radius: 10px;
++            margin-top: 20px;
++            border: 2px dashed #ddd;
++        }
++
++        .form-group {
++            margin-bottom: 15px;
++        }
++
++        .form-group label {
++            display: block;
++            margin-bottom: 5px;
++            font-weight: bold;
++            color: #333;
++        }
++
++        .form-group input {
++            width: 100%;
++            padding: 10px;
++            border: 2px solid #e9ecef;
++            border-radius: 8px;
++            font-size: 1rem;
++            transition: border-color 0.3s ease;
++        }
++
++        .form-group input:focus {
++            border-color: #667eea;
++            outline: none;
++        }
++
++        .form-actions {
++            display: flex;
++            gap: 10px;
++            justify-content: flex-end;
++        }
++
++        .btn {
++            padding: 10px 20px;
++            border: none;
++            border-radius: 8px;
++            cursor: pointer;
++            font-weight: bold;
++            transition: all 0.3s ease;
++        }
++
++        .btn-primary {
++            background: linear-gradient(45deg, #667eea, #764ba2);
++            color: white;
++        }
++
++        .btn-secondary {
++            background: #6c757d;
++            color: white;
++        }
++
++        .btn:hover {
++            transform: scale(1.05);
++        }
++
++        @media (max-width: 768px) {
++            .services-grid {
++                grid-template-columns: 1fr;
++            }
++            
++            .modal-content {
++                width: 95%;
++                margin: 5% auto;
++            }
++            
++            .appointment-grid {
++                grid-template-columns: 1fr;
++            }
++        }
++    </style>
++</head>
++<body>
++    <!-- Services Section -->
++    <!-- User Info Display - Solo cuando esté logueado -->
++    <div id="userInfo" class="logged-user-info" style="display: none;">
++        <span id="loggedUser">👤 Personal: </span>
++        <button class="logout-btn" onclick="logout()">🚪 Salir</button>
++    </div>
++
++    <!-- Login Modal - Solo para añadir pacientes -->
++    <div id="loginModal" class="modal" style="display: none;">
++        <div class="modal-content" style="max-width: 400px; margin: 15% auto;">
++            <div class="modal-header">
++                <h3 class="modal-title">🔐 Acceso para Personal Médico</h3>
++                <span class="close" onclick="closeLoginModal()">&times;</span>
++            </div>
++            <div class="modal-body">
++                <div class="login-form">
++                    <div style="background: #fff3cd; padding: 15px; border-radius: 8px; margin-bottom: 20px; border-left: 4px solid #ffc107;">
++                        <strong>⚠️ Acceso Restringido</strong><br>
++                        Solo personal autorizado puede registrar pacientes
++                    </div>
++                    <div class="form-group">
++                        <label for="username">👤 Usuario:</label>
++                        <input type="text" id="username" placeholder="Ingrese su usuario" autocomplete="username">
++                    </div>
++                    <div class="form-group">
++                        <label for="password">🔑 Contraseña:</label>
++                        <input type="password" id="password" placeholder="Ingrese su contraseña" autocomplete="current-password">
++                    </div>
++                    <div class="login-error" id="loginError" style="display: none; color: #dc3545; text-align: center; margin: 10px 0; font-weight: bold;"></div>
++                    <div class="form-actions">
++                        <button class="btn btn-secondary" onclick="closeLoginModal()" style="width: 48%;">
++                            ❌ Cancelar
++                        </button>
++                        <button class="btn btn-primary" onclick="authenticate()" style="width: 48%;">
++                            🚀 Acceder
++                        </button>
++                    </div>
++                    <div style="margin-top: 20px; padding: 15px; background: #e3f2fd; border-radius: 8px; font-size: 0.9rem;">
++                        <strong>💡 Credenciales de Personal:</strong><br>
++                        <strong>Usuario:</strong> admin | <strong>Pass:</strong> medico2024<br>
++                        <strong>Usuario:</strong> doctor | <strong>Pass:</strong> salud123<br>
++                        <strong>Usuario:</strong> enfermera | <strong>Pass:</strong> cuidados2024
++                    </div>
++                </div>
++            </div>
++        </div>
++    </div>
++
++    <section id="servicios" class="services-section">
++        <h2 class="services-title">Atención de Servicios de Lunes a Viernes</h2>
++        <div class="services-container">
++            <div class="services-grid">
++                <!-- Odontología -->
++                <div class="service-card" onclick="openAppointmentModal('ODONTOLOGIA')">
++                    <div class="service-icon-container">
++                        <div class="service-icon tooth-icon">🦷</div>
++                    </div>
++                    <div class="service-info">
++                        <div class="service-name">ODONTOLOGIA</div>
++                        <div class="service-hours">
++                            <div><span class="time-label">Mañana:</span> <span class="time-text">Hrs. de atención: de 07:00 a 13:00</span></div>
++                            <div><span class="time-label">Tarde:</span> <span class="time-text">Hrs. de atención: de 13:00 a 19:00</span></div>
++                        </div>
++                        <button class="view-appointments-btn">Ver Fichas y Pacientes</button>
++                    </div>
++                </div>
++
++                <!-- Vacunas PAI -->
++                <div class="service-card" onclick="openAppointmentModal('VACUNAS PAI')">
++                    <div class="service-icon-container">
++                        <div class="service-icon vaccine-icon">💉</div>
++                    </div>
++                    <div class="service-info">
++                        <div class="service-name">VACUNAS PAI</div>
++                        <div class="service-hours">
++                            <div><span class="time-label">Mañana:</span> <span class="time-text">Hrs. de atención: de 07:00 a 13:00</span></div>
++                            <div><span class="time-label">Tarde:</span> <span class="time-text">Hrs. de atención: de 13:00 a 19:00</span></div>
++                        </div>
++                        <button class="view-appointments-btn">Ver Fichas y Pacientes</button>
++                    </div>
++                </div>
++
++                <!-- Urgencias -->
++                <div class="service-card" onclick="openAppointmentModal('URGENCIAS')">
++                    <div class="service-icon-container">
++                        <div class="service-icon emergency-icon">🚑</div>
++                    </div>
++                    <div class="service-info">
++                        <div class="service-name">URGENCIAS</div>
++                        <div class="service-24h">ATENCIÓN LAS 24 HORAS</div>
++                        <button class="view-appointments-btn">Ver Fichas y Pacientes</button>
++                    </div>
++                </div>
++
++                <!-- Consulta Externa -->
++                <div class="service-card" onclick="openAppointmentModal('CONSULTA EXTERNA')">
++                    <div class="service-icon-container">
++                        <div class="service-icon stethoscope-icon">🩺</div>
++                    </div>
++                    <div class="service-info">
++                        <div class="service-name">CONSULTA EXTERNA</div>
++                        <div class="service-hours">
++                            <div><span class="time-label">Mañana:</span> <span class="time-text">Hrs. de atención: de 07:00 a 13:00</span></div>
++                            <div><span class="time-label">Tarde:</span> <span class="time-text">Hrs. de atención: de 13:00 a 19:00</span></div>
++                        </div>
++                        <button class="view-appointments-btn">Ver Fichas y Pacientes</button>
++                    </div>
++                </div>
++
++                <!-- Laboratorio -->
++                <div class="service-card" onclick="openAppointmentModal('LABORATORIO')">
++                    <div class="service-icon-container">
++                        <div class="service-icon lab-icon">🔬</div>
++                    </div>
++                    <div class="service-info">
++                        <div class="service-name">LABORATORIO</div>
++                        <div class="service-hours">
++                            <div><span class="time-label">Mañana:</span> <span class="time-text">Hrs. de atención: de 07:00 a 13:00</span></div>
++                            <div><span class="time-label">Tarde:</span> <span class="time-text">Hrs. de atención: de 13:00 a 19:00</span></div>
++                        </div>
++                        <button class="view-appointments-btn">Ver Fichas y Pacientes</button>
++                    </div>
++                </div>
++
++                <!-- Ginecología -->
++                <div class="service-card" onclick="openAppointmentModal('GINECOLOGIA')">
++                    <div class="service-icon-container">
++                        <div class="service-icon gynecology-icon">🤱</div>
++                    </div>
++                    <div class="service-info">
++                        <div class="service-name">GINECOLOGIA</div>
++                        <div class="service-hours">
++                            <div><span class="time-label">Mañana:</span> <span class="time-text">Hrs. de atención: de 08:00 a 11:00</span></div>
++                            <div><span class="time-label">Tarde:</span> <span class="time-text">Hrs. de atención: de 13:00 a 15:00</span></div>
++                        </div>
++                        <button class="view-appointments-btn">Ver Fichas y Pacientes</button>
++                    </div>
++                </div>
++
++                <!-- Pediatría -->
++                <div class="service-card" onclick="openAppointmentModal('PEDIATRIA')">
++                    <div class="service-icon-container">
++                        <div class="service-icon pediatrics-icon">👶</div>
++                    </div>
++                    <div class="service-info">
++                        <div class="service-name">PEDIATRIA</div>
++                        <div class="service-hours">
++                            <div><span class="time-label">Mañana:</span> <span class="time-text">Hrs. de atención: de 08:00 a 11:00</span></div>
++                            <div><span class="time-label">Tarde:</span> <span class="time-text">Hrs. de atención: de 14:00 a 17:00</span></div>
++                        </div>
++                        <button class="view-appointments-btn">Ver Fichas y Pacientes</button>
++                    </div>
++                </div>
++
++                <!-- Ecografía -->
++                <div class="service-card" onclick="openAppointmentModal('ECOGRAFIA')">
++                    <div class="service-icon-container">
++                        <div class="service-icon ultrasound-icon">📡</div>
++                    </div>
++                    <div class="service-info">
++                        <div class="service-name">ECOGRAFIA</div>
++                        <div class="service-hours">
++                            <div><span class="time-label">Mañana:</span> <span class="time-text">Hrs. de atención: de 07:00 a 13:00</span></div>
++                            <div><span class="time-label">Tarde:</span> <span class="time-text">Hrs. de atención: de 13:00 a 19:00</span></div>
++                        </div>
++                        <button class="view-appointments-btn">Ver Fichas y Pacientes</button>
++                    </div>
++                </div>
++            </div>
++        </div>
++    </section>
++
++    <!-- Modal for Appointments -->
++    <div id="appointmentModal" class="modal">
++        <div class="modal-content">
++            <div class="modal-header">
++                <h3 class="modal-title" id="modalTitle">Gestión de Fichas</h3>
++                <span class="close" onclick="closeAppointmentModal()">&times;</span>
++            </div>
++            <div class="modal-body">
++                <div class="shift-tabs">
++                    <button class="shift-tab active" onclick="switchShift('morning')">Turno Mañana</button>
++                    <button class="shift-tab" onclick="switchShift('afternoon')">Turno Tarde</button>
++                </div>
++                
++                <div class="appointments-container">
++                    <div class="appointments-header">
++                        <h4 id="shiftTitle">Turno Mañana</h4>
++                        <div class="available-slots" id="availableSlots">20 fichas disponibles</div>
++                    </div>
++                    
++                    <div class="appointment-grid" id="appointmentGrid">
++                        <!-- Las fichas se generan dinámicamente con JavaScript -->
++                    </div>
++                    
++                    <div class="patient-form" id="patientForm" style="display: none;">
++                        <h5>Registrar Nuevo Paciente</h5>
++                        <div class="form-group">
++                            <label for="patientName">Nombre Completo:</label>
++                            <input type="text" id="patientName" placeholder="Ingrese el nombre completo">
++                        </div>
++                        <div class="form-group">
++                            <label for="patientCI">Cédula de Identidad:</label>
++                            <input type="text" id="patientCI" placeholder="Ingrese la CI">
++                        </div>
++                        <div class="form-group">
++                            <label for="patientPhone">Teléfono:</label>
++                            <input type="text" id="patientPhone" placeholder="Ingrese el teléfono">
++                        </div>
++                        <div class="form-actions">
++                            <button class="btn btn-secondary" onclick="cancelPatientForm()">Cancelar</button>
++                            <button class="btn btn-primary" onclick="savePatient()">Guardar Paciente</button>
++                        </div>
++                    </div>
++                </div>
++            </div>
++        </div>
++    </div>
++
++    <script>
++        // Sistema de autenticación - Solo para registrar pacientes
++        let isAuthenticated = false;
++        let currentUser = '';
++        let pendingSlot = null; // Para recordar qué ficha se quiere asignar
++
++        // Credenciales válidas (en un sistema real, esto estaría en el backend)
++        const validCredentials = {
++            'admin': 'medico2024',
++            'doctor': 'salud123',
++            'enfermera': 'cuidados2024'
++        };
++
++        function authenticate() {
++            const username = document.getElementById('username').value.trim();
++            const password = document.getElementById('password').value;
++            const loginError = document.getElementById('loginError');
++
++            // Validar campos vacíos
++            if (!username || !password) {
++                showLoginError('⚠️ Por favor, complete todos los campos');
++                return;
++            }
++
++            // Verificar credenciales
++            if (validCredentials[username] && validCredentials[username] === password) {
++                isAuthenticated = true;
++                currentUser = username;
++                
++                // Cerrar modal de login
++                closeLoginModal();
++                
++                // Mostrar información del usuario logueado
++                document.getElementById('userInfo').style.display = 'block';
++                document.getElementById('loggedUser').textContent = `👤 Personal: ${username}`;
++                
++                // Si hay una ficha pendiente, mostrar el formulario de paciente
++                if (pendingSlot) {
++                    showPatientFormAfterAuth(pendingSlot);
++                    pendingSlot = null;
++                }
++                
++                // Mensaje de éxito
++                alert(`✅ Acceso concedido, ${username}!\n🏥 Ahora puede registrar nuevos pacientes.`);
++                
++            } else {
++                showLoginError('❌ Usuario o contraseña incorrectos');
++                document.getElementById('password').value = '';
++            }
++        }
++
++        function closeLoginModal() {
++            document.getElementById('loginModal').style.display = 'none';
++            document.getElementById('username').value = '';
++            document.getElementById('password').value = '';
++            document.getElementById('loginError').style.display = 'none';
++            pendingSlot = null;
++        }
++
++        function showLoginError(message) {
++            const loginError = document.getElementById('loginError');
++            loginError.textContent = message;
++            loginError.style.display = 'block';
++            
++            // Efecto de shake
++            const loginModal = document.getElementById('loginModal').querySelector('.modal-content');
++            loginModal.style.animation = 'shake 0.5s ease-in-out';
++            setTimeout(() => {
++                loginModal.style.animation = '';
++            }, 500);
++        }
++
++        function logout() {
++            if (confirm('🔐 ¿Cerrar sesión como personal médico?\n\n💡 Podrá seguir viendo las fichas, pero no podrá registrar nuevos pacientes.')) {
++                isAuthenticated = false;
++                currentUser = '';
++                document.getElementById('userInfo').style.display = 'none';
++                closeAppointmentModal();
++                alert('👋 Sesión cerrada. Ahora en modo visitante.');
++            }
++        }
++
++        // Sistema de gestión de citas y fichas
++        let currentService = '';
++        let currentShift = 'morning';
++        let currentSlot = null;
++        
++        // Base de datos simulada en memoria
++        const appointmentsData = {};
++
++        // Inicializar datos para todos los servicios
++        const services = ['ODONTOLOGIA', 'VACUNAS PAI', 'URGENCIAS', 'CONSULTA EXTERNA', 'LABORATORIO', 'GINECOLOGIA', 'PEDIATRIA', 'ECOGRAFIA'];
++        
++        services.forEach(service => {
++            appointmentsData[service] = {
++                morning: Array.from({length: 20}, (_, i) => ({
++                    slotNumber: i + 1,
++                    patient: null
++                })),
++                afternoon: Array.from({length: 20}, (_, i) => ({
++                    slotNumber: i + 1,
++                    patient: null
++                }))
++            };
++        });
++
++        // Agregar algunos pacientes de ejemplo
++        appointmentsData['ODONTOLOGIA'].morning[0].patient = {
++            name: 'María González',
++            ci: '12345678',
++            phone: '70123456'
++        };
++        appointmentsData['ODONTOLOGIA'].morning[2].patient = {
++            name: 'Juan Pérez',
++            ci: '87654321',
++            phone: '71234567'
++        };
++
++        function openAppointmentModal(serviceName) {
++            // Los visitantes pueden ver las fichas sin problemas
++            currentService = serviceName;
++            document.getElementById('modalTitle').textContent = `Fichas de ${serviceName}`;
++            document.getElementById('appointmentModal').style.display = 'block';
++            
++            // Resetear a turno mañana
++            currentShift = 'morning';
++            document.querySelectorAll('.shift-tab').forEach(tab => tab.classList.remove('active'));
++            document.querySelectorAll('.shift-tab')[0].classList.add('active');
++            
++            updateAppointmentView();
++        }
++
++        function closeAppointmentModal() {
++            document.getElementById('appointmentModal').style.display = 'none';
++            document.getElementById('patientForm').style.display = 'none';
++        }
++
++        function switchShift(shift) {
++            currentShift = shift;
++            document.querySelectorAll('.shift-tab').forEach(tab => tab.classList.remove('active'));
++            event.target.classList.add('active');
++            
++            document.getElementById('shiftTitle').textContent = 
++                shift === 'morning' ? 'Turno Mañana' : 'Turno Tarde';
++                
++            updateAppointmentView();
++        }
++
++        function updateAppointmentView() {
++            const appointmentGrid = document.getElementById('appointmentGrid');
++            const appointments = appointmentsData[currentService][currentShift];
++            
++            // Contar fichas disponibles
++            const availableCount = appointments.filter(apt => !apt.patient).length;
++            document.getElementById('availableSlots').textContent = 
++                `${availableCount} fichas disponibles de 20`;
++
++            // Agregar información para visitantes
++            appointmentGrid.innerHTML = `
++                <div class="visitor-info">
++                    ${isAuthenticated ? 
++                        `👨‍⚕️ Personal autorizado: ${currentUser} - Puede registrar pacientes` : 
++                        `👥 Modo visitante - Solo visualización de fichas`
++                    }
++                </div>
++            `;
++
++            // Generar HTML para las fichas
++            appointments.forEach(appointment => {
++                const slotDiv = document.createElement('div');
++                slotDiv.className = `appointment-slot ${appointment.patient ? 'occupied' : ''}`;
++                
++                // Mostrar información del paciente o ficha disponible
++                const patientInfo = appointment.patient ? 
++                    `<strong>${appointment.patient.name}</strong><br>
++                     CI: ${appointment.patient.ci}<br>
++                     Tel: ${appointment.patient.phone}
++                     ${appointment.patient.registeredBy ? `<br><small>👤 Por: ${appointment.patient.registeredBy}</small>` : ''}` : 
++                    'Ficha disponible';
++
++                // Botones según el estado de autenticación
++                let actionButtons = '';
++                if (!appointment.patient) {
++                    // Ficha disponible
++                    actionButtons = isAuthenticated ? 
++                        `<button class="add-patient-btn" onclick="showPatientForm(${appointment.slotNumber})">
++                            Asignar Paciente
++                        </button>` :
++                        `<button class="add-patient-btn public-view" onclick="requestAuth(${appointment.slotNumber})">
++                            🔐 Asignar Paciente (Personal)
++                        </button>`;
++                } else {
++                    // Ficha ocupada - solo personal puede liberar
++                    if (isAuthenticated) {
++                        actionButtons = `<button class="add-patient-btn" style="background: #ff6b6b;" onclick="removePatient(${appointment.slotNumber})">
++                            Liberar Ficha
++                        </button>`;
++                    } else {
++                        actionButtons = `<div class="staff-only-action">
++                            🔒 Solo personal puede liberar fichas
++                        </div>`;
++                    }
++                }
++
++                slotDiv.innerHTML = `
++                    <div class="slot-number">Ficha #${appointment.slotNumber}</div>
++                    <div class="patient-info ${!appointment.patient ? 'empty' : ''}">
++                        ${patientInfo}
++                    </div>
++                    ${actionButtons}
++                `;
++                
++                appointmentGrid.appendChild(slotDiv);
++            });
++        }
++
++        // Función para solicitar autenticación al tratar de asignar
++        function requestAuth(slotNumber) {
++            pendingSlot = slotNumber;
++            document.getElementById('loginModal').style.display = 'block';
++            document.getElementById('username').focus();
++        }
++
++        function showPatientForm(slotNumber) {
++            // Solo mostrar si está autenticado
++            if (!isAuthenticated) {
++                requestAuth(slotNumber);
++                return;
++            }
++            
++            currentSlot = slotNumber;
++            document.getElementById('patientForm').style.display = 'block';
++            document.getElementById('patientName').focus();
++        }
++
++        function showPatientFormAfterAuth(slotNumber) {
++            currentSlot = slotNumber;
++            document.getElementById('patientForm').style.display = 'block';
++            document.getElementById('patientName').focus();
++        }
++
++        function cancelPatientForm() {
++            document.getElementById('patientForm').style.display = 'none';
++            document.getElementById('patientName').value = '';
++            document.getElementById('patientCI').value = '';
++            document.getElementById('patientPhone').value = '';
++            currentSlot = null;
++        }
++
++        function savePatient() {
++            // Verificar autenticación al guardar
++            if (!isAuthenticated) {
++                alert('🔒 Error: Sesión no válida. Inicie sesión nuevamente.');
++                closeAppointmentModal();
++                return;
++            }
++            
++            const name = document.getElementById('patientName').value.trim();
++            const ci = document.getElementById('patientCI').value.trim();
++            const phone = document.getElementById('patientPhone').value.trim();
++
++            if (!name || !ci || !phone) {
++                alert('⚠️ Por favor, complete todos los campos');
++                return;
++            }
++
++            // Verificar si la CI ya existe en el turno actual
++            const existingPatient = appointmentsData[currentService][currentShift].find(
++                apt => apt.patient && apt.patient.ci === ci
++            );
++
++            if (existingPatient) {
++                alert('❌ Ya existe un paciente registrado con esta CI en este turno');
++                return;
++            }
++
++            // Guardar el paciente con información del usuario que lo registró
++            const slotIndex = currentSlot - 1;
++            appointmentsData[currentService][currentShift][slotIndex].patient = {
++                name,
++                ci,
++                phone,
++                registeredBy: currentUser,
++                registeredAt: new Date().toLocaleString('es-ES')
++            };
++
++            // Limpiar formulario y actualizar vista
++            cancelPatientForm();
++            updateAppointmentView();
++            
++            alert(`✅ Paciente ${name} registrado exitosamente en la ficha #${currentSlot}\n👤 Registrado por: ${currentUser}`);
++        }
++
++        function removePatient(slotNumber) {
++            if (!isAuthenticated) {
++                alert('🔒 Solo el personal autorizado puede liberar fichas.\nSi es personal médico, inicie sesión primero.');
++                return;
++            }
++            
++            if (confirm('🔐 ¿Está seguro de que desea liberar esta ficha?\n\n⚠️ Esta acción no se puede deshacer.')) {
++                const slotIndex = slotNumber - 1;
++                appointmentsData[currentService][currentShift][slotIndex].patient = null;
++                updateAppointmentView();
++                alert(`✅ Ficha #${slotNumber} liberada exitosamente\n👤 Acción realizada por: ${currentUser}`);
++            }
++        }
++
++        // Cerrar modal al hacer clic fuera de él
++        window.onclick = function(event) {
++            const modal = document.getElementById('appointmentModal');
++            if (event.target == modal) {
++                closeAppointmentModal();
++            }
++        }
++
++        // Manejar Enter en el formulario de login
++        document.addEventListener('DOMContentLoaded', function() {
++            ['username', 'password'].forEach(id => {
++                document.getElementById(id).addEventListener('keypress', function(e) {
++                    if (e.key === 'Enter') {
++                        authenticate();
++                    }
++                });
++            });
++
++            // Manejar Enter en los campos del formulario de pacientes
++            ['patientName', 'patientCI', 'patientPhone'].forEach(id => {
++                document.getElementById(id).addEventListener('keypress', function(e) {
++                    if (e.key === 'Enter') {
++                        savePatient();
++                    }
++                });
++            });
++        });
++
++        // Agregar animación de shake para errores
++        const style = document.createElement('style');
++        style.textContent = `
++            @keyframes shake {
++                0%, 100% { transform: translateX(0); }
++                10%, 30%, 50%, 70%, 90% { transform: translateX(-10px); }
++                20%, 40%, 60%, 80% { transform: translateX(10px); }
++            }
++        `;
++        document.head.appendChild(style);
++    </script>
++</body>
++</html>
++        <!-- Reclamos y Sugerencias Section -->
++        <section id="reclamos" class="reclamos-section scroll-animation">
++            <h2 class="section-title">Reclamos y Sugerencias</h2>
++            <div class="reclamos-container">
++                <p style="margin-bottom: 1rem; color: #374151;">¿Tienes algún reclamo o sugerencia? Por favor déjanos tu comentario:</p>
++                
++                <form class="reclamos-form" id="reclamosForm">
++                    <input type="text" placeholder="Nombre (opcional)" class="reclamos-input">
++                    <textarea required placeholder="¿Cuál es tu reclamo o sugerencia?" rows="4" class="reclamos-input reclamos-textarea"></textarea>
++                    <button type="submit" class="reclamos-submit">Enviar</button>
++                </form>
++
++                <!-- Mapa virtual de ubicación -->
++                <div class="map-section">
++                    <h3 class="map-title">Ubicación del establecimiento</h3>
++                    <div class="map-container">
++                        <iframe
++                            title="Ubicación Centro de Salud Belén"
++                            class="map-iframe"
++                            loading="lazy"
++                            allowfullscreen
++                            src="https://www.google.com/maps?q=-19.02495338,-65.3015633&z=17&output=embed">
++                        </iframe>
++                    </div>
++                </div>
++
++                <!-- Enhanced Features Section -->
++                <div class="enhanced-features">
++                    <h3 class="features-title">💬 Más Formas de Contacto</h3>
++                    <div class="features-grid">
++                        <div class="feature-item">
++                            <span class="feature-icon">📞</span>
++                            <span class="feature-text">+591 4-123-4567</span>
++                        </div>
++                        <div class="feature-item">
++                            <span class="feature-icon">🚑</span>
++                            <span class="feature-text">Emergencias 24/7</span>
++                        </div>
++                        <div class="feature-item">
++                            <span class="feature-icon">📧</span>
++                            <span class="feature-text">info@centrosaludbelen.bo</span>
++                        </div>
++                        <div class="feature-item">
++                            <span class="feature-icon">💬</span>
++                            <span class="feature-text">WhatsApp: +591 70317124</span>
++                        </div>
++                        <div class="feature-item">
++                            <span class="feature-icon">🕒</span>
++                            <span class="feature-text">Lun-Vie: 7:00-19:00</span>
++                        </div>
++                        <div class="feature-item">
++                            <span class="feature-icon">📍</span>
++                            <span class="feature-text">Barrio Belén, Sucre-Bolivia</span>
++                        </div>
++                    </div>
++                </div>
++            </div>
++        </section>
++    </main>
++
++    <script>
++        // Scroll animations
++        function animateOnScroll() {
++            const elements = document.querySelectorAll('.scroll-animation');
++            const windowHeight = window.innerHeight;
++
++            elements.forEach(element => {
++                const elementTop = element.getBoundingClientRect().top;
++                const elementVisible = 150;
++
++                if (elementTop < windowHeight - elementVisible) {
++                    element.classList.add('visible');
++                }
++            });
++        }
++
++        window.addEventListener('scroll', animateOnScroll);
++        window.addEventListener('load', animateOnScroll);
++
++        // Smooth scrolling for navigation links
++        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
++            anchor.addEventListener('click', function (e) {
++                e.preventDefault();
++                const target = document.querySelector(this.getAttribute('href'));
++                if (target) {
++                    target.scrollIntoView({
++                        behavior: 'smooth',
++                        block: 'start'
++                    });
++                }
++            });
++        });
++
++        // Registration form handler
++        document.getElementById('registrationForm').addEventListener('submit', function(e) {
++            e.preventDefault();
++            
++            // Get form data
++            const formData = new FormData(this);
++            const data = Object.fromEntries(formData);
++            
++            // Simulate form submission
++            const submitBtn = this.querySelector('.form-submit');
++            const originalText = submitBtn.textContent;
++            
++            submitBtn.textContent = 'Registrando...';
++            submitBtn.disabled = true;
++            
++            setTimeout(() => {
++                alert(`¡Paciente registrado exitosamente!\n\nNombre: ${data.nombreCompleto}\nCI: ${data.ci}\nTeléfono: ${data.telefono}\nServicio: ${data.servicio}`);
++                this.reset();
++                submitBtn.textContent = originalText;
++                submitBtn.disabled = false;
++            }, 2000);
++        });
++
++        // Reclamos form handler
++        document.getElementById('reclamosForm').addEventListener('submit', function(e) {
++            e.preventDefault();
++            
++            const submitBtn = this.querySelector('.reclamos-submit');
++            const originalText = submitBtn.textContent;
++            
++            submitBtn.textContent = 'Enviando...';
++            submitBtn.disabled = true;
++            
++            setTimeout(() => {
++                alert('¡Mensaje enviado exitosamente! Te contactaremos pronto.');
++                this.reset();
++                submitBtn.textContent = originalText;
++                submitBtn.disabled = false;
++            }, 2000);
++        });
++
++        // Phone number formatting
++        document.getElementById('telefono').addEventListener('input', function() {
++            let value = this.value.replace(/\D/g, '');
++            if (value.length > 0 && !value.startsWith('591')) {
++                if (value.length <= 8) {
++                    value = '591' + value;
++                }
++            }
++            
++            // Format as +591 XXXX XXXX
++            if (value.length >= 3) {
++                value = '+' + value.slice(0, 3) + ' ' + value.slice(3);
++            }
++            
++            this.value = value;
++        });
++
++        // Stats counter animation
++        function animateCounters() {
++            const counters = document.querySelectorAll('.stat-number');
++            const speed = 200;
++
++            counters.forEach(counter => {
++                const animate = () => {
++                    const value = counter.getAttribute('data-target') || counter.innerText;
++                    const data = +value.replace(/[^\d]/g, '');
++                    const time = value.replace(/[\d]/g, '').trim();
++                    
++                    counter.setAttribute('data-target', value);
++                    
++                    const increment = data / speed;
++                    let current = 0;
++
++                    if (current < data) {
++                        const timer = setInterval(() => {
++                            current += increment;
++                            if (current >= data) {
++                                current = data;
++                                clearInterval(timer);
++                            }
++                            counter.innerText = Math.floor(current) + (time || '');
++                        }, 1);
++                    }
++                };
++
++                // Trigger animation when element is visible
++                const observer = new IntersectionObserver((entries) => {
++                    if (entries[0].isIntersecting) {
++                        animate();
++                        observer.unobserve(counter);
++                    }
++                });
++
++                observer.observe(counter);
++            });
++        }
++
++        // Initialize counters
++        animateCounters();
++
++        // Add loading effect
++        window.addEventListener('load', () => {
++            document.body.style.opacity = '0';
++            document.body.style.transition = 'opacity 0.5s ease';
++            setTimeout(() => {
++                document.body.style.opacity = '1';
++            }, 100);
++        });
++
++        // Add hover effects for service cards
++        document.querySelectorAll('.service-card').forEach(card => {
++            card.addEventListener('mouseenter', function() {
++                this.style.transform = 'translateY(-5px)';
++                this.style.transition = 'transform 0.3s ease';
++            });
++
++            card.addEventListener('mouseleave', function() {
++                this.style.transform = 'translateY(0)';
++            });
++        });
++
++        // Add click to call functionality
++        document.querySelectorAll('.feature-item').forEach(item => {
++            const text = item.querySelector('.feature-text').textContent;
++            if (text.includes('+591')) {
++                item.style.cursor = 'pointer';
++                item.addEventListener('click', () => {
++                    window.location.href = 'tel:' + text.replace(/\s/g, '');
++                });
++            } else if (text.includes('@')) {
++                item.style.cursor = 'pointer';
++                item.addEventListener('click', () => {
++                    window.location.href = 'mailto:' + text;
++                });
++            }
++        });
++    </script>
++</body>
++</html>
