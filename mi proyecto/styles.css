@@ -1,0 +1,10 @@
+body {
+       background-image: url('AdobeStock_512307383_Preview.jpeg');
+        background-size: cover;
+        background-position: center; 
+        font-family: 'Inter', sans-serif;
+        color: #333;
+        margin: 0;
+        padding: 20px;
+        box-sizing: border-box;
+    } 
