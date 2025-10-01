@@ -1,4 +1,4 @@
-{
+  {
   // Configuración para lanzar el sitio estático en Chrome o Edge.
   "version": "0.2.0",
   "configurations": [
