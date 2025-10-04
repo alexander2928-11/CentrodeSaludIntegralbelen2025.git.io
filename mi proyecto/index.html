@@ -12,6 +12,7 @@
             padding: 0;           
             box-sizing: border-box;
         }
+
         :root {
             --color-primary: #dc2626;
             --color-primary-dark: #991b1b;
@@ -22,13 +23,14 @@
             --color-gray-800: #374151;
             --color-gray-900: #111827;
         }
+
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             margin: 0;
             padding: 0;
             scroll-behavior: smooth;
-            background-color: var(--color-white);
         }
+
         /* Navigation */
         .navigation {
             position: fixed;
@@ -40,32 +42,38 @@
             backdrop-filter: blur(10px);
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
+
         .nav-container {
             max-width: 1280px;
             margin: 0 auto;
             padding: 0 1rem;
         }
+
         .nav-content {
             display: flex;
             height: 4rem;
             align-items: center;
             justify-content: space-between;
         }
+
         .nav-logo {
             display: flex;
             align-items: center;
             flex-shrink: 0;
         }
+
         .nav-logo p {
             font-size: 1.125rem;
             font-weight: 700;
             color: white;
         }
+
         .nav-links {
             display: none;
             align-items: center;
             gap: 2rem;
         }
+
         .nav-links a {
             font-size: 0.875rem;
             font-weight: 500;
@@ -75,47 +83,55 @@
             padding: 0.5rem 1rem;
             border-radius: 0.25rem;
         }
+
         .nav-links a:hover {
             color: rgba(255, 255, 255, 0.8);
             background: rgba(255, 255, 255, 0.1);
         }
+
         @media (min-width: 640px) {
             .nav-links {
                 display: flex;
             }
         }
-        /* Main Hero Section con imagen de fondo */
+
+        /* Main Hero Section */
         .main-section {
             position: relative;
             width: 100%;
             overflow: hidden;
             background-image: 
-                url('https://placehold.co/1920x1080/dc2626/white?text=Centro+de+Salud+Belen'),
+                url('AdobeStock_512307383_Preview.jpeg'),
                 radial-gradient(circle at 20% 80%, rgba(255,255,255,0.1) 0%, transparent 50%),
                 radial-gradient(circle at 80% 20%, rgba(255,255,255,0.1) 0%, transparent 50%),
                 linear-gradient(135deg, rgba(220, 38, 38, 0.85), rgba(153, 27, 27, 0.9)),
                 linear-gradient(to bottom right, #dc2626, #991b1b);
+            
             background-size: 
                 cover,
                 400px 400px,
                 600px 600px,
                 100% 100%,
                 100% 100%;
+            
             background-position: 
                 center center,
                 0 0,
                 100% 100%,
                 0 0,
                 0 0;
+            
             background-repeat: 
                 no-repeat,
                 repeat,
                 repeat,
                 no-repeat,
                 no-repeat;
+            
             background-attachment: fixed;
             min-height: 100vh;
         }
+
         .main-section::before {
             content: '';
             position: absolute;
@@ -141,6 +157,7 @@
             pointer-events: none;
             z-index: 1;
         }
+
         .hero-container {
             position: relative;
             z-index: 2;
@@ -154,12 +171,14 @@
             overflow: hidden;
             padding: 6rem 1rem 3rem;
         }
+
         @media (min-width: 1024px) {
             .hero-container {
                 grid-template-columns: 2fr 1fr;
                 padding: 5rem 1rem 0;
             }
         }
+
         .hero-content {
             display: flex;
             flex-direction: column;
@@ -169,6 +188,7 @@
             border-radius: 1rem;
             backdrop-filter: blur(5px);
         }
+
         @media (min-width: 640px) {
             .hero-content {
                 align-items: flex-start;
@@ -176,48 +196,56 @@
                 background: rgba(255, 255, 255, 0.08);
             }
         }
+
         .medical-logo {
             width: 8rem;
             height: 8rem;
         }
+
         @media (min-width: 768px) {
             .medical-logo {
                 width: 10rem;
                 height: 10rem;
             }
         }
+
         .hero-title {
             margin-top: 1.5rem;
             text-align: center;
             font-size: 2.25rem;
             font-weight: 800;
             letter-spacing: -0.025em;
-            color: rgb(255, 1, 1);
+            color: white;
         }
+
         @media (min-width: 640px) {
             .hero-title {
                 text-align: left;
                 font-size: 3rem;
             }
         }
+
         @media (min-width: 1024px) {
             .hero-title {
                 font-size: 3.75rem;
             }
         }
+
         .hero-subtitle {
             margin-top: 1.5rem;
             max-width: 32rem;
             text-align: center;
             font-size: 1.125rem;
-            color: rgba(252, 3, 3, 0.9);
+            color: rgba(255, 255, 255, 0.9);
         }
+
         @media (min-width: 640px) {
             .hero-subtitle {
                 text-align: left;
                 font-size: 1.25rem;
             }
         }
+
         /* Registration Form */
         .form-container {
             position: relative;
@@ -227,11 +255,13 @@
             justify-content: center;
             padding: 0 1rem;
         }
+
         @media (min-width: 768px) {
             .form-container {
                 justify-content: flex-end;
             }
         }
+
         .registration-form {
             background: rgba(255, 255, 255, 0.95);
             border-radius: 1rem;
@@ -241,6 +271,7 @@
             width: 100%;
             max-width: 400px;
         }
+
         .form-title {
             font-size: 1.5rem;
             font-weight: 700;
@@ -248,9 +279,11 @@
             margin-bottom: 1.5rem;
             text-align: center;
         }
+
         .form-group {
             margin-bottom: 1rem;
         }
+
         .form-group label {
             display: block;
             color: var(--color-gray-800);
@@ -258,6 +291,7 @@
             margin-bottom: 0.5rem;
             font-size: 0.875rem;
         }
+
         .form-group input,
         .form-group select {
             width: 100%;
@@ -267,11 +301,13 @@
             font-size: 1rem;
             transition: border-color 0.2s;
         }
+
         .form-group input:focus,
         .form-group select:focus {
             outline: none;
             border-color: var(--color-primary);
         }
+
         .form-submit {
             width: 100%;
             background: var(--color-primary);
@@ -284,33 +320,39 @@
             cursor: pointer;
             transition: background-color 0.2s;
         }
+
         .form-submit:hover {
             background: var(--color-primary-dark);
         }
+
         /* Statistics Section */
         .statistics-section {
             max-width: 64rem;
             margin: 0 auto;
             padding: 4rem 1rem;
         }
+
         .section-title {
             font-size: 1.875rem;
             font-weight: 700;
-            color: rgb(253, 3, 3);
+            color: var(--color-primary);
             margin-bottom: 1.5rem;
         }
+
         .stats-container {
             border-radius: 0.5rem;
             background: rgba(255, 255, 255, 0.8);
             padding: 1.5rem;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
+
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 1.5rem;
             margin-top: 2rem;
         }
+
         .stat-card {
             background: white;
             border-radius: 0.75rem;
@@ -318,6 +360,7 @@
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
             text-align: center;
         }
+
         .stat-icon {
             width: 3rem;
             height: 3rem;
@@ -330,40 +373,75 @@
             font-size: 1.5rem;
             margin: 0 auto 1rem;
         }
+
         .stat-number {
             font-size: 2rem;
             font-weight: 800;
             color: var(--color-primary);
             margin-bottom: 0.5rem;
         }
+
         .stat-label {
             color: var(--color-gray-600);
             font-size: 0.875rem;
         }
+
         /* Services Section */
         .services-section {
-            max-width: 1200px;
+            max-width: 96rem;
             margin: 0 auto;
-            background: white;
-            border-radius: 20px;
-            padding: 30px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            padding: 4rem 1rem;
         }
+
         .services-title {
+            font-size: 2.25rem;
+            font-weight: 800;
             text-align: center;
-            font-size: 2.5rem;
-            color: #333;
-            margin-bottom: 40px;
-            background: linear-gradient(45deg, #ff0000, #eb0505);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.025em;
+            color: var(--color-primary);
         }
+
+        @media (min-width: 768px) {
+            .services-title {
+                font-size: 2.5rem;
+            }
+        }
+
+        .services-container {
+            border-radius: 0.75rem;
+            background: #ededed;
+            padding: 2.5rem 0.5rem;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (min-width: 768px) {
+            .services-container {
+                padding: 2.5rem 3rem;
+            }
+        }
+
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            justify-items: center;
         }
+
+        @media (min-width: 768px) {
+            .services-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 2rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .services-grid {
+                gap: 3rem;
+            }
+        }
+
         .service-card {
             background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
             border-radius: 15px;
@@ -373,7 +451,9 @@
             cursor: pointer;
             position: relative;
             overflow: hidden;
+            max-width: 18rem;
         }
+
         .service-card::before {
             content: '';
             position: absolute;
@@ -384,18 +464,22 @@
             background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
             transition: left 0.5s;
         }
+
         .service-card:hover::before {
             left: 100%;
         }
+
         .service-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 15px 35px rgba(0,0,0,0.2);
         }
+
         .service-icon-container {
             display: flex;
             justify-content: center;
             margin-bottom: 15px;
         }
+
         .service-icon {
             width: 80px;
             height: 80px;
@@ -410,6 +494,7 @@
             position: relative;
             overflow: hidden;
         }
+
         .service-icon::before {
             content: '';
             position: absolute;
@@ -421,17 +506,21 @@
             transform: rotate(45deg);
             transition: all 0.3s ease;
         }
+
         .service-card:hover .service-icon {
             transform: scale(1.1) rotate(5deg);
             box-shadow: 0 15px 35px rgba(220, 53, 69, 0.4);
         }
+
         .service-card:hover .service-icon::before {
             animation: shine 0.6s ease-in-out;
         }
+
         @keyframes shine {
             0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
             100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
         }
+
         .service-name {
             font-size: 1.4rem;
             font-weight: bold;
@@ -439,10 +528,16 @@
             margin-bottom: 15px;
             text-align: center;
         }
+
+        .service-info {
+            text-align: center;
+        }
+
         .service-hours {
             color: #666;
             line-height: 1.6;
         }
+
         .service-24h {
             background: linear-gradient(45deg, #ff6b6b, #ee5a24);
             color: white;
@@ -452,18 +547,22 @@
             font-weight: bold;
             animation: pulse 2s infinite;
         }
+
         @keyframes pulse {
             0% { transform: scale(1); }
             50% { transform: scale(1.05); }
             100% { transform: scale(1); }
         }
+
         .time-label {
             font-weight: bold;
             color: #667eea;
         }
+
         .time-text {
             color: #333;
         }
+
         .view-appointments-btn {
             background: linear-gradient(45deg, #667eea, #764ba2);
             color: white;
@@ -476,10 +575,12 @@
             width: 100%;
             transition: all 0.3s ease;
         }
+
         .view-appointments-btn:hover {
             transform: scale(1.05);
-            box-shadow: 0 5px 15px rgba(221, 4, 4, 0.4);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
         }
+
         /* Modal Styles */
         .modal {
             display: none;
@@ -492,6 +593,7 @@
             background-color: rgba(0,0,0,0.5);
             backdrop-filter: blur(5px);
         }
+
         .modal-content {
             background: white;
             margin: 2% auto;
@@ -503,10 +605,12 @@
             overflow-y: auto;
             animation: modalSlideIn 0.3s ease;
         }
+
         @keyframes modalSlideIn {
             from { transform: translateY(-100px); opacity: 0; }
             to { transform: translateY(0); opacity: 1; }
         }
+
         .modal-header {
             background: linear-gradient(45deg, #667eea, #764ba2);
             color: white;
@@ -514,10 +618,12 @@
             border-radius: 20px 20px 0 0;
             position: relative;
         }
+
         .modal-title {
             font-size: 1.8rem;
             margin: 0;
         }
+
         .close {
             color: white;
             float: right;
@@ -529,12 +635,15 @@
             top: 50%;
             transform: translateY(-50%);
         }
+
         .close:hover {
             opacity: 0.7;
         }
+
         .modal-body {
             padding: 30px;
         }
+
         .shift-tabs {
             display: flex;
             margin-bottom: 20px;
@@ -542,6 +651,7 @@
             border-radius: 10px;
             padding: 5px;
         }
+
         .shift-tab {
             flex: 1;
             padding: 12px 20px;
@@ -552,21 +662,25 @@
             font-weight: bold;
             transition: all 0.3s ease;
         }
+
         .shift-tab.active {
             background: linear-gradient(45deg, #667eea, #764ba2);
             color: white;
         }
+
         .appointments-container {
             background: #f8f9fa;
             border-radius: 15px;
             padding: 20px;
         }
+
         .appointments-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             margin-bottom: 20px;
         }
+
         .available-slots {
             background: linear-gradient(45deg, #20bf6b, #26d0ce);
             color: white;
@@ -574,12 +688,14 @@
             border-radius: 20px;
             font-weight: bold;
         }
+
         .appointment-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 15px;
             margin-bottom: 20px;
         }
+
         .appointment-slot {
             background: white;
             border-radius: 10px;
@@ -587,25 +703,30 @@
             box-shadow: 0 3px 10px rgba(0,0,0,0.1);
             border-left: 4px solid #667eea;
         }
+
         .appointment-slot.occupied {
             border-left-color: #ff6b6b;
             background: #fff5f5;
         }
+
         .slot-number {
             font-weight: bold;
             color: #667eea;
             margin-bottom: 5px;
         }
+
         .patient-info {
             color: #333;
             font-size: 0.9rem;
         }
+
         .patient-info.empty {
             color: #999;
             font-style: italic;
         }
+
         .add-patient-btn {
-            background: linear-gradient(45deg, #f30202, #dd7575);
+            background: linear-gradient(45deg, #20bf6b, #26d0ce);
             color: white;
             border: none;
             padding: 5px 10px;
@@ -614,6 +735,16 @@
             font-size: 0.8rem;
             margin-top: 5px;
         }
+
+        .add-patient-btn.public-view {
+            background: #6c757d;
+            cursor: pointer;
+        }
+
+        .add-patient-btn.public-view:hover {
+            background: #5a6268;
+        }
+
         .patient-form {
             background: white;
             padding: 20px;
@@ -621,6 +752,13 @@
             margin-top: 20px;
             border: 2px dashed #ddd;
         }
+
+        .form-actions {
+            display: flex;
+            gap: 10px;
+            justify-content: flex-end;
+        }
+
         .btn {
             padding: 10px 20px;
             border: none;
@@ -629,22 +767,28 @@
             font-weight: bold;
             transition: all 0.3s ease;
         }
+
         .btn-primary {
             background: linear-gradient(45deg, #667eea, #764ba2);
             color: white;
         }
+
         .btn-secondary {
             background: #6c757d;
             color: white;
         }
+
         .btn:hover {
             transform: scale(1.05);
         }
-        .form-actions {
-            display: flex;
-            gap: 10px;
-            justify-content: flex-end;
+
+        .login-error {
+            color: #dc3545;
+            text-align: center;
+            margin: 10px 0;
+            font-weight: bold;
         }
+
         .logged-user-info {
             position: fixed;
             top: 70px;
@@ -652,23 +796,20 @@
             background: white;
             padding: 10px 20px;
             border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             z-index: 100;
-            display: none;
         }
+
         .logout-btn {
             background: #dc3545;
             color: white;
             border: none;
             padding: 5px 15px;
             border-radius: 5px;
-            cursor: pointer;
             margin-left: 10px;
-            font-weight: bold;
+            cursor: pointer;
         }
-        .logout-btn:hover {
-            background: #c82333;
-        }
+
         .visitor-info {
             background: linear-gradient(135deg, #cce5ff, #b3d9ff);
             color: #004085;
@@ -678,6 +819,7 @@
             text-align: center;
             font-weight: bold;
         }
+
         .staff-only-action {
             background: #fff3cd;
             border: 1px solid #ffeaa7;
@@ -687,13 +829,8 @@
             font-size: 0.8rem;
             margin-top: 5px;
         }
-        .login-error {
-            display: none;
-            color: #dc3545;
-            text-align: center;
-            margin: 10px 0;
-            font-weight: bold;
-        }
+
+        /* Export Button */
         .export-btn {
             background: linear-gradient(45deg, #28a745, #20c997);
             color: white;
@@ -702,30 +839,35 @@
             border-radius: 8px;
             cursor: pointer;
             font-weight: bold;
-            margin: 10px 5px;
+            margin-left: 10px;
             transition: all 0.3s ease;
         }
+
         .export-btn:hover {
             transform: scale(1.05);
             box-shadow: 0 5px 15px rgba(40, 167, 69, 0.4);
         }
+
         /* Reclamos Section */
         .reclamos-section {
             max-width: 64rem;
             margin: 0 auto;
             padding: 4rem 1rem 2rem;
         }
+
         .reclamos-container {
             border-radius: 0.5rem;
             background: rgba(255, 255, 255, 0.8);
             padding: 1.5rem;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
+
         .reclamos-form {
             display: flex;
             flex-direction: column;
             gap: 1rem;
         }
+
         .reclamos-input {
             width: 100%;
             border-radius: 0.25rem;
@@ -735,13 +877,16 @@
             color: var(--color-gray-900);
             box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
         }
+
         .reclamos-input::placeholder {
             color: var(--color-gray-600);
         }
+
         .reclamos-textarea {
             min-height: 6rem;
             resize: vertical;
         }
+
         .reclamos-submit {
             width: 100%;
             border-radius: 0.25rem;
@@ -753,18 +898,22 @@
             cursor: pointer;
             transition: background-color 0.2s;
         }
+
         .reclamos-submit:hover {
             background: rgba(220, 38, 38, 0.9);
         }
+
         .map-section {
             margin-top: 2rem;
         }
+
         .map-title {
             font-size: 1.125rem;
             font-weight: 600;
             color: var(--color-primary);
             margin-bottom: 0.5rem;
         }
+
         .map-container {
             overflow: hidden;
             border-radius: 0.5rem;
@@ -772,11 +921,14 @@
             width: 100%;
             height: 18rem;
         }
+
         .map-iframe {
             border: 0;
             width: 100%;
             height: 100%;
         }
+
+        /* Enhanced Features */
         .enhanced-features {
             background: white;
             border-radius: 1rem;
@@ -784,6 +936,7 @@
             margin-top: 2rem;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
+
         .features-title {
             color: var(--color-primary);
             font-size: 1.5rem;
@@ -791,11 +944,13 @@
             margin-bottom: 1.5rem;
             text-align: center;
         }
+
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 1.5rem;
         }
+
         .feature-item {
             display: flex;
             align-items: center;
@@ -803,67 +958,81 @@
             padding: 1rem;
             background: var(--color-gray-100);
             border-radius: 0.5rem;
-            cursor: pointer;
         }
+
         .feature-icon {
             font-size: 1.5rem;
         }
+
         .feature-text {
             font-weight: 600;
             color: var(--color-gray-800);
         }
+
+        /* Responsive improvements */
         @media (max-width: 768px) {
             .hero-container {
                 padding-top: 5rem;
             }
+            
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+            
+            .service-card {
+                max-width: none;
+            }
+            
+            .service-icon {
+                width: 5rem;
+                height: 5rem;
+            }
+            
+            .service-name {
+                font-size: 1rem;
+            }
+            
+            .service-hours {
+                font-size: 0.75rem;
+            }
+        }
+
+        @media (max-width: 480px) {
             .services-grid {
                 grid-template-columns: 1fr;
             }
-            .modal-content {
-                width: 95%;
-                margin: 5% auto;
-            }
-            .appointment-grid {
-                grid-template-columns: 1fr;
-            }
         }
+
+        /* Animation */
         .fade-in {
             opacity: 0;
             transform: translateY(20px);
             animation: fadeInUp 0.8s ease forwards;
         }
+
         @keyframes fadeInUp {
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
+
         .scroll-animation {
             opacity: 0;
             transform: translateY(30px);
             transition: all 0.6s ease;
         }
+
         .scroll-animation.visible {
             opacity: 1;
             transform: translateY(0);
         }
+
         @keyframes shake {
             0%, 100% { transform: translateX(0); }
             10%, 30%, 50%, 70%, 90% { transform: translateX(-10px); }
             20%, 40%, 60%, 80% { transform: translateX(10px); }
-        }
-        /* Accessibility improvements */
-        .add-patient-btn:focus,
-        .btn:focus,
-        .form-submit:focus,
-        .reclamos-submit:focus,
-        .view-appointments-btn:focus {
-            outline: 2px solid #4f46e5;
-            outline-offset: 2px;
-        }
-        /* Improved phone formatting */
-        input[type="tel"] {
-            font-family: monospace;
         }
     </style>
 </head>
@@ -876,20 +1045,22 @@
                     <p>CENTRO DE SALUD INTEGRAL "BELEN"</p>
                 </div>
                 <div class="nav-links">
-                    <a href="#estadistica">ESTADISTICA</a>
+                   <a href="#estadistica">ESTADISTICA</a>
                     <a href="#servicios">SERVICIOS</a>
                     <a href="#reclamos">RECLAMOS Y SUGERENCIAS</a>
                 </div>
             </div>
         </nav>
     </header>
+
     <!-- User Info Display -->
-    <div id="userInfo" class="logged-user-info">
+    <div id="userInfo" class="logged-user-info" style="display: none;">
         <span id="loggedUser">👤 Personal: </span>
         <button class="logout-btn" onclick="logout()">🚪 Salir</button>
     </div>
+
     <!-- Login Modal -->
-    <div id="loginModal" class="modal">
+    <div id="loginModal" class="modal" style="display: none;">
         <div class="modal-content" style="max-width: 400px; margin: 15% auto;">
             <div class="modal-header">
                 <h3 class="modal-title">🔐 Acceso para Personal Médico</h3>
@@ -909,7 +1080,7 @@
                         <label for="password">🔑 Contraseña:</label>
                         <input type="password" id="password" placeholder="Ingrese su contraseña" autocomplete="current-password">
                     </div>
-                    <div class="login-error" id="loginError"></div>
+                    <div class="login-error" id="loginError" style="display: none;"></div>
                     <div class="form-actions">
                         <button class="btn btn-secondary" onclick="closeLoginModal()" style="width: 48%;">
                             ❌ Cancelar
@@ -928,11 +1099,13 @@
             </div>
         </div>
     </div>
+
     <!-- Main Content -->
     <main class="main-section">
         <!-- Hero Section -->
         <div class="hero-container">
             <div class="hero-content fade-in">
+                <!-- Logo SVG -->
                 <svg class="medical-logo" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Logo del Centro de Salud Integral Belen">
                     <defs>
                         <path id="logo-circular-path" d="M 100,30 a 70,70 0 1,1 0,140 a 70,70 0 1,1 0,-140" fill="none"/>
@@ -948,331 +1121,363 @@
                         <textPath href="#logo-circular-path" startOffset="85%">"BELEN"</textPath>
                     </text>
                 </svg>
+
                 <h1 class="hero-title">CENTRO DE SALUD INTEGRAL "BELEN"</h1>
                 <p class="hero-subtitle">Atención las 24 horas</p>
             </div>
-            <div class="registration-form fade-in">
-                <h2 class="form-title">📋 Registro de Pacientes</h2>
-                <form id="registrationForm">
-                    <div class="form-group">
-                        <label for="nombreCompleto">Nombre Completo *</label>
-                        <input type="text" id="nombreCompleto" name="nombreCompleto" required>
+
+            <div class="form-container">
+                <div class="registration-form fade-in">
+                    <h2 class="form-title">📋 Registro de Pacientes</h2>
+                    <form id="registrationForm">
+                        <div class="form-group">
+                            <label for="nombreCompleto">Nombre Completo *</label>
+                            <input type="text" id="nombreCompleto" name="nombreCompleto" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="ci">Carnet de Identidad *</label>
+                            <input type="text" id="ci" name="ci" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="telefono">Teléfono *</label>
+                            <input type="tel" id="telefono" name="telefono" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="servicio">Servicio Solicitado *</label>
+                            <select id="servicio" name="servicio" required>
+                                <option value="">Seleccionar servicio</option>
+                                <option value="odontologia">Odontología</option>
+                                <option value="Ginecologia">Ginecología</option>
+                                <option value="Pediatria">Pediatría</option>
+                                <option value="Laboratorio">Laboratorio</option>
+                                <option value="Ecografia">Ecografía</option>
+                                <option value="Medicina General">Medicina General</option>
+                                <option value="Vacunas PAI">Vacunas PAI</option>
+                                <option value="Emergencia">Emergencia</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="seguro">Verificación de Seguro *</label>
+                            <select id="seguro" name="seguro" required>
+                                <option value="">Seleccionar Seguro</option>
+                                <option value="SUS">SUS</option>
+                                <option value="Caja Privada">Caja Privada</option>
+                                <option value="Ninguno">Ninguno</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="form-submit">Registrar Paciente</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Statistics Section -->
+        <section id="estadistica" class="statistics-section scroll-animation">
+            <h2 class="section-title">Estadística</h2>
+            <div class="stats-container">
+                <p style="color: #374151; font-size: 1rem;">Indicadores estadísticos relevantes del centro de salud</p>
+                
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">👥</div>
+                        <div class="stat-number">2,847</div>
+                        <div class="stat-label">Pacientes Atendidos</div>
                     </div>
-                    <div class="form-group">
-                        <label for="ci">Carnet de Identidad *</label>
-                        <input type="text" id="ci" name="ci" required>
+                    <div class="stat-card">
+                        <div class="stat-icon">⭐</div>
+                        <div class="stat-number">98%</div>
+                        <div class="stat-label">Satisfacción</div>
                     </div>
-                    <div class="form-group">
-                        <label for="telefono">Teléfono *</label>
-                        <input type="tel" id="telefono" name="telefono" required>
+                    <div class="stat-card">
+                        <div class="stat-icon">🚑</div>
+                        <div class="stat-number">456</div>
+                        <div class="stat-label">Emergencias</div>
                     </div>
-                    <div class="form-group">
-                        <label for="servicio">Servicio Solicitado *</label>
-                        <select id="servicio" name="servicio" required>
-                            <option value="">Seleccionar servicio</option>
-                            <option value="ODONTOLOGIA">Odontología</option>
-                            <option value="GINECOLOGIA">Ginecología</option>
-                            <option value="PEDIATRIA">Pediatría</option>
-                            <option value="LABORATORIO">Laboratorio</option>
-                            <option value="ECOGRAFIA">Ecografía</option>
-                            <option value="CONSULTA EXTERNA">Medicina General</option>
-                            <option value="VACUNAS PAI">Vacunas PAI</option>
-                            <option value="URGENCIAS">Emergencia</option>
-                        </select>
+                    <div class="stat-card">
+                        <div class="stat-icon">⏱️</div>
+                        <div class="stat-number">15 min</div>
+                        <div class="stat-label">Tiempo Promedio</div>
                     </div>
-                    <div class="form-group">
-                        <label for="seguro">Verificación de Seguro *</label>
-                        <select id="seguro" name="seguro" required>
-                            <option value="">Seleccionar Seguro</option>
-                            <option value="SUS">SUS</option>
-                            <option value="Caja Privada">Caja Privada</option>
-                            <option value="Ninguno">Ninguno</option>
-                        </select>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="servicios" class="services-section">
+            <h2 class="services-title">Atención de Servicios de Lunes a Viernes</h2>
+            <div class="services-container">
+                <div class="services-grid">
+                    <!-- Odontología -->
+                    <div class="service-card" onclick="openAppointmentModal('ODONTOLOGIA')">
+                        <div class="service-icon-container">
+                            <div class="service-icon">🦷</div>
+                        </div>
+                        <div class="service-info">
+                            <div class="service-name">ODONTOLOGIA</div>
+                            <div class="service-hours">
+                                <div><span class="time-label">Mañana:</span> <span class="time-text">07:00 a 13:00</span></div>
+                                <div><span class="time-label">Tarde:</span> <span class="time-text">13:00 a 19:00</span></div>
+                            </div>
+                            <button class="view-appointments-btn">Ver Fichas y Pacientes</button>
+                        </div>
                     </div>
-                    <button type="submit" class="form-submit">Registrar Paciente</button>
+
+                    <!-- Vacunas PAI -->
+                    <div class="service-card" onclick="openAppointmentModal('VACUNAS PAI')">
+                        <div class="service-icon-container">
+                            <div class="service-icon">💉</div>
+                        </div>
+                        <div class="service-info">
+                            <div class="service-name">VACUNAS PAI</div>
+                            <div class="service-hours">
+                                <div><span class="time-label">Mañana:</span> <span class="time-text">07:00 a 13:00</span></div>
+                                <div><span class="time-label">Tarde:</span> <span class="time-text">13:00 a 19:00</span></div>
+                            </div>
+                            <button class="view-appointments-btn">Ver Fichas y Pacientes</button>
+                        </div>
+                    </div>
+
+                    <!-- Urgencias -->
+                    <div class="service-card" onclick="openAppointmentModal('URGENCIAS')">
+                        <div class="service-icon-container">
+                            <div class="service-icon">🚑</div>
+                        </div>
+                        <div class="service-info">
+                            <div class="service-name">URGENCIAS</div>
+                            <div class="service-24h">ATENCIÓN LAS 24 HORAS</div>
+                            <button class="view-appointments-btn">Ver Fichas y Pacientes</button>
+                        </div>
+                    </div>
+
+                    <!-- Consulta Externa -->
+                    <div class="service-card" onclick="openAppointmentModal('CONSULTA EXTERNA')">
+                        <div class="service-icon-container">
+                            <div class="service-icon">🩺</div>
+                        </div>
+                        <div class="service-info">
+                            <div class="service-name">CONSULTA EXTERNA</div>
+                            <div class="service-hours">
+                                <div><span class="time-label">Mañana:</span> <span class="time-text">07:00 a 13:00</span></div>
+                                <div><span class="time-label">Tarde:</span> <span class="time-text">13:00 a 19:00</span></div>
+                            </div>
+                            <button class="view-appointments-btn">Ver Fichas y Pacientes</button>
+                        </div>
+                    </div>
+
+                    <!-- Laboratorio -->
+                    <div class="service-card" onclick="openAppointmentModal('LABORATORIO')">
+                        <div class="service-icon-container">
+                            <div class="service-icon">🔬</div>
+                        </div>
+                        <div class="service-info">
+                            <div class="service-name">LABORATORIO</div>
+                            <div class="service-hours">
+                                <div><span class="time-label">Mañana:</span> <span class="time-text">07:00 a 13:00</span></div>
+                                <div><span class="time-label">Tarde:</span> <span class="time-text">13:00 a 19:00</span></div>
+                            </div>
+                            <button class="view-appointments-btn">Ver Fichas y Pacientes</button>
+                        </div>
+                    </div>
+
+                    <!-- Ginecología -->
+                    <div class="service-card" onclick="openAppointmentModal('GINECOLOGIA')">
+                        <div class="service-icon-container">
+                            <div class="service-icon">🤱</div>
+                        </div>
+                        <div class="service-info">
+                            <div class="service-name">GINECOLOGIA</div>
+                            <div class="service-hours">
+                                <div><span class="time-label">Mañana:</span> <span class="time-text">08:00 a 11:00</span></div>
+                                <div><span class="time-label">Tarde:</span> <span class="time-text">13:00 a 15:00</span></div>
+                            </div>
+                            <button class="view-appointments-btn">Ver Fichas y Pacientes</button>
+                        </div>
+                    </div>
+
+                    <!-- Pediatría -->
+                    <div class="service-card" onclick="openAppointmentModal('PEDIATRIA')">
+                        <div class="service-icon-container">
+                            <div class="service-icon">👶</div>
+                        </div>
+                        <div class="service-info">
+                            <div class="service-name">PEDIATRIA</div>
+                            <div class="service-hours">
+                                <div><span class="time-label">Mañana:</span> <span class="time-text">08:00 a 11:00</span></div>
+                                <div><span class="time-label">Tarde:</span> <span class="time-text">14:00 a 17:00</span></div>
+                            </div>
+                            <button class="view-appointments-btn">Ver Fichas y Pacientes</button>
+                        </div>
+                    </div>
+
+                    <!-- Ecografía -->
+                    <div class="service-card" onclick="openAppointmentModal('ECOGRAFIA')">
+                        <div class="service-icon-container">
+                            <div class="service-icon">📡</div>
+                        </div>
+                        <div class="service-info">
+                            <div class="service-name">ECOGRAFIA</div>
+                            <div class="service-hours">
+                                <div><span class="time-label">Mañana:</span> <span class="time-text">07:00 a 13:00</span></div>
+                                <div><span class="time-label">Tarde:</span> <span class="time-text">13:00 a 19:00</span></div>
+                            </div>
+                            <button class="view-appointments-btn">Ver Fichas y Pacientes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modal for Appointments -->
+        <div id="appointmentModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="modalTitle">Gestión de Fichas</h3>
+                    <span class="close" onclick="closeAppointmentModal()">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <div class="shift-tabs">
+                        <button class="shift-tab active" onclick="switchShift('morning')">Turno Mañana</button>
+                        <button class="shift-tab" onclick="switchShift('afternoon')">Turno Tarde</button>
+                    </div>
+                    
+                    <div class="appointments-container">
+                        <div class="appointments-header">
+                            <h4 id="shiftTitle">Turno Mañana</h4>
+                            <div>
+                                <span class="available-slots" id="availableSlots">20 fichas disponibles</span>
+                                <button class="export-btn" onclick="exportToExcel()">📊 Exportar a Excel</button>
+                            </div>
+                        </div>
+                        
+                        <div class="appointment-grid" id="appointmentGrid">
+                            <!-- Las fichas se generan dinámicamente -->
+                        </div>
+                        
+                        <div class="patient-form" id="patientForm" style="display: none;">
+                            <h5>Registrar Nuevo Paciente</h5>
+                            <div class="form-group">
+                                <label for="patientName">Nombre Completo:</label>
+                                <input type="text" id="patientName" placeholder="Ingrese el nombre completo">
+                            </div>
+                            <div class="form-group">
+                                <label for="patientCI">Cédula de Identidad:</label>
+                                <input type="text" id="patientCI" placeholder="Ingrese la CI">
+                            </div>
+                            <div class="form-group">
+                                <label for="patientPhone">Teléfono:</label>
+                                <input type="text" id="patientPhone" placeholder="Ingrese el teléfono">
+                            </div>
+                            <div class="form-actions">
+                                <button class="btn btn-secondary" onclick="cancelPatientForm()">Cancelar</button>
+                                <button class="btn btn-primary" onclick="savePatient()">Guardar Paciente</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Reclamos y Sugerencias Section -->
+        <section id="reclamos" class="reclamos-section scroll-animation">
+            <h2 class="section-title">Reclamos y Sugerencias</h2>
+            <div class="reclamos-container">
+                <p style="margin-bottom: 1rem; color: #374151;">¿Tienes algún reclamo o sugerencia? Por favor déjanos tu comentario:</p>
+                
+                <form class="reclamos-form" id="reclamosForm">
+                    <input type="text" placeholder="Nombre (opcional)" class="reclamos-input">
+                    <textarea required placeholder="¿Cuál es tu reclamo o sugerencia?" rows="4" class="reclamos-input reclamos-textarea"></textarea>
+                    <button type="submit" class="reclamos-submit">Enviar</button>
                 </form>
+
+                <!-- Mapa virtual -->
+                <div class="map-section">
+                    <h3 class="map-title">Ubicación del establecimiento</h3>
+                    <div class="map-container">
+                        <iframe
+                            title="Ubicación Centro de Salud Belén"
+                            class="map-iframe"
+                            loading="lazy"
+                            allowfullscreen
+                            src="https://www.google.com/maps?q=-19.02495338,-65.3015633&z=17&output=embed">
+                        </iframe>
+                    </div>
+                </div>
+
+                <!-- Enhanced Features -->
+                <div class="enhanced-features">
+                    <h3 class="features-title">💬 Más Formas de Contacto</h3>
+                    <div class="features-grid">
+                        <div class="feature-item">
+                            <span class="feature-icon">📞</span>
+                            <span class="feature-text">+591 4-123-4567</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">🚑</span>
+                            <span class="feature-text">Emergencias 24/7</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">📧</span>
+                            <span class="feature-text">info@centrosaludbelen.bo</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">💬</span>
+                            <span class="feature-text">WhatsApp: +591 70317124</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">🕒</span>
+                            <span class="feature-text">Lun-Vie: 7:00-19:00</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">📍</span>
+                            <span class="feature-text">Barrio Belén, Sucre-Bolivia</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
+        </section>
     </main>
-    <!-- Statistics Section -->
-    <section id="estadistica" class="statistics-section scroll-animation">
-        <h2 class="section-title">Estadística</h2>
-        <div class="stats-container">
-            <p style="color: #374151; font-size: 1rem;">Indicadores estadísticos relevantes del centro de salud</p>
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-icon">👥</div>
-                    <div class="stat-number">2,847</div>
-                    <div class="stat-label">Pacientes Atendidos</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-icon">⭐</div>
-                    <div class="stat-number">98%</div>
-                    <div class="stat-label">Satisfacción</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-icon">🚑</div>
-                    <div class="stat-number">456</div>
-                    <div class="stat-label">Emergencias</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-icon">⏱️</div>
-                    <div class="stat-number">15 min</div>
-                    <div class="stat-label">Tiempo Promedio</div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Services Section -->
-    <section id="servicios" class="services-section">
-        <h2 class="services-title">Atención de Servicios de Lunes a Viernes</h2>
-        <div style="text-align: center; margin-bottom: 20px;">
-            <button class="export-btn" onclick="exportAllPatientsToExcel()">📊 Exportar Todos los Pacientes a Excel</button>
-        </div>
-        <div class="services-container">
-            <div class="services-grid">
-                <!-- Odontología -->
-                <div class="service-card" onclick="openAppointmentModal('ODONTOLOGIA')">
-                    <div class="service-icon-container">
-                        <div class="service-icon tooth-icon">🦷</div>
-                    </div>
-                    <div class="service-info">
-                        <div class="service-name">ODONTOLOGIA</div>
-                        <div class="service-hours">
-                            <div><span class="time-label">Mañana:</span> <span class="time-text">Hrs. de atención: de 07:00 a 13:00</span></div>
-                            <div><span class="time-label">Tarde:</span> <span class="time-text">Hrs. de atención: de 13:00 a 19:00</span></div>
-                        </div>
-                        <button class="view-appointments-btn">Ver Fichas y Pacientes</button>
-                    </div>
-                </div>
-                <!-- Vacunas PAI -->
-                <div class="service-card" onclick="openAppointmentModal('VACUNAS PAI')">
-                    <div class="service-icon-container">
-                        <div class="service-icon vaccine-icon">💉</div>
-                    </div>
-                    <div class="service-info">
-                        <div class="service-name">VACUNAS PAI</div>
-                        <div class="service-hours">
-                            <div><span class="time-label">Mañana:</span> <span class="time-text">Hrs. de atención: de 07:00 a 13:00</span></div>
-                            <div><span class="time-label">Tarde:</span> <span class="time-text">Hrs. de atención: de 13:00 a 19:00</span></div>
-                        </div>
-                        <button class="view-appointments-btn">Ver Fichas y Pacientes</button>
-                    </div>
-                </div>
-                <!-- Urgencias -->
-                <div class="service-card" onclick="openAppointmentModal('URGENCIAS')">
-                    <div class="service-icon-container">
-                        <div class="service-icon emergency-icon">🚑</div>
-                    </div>
-                    <div class="service-info">
-                        <div class="service-name">URGENCIAS</div>
-                        <div class="service-24h">ATENCIÓN LAS 24 HORAS</div>
-                        <button class="view-appointments-btn">Ver Fichas y Pacientes</button>
-                    </div>
-                </div>
-                <!-- Consulta Externa -->
-                <div class="service-card" onclick="openAppointmentModal('CONSULTA EXTERNA')">
-                    <div class="service-icon-container">
-                        <div class="service-icon stethoscope-icon">🩺</div>
-                    </div>
-                    <div class="service-info">
-                        <div class="service-name">CONSULTA EXTERNA</div>
-                        <div class="service-hours">
-                            <div><span class="time-label">Mañana:</span> <span class="time-text">Hrs. de atención: de 07:00 a 13:00</span></div>
-                            <div><span class="time-label">Tarde:</span> <span class="time-text">Hrs. de atención: de 13:00 a 19:00</span></div>
-                        </div>
-                        <button class="view-appointments-btn">Ver Fichas y Pacientes</button>
-                    </div>
-                </div>
-                <!-- Laboratorio -->
-                <div class="service-card" onclick="openAppointmentModal('LABORATORIO')">
-                    <div class="service-icon-container">
-                        <div class="service-icon lab-icon">🔬</div>
-                    </div>
-                    <div class="service-info">
-                        <div class="service-name">LABORATORIO</div>
-                        <div class="service-hours">
-                            <div><span class="time-label">Mañana:</span> <span class="time-text">Hrs. de atención: de 07:00 a 13:00</span></div>
-                            <div><span class="time-label">Tarde:</span> <span class="time-text">Hrs. de atención: de 13:00 a 19:00</span></div>
-                        </div>
-                        <button class="view-appointments-btn">Ver Fichas y Pacientes</button>
-                    </div>
-                </div>
-                <!-- Ginecología -->
-                <div class="service-card" onclick="openAppointmentModal('GINECOLOGIA')">
-                    <div class="service-icon-container">
-                        <div class="service-icon gynecology-icon">🤱</div>
-                    </div>
-                    <div class="service-info">
-                        <div class="service-name">GINECOLOGIA</div>
-                        <div class="service-hours">
-                            <div><span class="time-label">Mañana:</span> <span class="time-text">Hrs. de atención: de 08:00 a 11:00</span></div>
-                            <div><span class="time-label">Tarde:</span> <span class="time-text">Hrs. de atención: de 13:00 a 15:00</span></div>
-                        </div>
-                        <button class="view-appointments-btn">Ver Fichas y Pacientes</button>
-                    </div>
-                </div>
-                <!-- Pediatría -->
-                <div class="service-card" onclick="openAppointmentModal('PEDIATRIA')">
-                    <div class="service-icon-container">
-                        <div class="service-icon pediatrics-icon">👶</div>
-                    </div>
-                    <div class="service-info">
-                        <div class="service-name">PEDIATRIA</div>
-                        <div class="service-hours">
-                            <div><span class="time-label">Mañana:</span> <span class="time-text">Hrs. de atención: de 08:00 a 11:00</span></div>
-                            <div><span class="time-label">Tarde:</span> <span class="time-text">Hrs. de atención: de 14:00 a 17:00</span></div>
-                        </div>
-                        <button class="view-appointments-btn">Ver Fichas y Pacientes</button>
-                    </div>
-                </div>
-                <!-- Ecografía -->
-                <div class="service-card" onclick="openAppointmentModal('ECOGRAFIA')">
-                    <div class="service-icon-container">
-                        <div class="service-icon ultrasound-icon">📡</div>
-                    </div>
-                    <div class="service-info">
-                        <div class="service-name">ECOGRAFIA</div>
-                        <div class="service-hours">
-                            <div><span class="time-label">Mañana:</span> <span class="time-text">Hrs. de atención: de 07:00 a 13:00</span></div>
-                            <div><span class="time-label">Tarde:</span> <span class="time-text">Hrs. de atención: de 13:00 a 19:00</span></div>
-                        </div>
-                        <button class="view-appointments-btn">Ver Fichas y Pacientes</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Modal for Appointments -->
-    <div id="appointmentModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3 class="modal-title" id="modalTitle">Gestión de Fichas</h3>
-                <span class="close" onclick="closeAppointmentModal()">&times;</span>
-            </div>
-            <div class="modal-body">
-                <div class="shift-tabs">
-                    <button class="shift-tab active" onclick="switchShift('morning')">Turno Mañana</button>
-                    <button class="shift-tab" onclick="switchShift('afternoon')">Turno Tarde</button>
-                </div>
-                <div class="appointments-container">
-                    <div class="appointments-header">
-                        <h4 id="shiftTitle">Turno Mañana</h4>
-                        <div class="available-slots" id="availableSlots">20 fichas disponibles</div>
-                    </div>
-                    <div class="appointment-grid" id="appointmentGrid"></div>
-                    <div class="patient-form" id="patientForm" style="display: none;">
-                        <h5>Registrar Nuevo Paciente</h5>
-                        <div class="form-group">
-                            <label for="patientName">Nombre Completo:</label>
-                            <input type="text" id="patientName" placeholder="Ingrese el nombre completo">
-                        </div>
-                        <div class="form-group">
-                            <label for="patientCI">Cédula de Identidad:</label>
-                            <input type="text" id="patientCI" placeholder="Ingrese la CI">
-                        </div>
-                        <div class="form-group">
-                            <label for="patientPhone">Teléfono:</label>
-                            <input type="tel" id="patientPhone" placeholder="Ingrese el teléfono">
-                        </div>
-                        <div class="form-actions">
-                            <button class="btn btn-secondary" onclick="cancelPatientForm()">Cancelar</button>
-                            <button class="btn btn-primary" onclick="savePatient()">Guardar Paciente</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Reclamos y Sugerencias Section -->
-    <section id="reclamos" class="reclamos-section scroll-animation">
-        <h2 class="section-title">Reclamos y Sugerencias</h2>
-        <div class="reclamos-container">
-            <p style="margin-bottom: 1rem; color: #374151;">¿Tienes algún reclamo o sugerencia? Por favor déjanos tu comentario:</p>
-            <form class="reclamos-form" id="reclamosForm">
-                <input type="text" placeholder="Nombre (opcional)" class="reclamos-input">
-                <textarea required placeholder="¿Cuál es tu reclamo o sugerencia?" rows="4" class="reclamos-input reclamos-textarea"></textarea>
-                <button type="submit" class="reclamos-submit">Enviar</button>
-            </form>
-            <div class="map-section">
-                <h3 class="map-title">Ubicación del establecimiento</h3>
-                <div class="map-container">
-                    <iframe
-                        title="Ubicación Centro de Salud Belén"
-                        class="map-iframe"
-                        loading="lazy"
-                        allowfullscreen
-                        src="https://www.google.com/maps?q=-19.02495338,-65.3015633&z=17&output=embed">
-                    </iframe>
-                </div>
-            </div>
-            <div class="enhanced-features">
-                <h3 class="features-title">💬 Más Formas de Contacto</h3>
-                <div class="features-grid">
-                    <div class="feature-item">
-                        <span class="feature-icon">📞</span>
-                        <span class="feature-text">+591 4-123-4567</span>
-                    </div>
-                    <div class="feature-item">
-                        <span class="feature-icon">🚑</span>
-                        <span class="feature-text">Emergencias 24/7</span>
-                    </div>
-                    <div class="feature-item">
-                        <span class="feature-icon">📧</span>
-                        <span class="feature-text">info@centrosaludbelen.bo</span>
-                    </div>
-                    <div class="feature-item">
-                        <span class="feature-icon">💬</span>
-                        <span class="feature-text">WhatsApp: +591 70317124</span>
-                    </div>
-                    <div class="feature-item">
-                        <span class="feature-icon">🕒</span>
-                        <span class="feature-text">Lun-Vie: 7:00-19:00</span>
-                    </div>
-                    <div class="feature-item">
-                        <span class="feature-icon">📍</span>
-                        <span class="feature-text">Barrio Belén, Sucre-Bolivia</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+
     <script>
-        // Sistema de almacenamiento de pacientes registrados desde el formulario principal
-        let allRegisteredPatients = [];
         // Sistema de autenticación
         let isAuthenticated = false;
         let currentUser = '';
         let pendingSlot = null;
+
         const validCredentials = {
             'admin': 'medico2024',
             'doctor': 'salud123',
             'enfermera': 'cuidados2024'
         };
+
         function authenticate() {
             const username = document.getElementById('username').value.trim();
             const password = document.getElementById('password').value;
+            const loginError = document.getElementById('loginError');
+
             if (!username || !password) {
                 showLoginError('⚠️ Por favor, complete todos los campos');
                 return;
             }
+
             if (validCredentials[username] && validCredentials[username] === password) {
                 isAuthenticated = true;
                 currentUser = username;
                 closeLoginModal();
                 document.getElementById('userInfo').style.display = 'block';
                 document.getElementById('loggedUser').textContent = `👤 Personal: ${username}`;
+                
                 if (pendingSlot) {
                     showPatientFormAfterAuth(pendingSlot);
                     pendingSlot = null;
                 }
-                alert(`✅ Acceso concedido, ${username}!
-🏥 Ahora puede registrar nuevos pacientes.`);
+                
+                alert(`✅ Acceso concedido, ${username}!\n🏥 Ahora puede registrar nuevos pacientes.`);
             } else {
                 showLoginError('❌ Usuario o contraseña incorrectos');
                 document.getElementById('password').value = '';
             }
         }
+
         function closeLoginModal() {
             document.getElementById('loginModal').style.display = 'none';
             document.getElementById('username').value = '';
@@ -1280,31 +1485,37 @@
             document.getElementById('loginError').style.display = 'none';
             pendingSlot = null;
         }
+
         function showLoginError(message) {
             const loginError = document.getElementById('loginError');
             loginError.textContent = message;
             loginError.style.display = 'block';
+            
             const loginModal = document.getElementById('loginModal').querySelector('.modal-content');
             loginModal.style.animation = 'shake 0.5s ease-in-out';
             setTimeout(() => {
                 loginModal.style.animation = '';
             }, 500);
         }
+
         function logout() {
-            if (confirm('🔐 ¿Cerrar sesión como personal médico?
-💡 Podrá seguir viendo las fichas, pero no podrá registrar nuevos pacientes.')) {
+            if (confirm('🔐 ¿Cerrar sesión como personal médico?\n\n💡 Podrá seguir viendo las fichas, pero no podrá registrar nuevos pacientes.')) {
                 isAuthenticated = false;
                 currentUser = '';
                 document.getElementById('userInfo').style.display = 'none';
                 closeAppointmentModal();
                 alert('👋 Sesión cerrada. Ahora en modo visitante.');
             }
-        // Sistema de gestión de citas y fichas
+        }
+
+        // Sistema de gestión de citas
         let currentService = '';
         let currentShift = 'morning';
         let currentSlot = null;
         const appointmentsData = {};
+
         const services = ['ODONTOLOGIA', 'VACUNAS PAI', 'URGENCIAS', 'CONSULTA EXTERNA', 'LABORATORIO', 'GINECOLOGIA', 'PEDIATRIA', 'ECOGRAFIA'];
+        
         services.forEach(service => {
             appointmentsData[service] = {
                 morning: Array.from({length: 20}, (_, i) => ({
@@ -1317,17 +1528,23 @@
                 }))
             };
         });
-        // Pacientes de ejemplo
+
+        // Datos de ejemplo
         appointmentsData['ODONTOLOGIA'].morning[0].patient = {
             name: 'María González',
             ci: '12345678',
-            phone: '70123456'
+            phone: '70123456',
+            registeredBy: 'admin',
+            registeredAt: new Date().toLocaleString('es-ES')
         };
         appointmentsData['ODONTOLOGIA'].morning[2].patient = {
             name: 'Juan Pérez',
             ci: '87654321',
-            phone: '71234567'
+            phone: '71234567',
+            registeredBy: 'doctor',
+            registeredAt: new Date().toLocaleString('es-ES')
         };
+
         function openAppointmentModal(serviceName) {
             currentService = serviceName;
             document.getElementById('modalTitle').textContent = `Fichas de ${serviceName}`;
@@ -1337,24 +1554,27 @@
             document.querySelectorAll('.shift-tab')[0].classList.add('active');
             updateAppointmentView();
         }
+
         function closeAppointmentModal() {
             document.getElementById('appointmentModal').style.display = 'none';
             document.getElementById('patientForm').style.display = 'none';
         }
+
         function switchShift(shift) {
             currentShift = shift;
             document.querySelectorAll('.shift-tab').forEach(tab => tab.classList.remove('active'));
             event.target.classList.add('active');
-            document.getElementById('shiftTitle').textContent = 
-                shift === 'morning' ? 'Turno Mañana' : 'Turno Tarde';
+            document.getElementById('shiftTitle').textContent = shift === 'morning' ? 'Turno Mañana' : 'Turno Tarde';
             updateAppointmentView();
         }
+
         function updateAppointmentView() {
             const appointmentGrid = document.getElementById('appointmentGrid');
             const appointments = appointmentsData[currentService][currentShift];
             const availableCount = appointments.filter(apt => !apt.patient).length;
-            document.getElementById('availableSlots').textContent = 
-                `${availableCount} fichas disponibles de 20`;
+            
+            document.getElementById('availableSlots').textContent = `${availableCount} fichas disponibles de 20`;
+
             appointmentGrid.innerHTML = `
                 <div class="visitor-info">
                     ${isAuthenticated ? 
@@ -1363,22 +1583,25 @@
                     }
                 </div>
             `;
+
             appointments.forEach(appointment => {
                 const slotDiv = document.createElement('div');
                 slotDiv.className = `appointment-slot ${appointment.patient ? 'occupied' : ''}`;
+                
                 const patientInfo = appointment.patient ? 
                     `<strong>${appointment.patient.name}</strong><br>
                      CI: ${appointment.patient.ci}<br>
                      Tel: ${appointment.patient.phone}
                      ${appointment.patient.registeredBy ? `<br><small>👤 Por: ${appointment.patient.registeredBy}</small>` : ''}` : 
                     'Ficha disponible';
+
                 let actionButtons = '';
                 if (!appointment.patient) {
                     actionButtons = isAuthenticated ? 
                         `<button class="add-patient-btn" onclick="showPatientForm(${appointment.slotNumber})">
                             Asignar Paciente
                         </button>` :
-                        `<button class="add-patient-btn public-view" onclick="requestAuth(${appointment.slotNumber})" style="background: #6c757d;">
+                        `<button class="add-patient-btn public-view" onclick="requestAuth(${appointment.slotNumber})">
                             🔐 Asignar Paciente (Personal)
                         </button>`;
                 } else {
@@ -1392,6 +1615,7 @@
                         </div>`;
                     }
                 }
+
                 slotDiv.innerHTML = `
                     <div class="slot-number">Ficha #${appointment.slotNumber}</div>
                     <div class="patient-info ${!appointment.patient ? 'empty' : ''}">
@@ -1399,14 +1623,17 @@
                     </div>
                     ${actionButtons}
                 `;
+                
                 appointmentGrid.appendChild(slotDiv);
             });
         }
+
         function requestAuth(slotNumber) {
             pendingSlot = slotNumber;
             document.getElementById('loginModal').style.display = 'block';
             document.getElementById('username').focus();
         }
+
         function showPatientForm(slotNumber) {
             if (!isAuthenticated) {
                 requestAuth(slotNumber);
@@ -1416,11 +1643,13 @@
             document.getElementById('patientForm').style.display = 'block';
             document.getElementById('patientName').focus();
         }
+
         function showPatientFormAfterAuth(slotNumber) {
             currentSlot = slotNumber;
             document.getElementById('patientForm').style.display = 'block';
             document.getElementById('patientName').focus();
         }
+
         function cancelPatientForm() {
             document.getElementById('patientForm').style.display = 'none';
             document.getElementById('patientName').value = '';
@@ -1428,210 +1657,171 @@
             document.getElementById('patientPhone').value = '';
             currentSlot = null;
         }
+
         function savePatient() {
             if (!isAuthenticated) {
                 alert('🔒 Error: Sesión no válida. Inicie sesión nuevamente.');
                 closeAppointmentModal();
                 return;
             }
+            
             const name = document.getElementById('patientName').value.trim();
             const ci = document.getElementById('patientCI').value.trim();
             const phone = document.getElementById('patientPhone').value.trim();
+
             if (!name || !ci || !phone) {
-                alert('⚠️ Por favor, complete todos los campos');
+                alert('⚠️ favor, complete todos los campos');
                 return;
             }
+
             const existingPatient = appointmentsData[currentService][currentShift].find(
                 apt => apt.patient && apt.patient.ci === ci
             );
+
             if (existingPatient) {
                 alert('❌ Ya existe un paciente registrado con esta CI en este turno');
                 return;
             }
+
             const slotIndex = currentSlot - 1;
-            const patientData = {
+            appointmentsData[currentService][currentShift][slotIndex].patient = {
                 name,
                 ci,
                 phone,
-                service: currentService,
-                shift: currentShift === 'morning' ? 'Mañana' : 'Tarde',
-                slotNumber: currentSlot,
                 registeredBy: currentUser,
-                registeredAt: new Date().toLocaleString('es-ES'),
-                source: 'Gestión de Fichas'
+                registeredAt: new Date().toLocaleString('es-ES')
             };
-            appointmentsData[currentService][currentShift][slotIndex].patient = patientData;
-            allRegisteredPatients.push(patientData);
+
             cancelPatientForm();
             updateAppointmentView();
-            alert(`✅ Paciente ${name} registrado exitosamente en la ficha #${currentSlot}
-👤 Registrado por: ${currentUser}`);
+            alert(`✅ Paciente ${name} registrado exitosamente en la ficha #${currentSlot}\n👤 Registrado por: ${currentUser}`);
         }
+
         function removePatient(slotNumber) {
             if (!isAuthenticated) {
-                alert('🔒 Solo el personal autorizado puede liberar fichas.
-Si es personal médico, inicie sesión primero.');
+                alert('🔒 Solo el personal autorizado puede liberar fichas.\nSi es personal médico, inicie sesión primero.');
                 return;
             }
-            if (confirm('🔐 ¿Está seguro de que desea liberar esta ficha?
-⚠️ Esta acción no se puede deshacer.')) {
+            
+            if (confirm('🔐 ¿Está seguro de que desea liberar esta ficha?\n\n⚠️ Esta acción no se puede deshacer.')) {
                 const slotIndex = slotNumber - 1;
                 appointmentsData[currentService][currentShift][slotIndex].patient = null;
                 updateAppointmentView();
-                alert(`✅ Ficha #${slotNumber} liberada exitosamente
-👤 Acción realizada por: ${currentUser}`);
+                alert(`✅ Ficha #${slotNumber} liberada exitosamente\n👤 Acción realizada por: ${currentUser}`);
             }
         }
-        // NUEVA FUNCIONALIDAD: Registro del formulario principal conectado a servicios
-        document.getElementById('registrationForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const formData = new FormData(this);
-            const data = {
-                name: formData.get('nombreCompleto'),
-                ci: formData.get('ci'),
-                phone: formData.get('telefono'),
-                service: formData.get('servicio'),
-                insurance: formData.get('seguro'),
-                registeredAt: new Date().toLocaleString('es-ES'),
-                source: 'Formulario Principal'
-            };
-            const submitBtn = this.querySelector('.form-submit');
-            const originalText = submitBtn.textContent;
-            submitBtn.textContent = 'Registrando...';
-            submitBtn.disabled = true;
-            setTimeout(() => {
-                // Agregar al almacenamiento de pacientes registrados
-                allRegisteredPatients.push(data);
-                alert(`✅ ¡Paciente registrado exitosamente!
-Nombre: ${data.name}
-CI: ${data.ci}
-Teléfono: ${data.phone}
-Servicio: ${data.service}
-Seguro: ${data.insurance}
-📊 Este registro ha sido almacenado y puede exportarse a Excel.`);
-                this.reset();
-                submitBtn.textContent = originalText;
-                submitBtn.disabled = false;
-            }, 1500);
-        });
-        // NUEVA FUNCIONALIDAD: Exportar todos los pacientes a Excel
-        function exportAllPatientsToExcel() {
-            if (allRegisteredPatients.length === 0) {
-                alert('⚠️ No hay pacientes registrados para exportar.
-Registre pacientes usando:
-• El formulario principal de registro
-• La gestión de fichas por servicio');
+
+        // Función para exportar a Excel
+        function exportToExcel() {
+            if (typeof XLSX === 'undefined') {
+                alert('⚠️ Error: La librería de Excel no está cargada correctamente.');
                 return;
             }
+
+            const appointments = appointmentsData[currentService][currentShift];
+            const shiftName = currentShift === 'morning' ? 'Mañana' : 'Tarde';
+            
             // Preparar datos para Excel
-            const excelData = allRegisteredPatients.map((patient, index) => ({
-                'N°': index + 1,
-                'Nombre Completo': patient.name,
-                'CI': patient.ci,
-                'Teléfono': patient.phone,
-                'Servicio': patient.service,
-                'Turno': patient.shift || 'N/A',
-                'Ficha N°': patient.slotNumber || 'N/A',
-                'Seguro': patient.insurance || 'N/A',
-                'Registrado Por': patient.registeredBy || 'Sistema',
-                'Fecha y Hora': patient.registeredAt,
-                'Origen': patient.source
-            }));
-            // Crear libro de Excel
+            const excelData = appointments.map(apt => {
+                if (apt.patient) {
+                    return {
+                        'Ficha': apt.slotNumber,
+                        'Nombre': apt.patient.name,
+                        'CI': apt.patient.ci,
+                        'Teléfono': apt.patient.phone,
+                        'Registrado por': apt.patient.registeredBy || 'N/A',
+                        'Fecha/Hora': apt.patient.registeredAt || 'N/A',
+                        'Estado': 'Ocupada'
+                    };
+                } else {
+                    return {
+                        'Ficha': apt.slotNumber,
+                        'Nombre': '-',
+                        'CI': '-',
+                        'Teléfono': '-',
+                        'Registrado por': '-',
+                        'Fecha/Hora': '-',
+                        'Estado': 'Disponible'
+                    };
+                }
+            });
+
+            // Crear libro de trabajo
             const wb = XLSX.utils.book_new();
             const ws = XLSX.utils.json_to_sheet(excelData);
+
             // Ajustar ancho de columnas
             const colWidths = [
-                { wch: 5 },  // N°
+                { wch: 8 },  // Ficha
                 { wch: 25 }, // Nombre
                 { wch: 12 }, // CI
-                { wch: 12 }, // Teléfono
-                { wch: 20 }, // Servicio
-                { wch: 10 }, // Turno
-                { wch: 10 }, // Ficha
-                { wch: 15 }, // Seguro
-                { wch: 15 }, // Registrado Por
-                { wch: 20 }, // Fecha
-                { wch: 20 }  // Origen
+                { wch: 15 }, // Teléfono
+                { wch: 18 }, // Registrado por
+                { wch: 20 }, // Fecha/Hora
+                { wch: 12 }  // Estado
             ];
             ws['!cols'] = colWidths;
-            // Agregar la hoja al libro
-            XLSX.utils.book_append_sheet(wb, ws, 'Pacientes Registrados');
-            // Crear segunda hoja con estadísticas por servicio
-            const serviceStats = {};
-            allRegisteredPatients.forEach(patient => {
-                if (!serviceStats[patient.service]) {
-                    serviceStats[patient.service] = 0;
-                }
-                serviceStats[patient.service]++;
-            });
-            const statsData = Object.keys(serviceStats).map(service => ({
-                'Servicio': service,
-                'Total Pacientes': serviceStats[service]
-            }));
-            const wsStats = XLSX.utils.json_to_sheet(statsData);
-            wsStats['!cols'] = [{ wch: 25 }, { wch: 20 }];
-            XLSX.utils.book_append_sheet(wb, wsStats, 'Estadísticas');
-            // Generar nombre de archivo con fecha
+
+            // Agregar hoja al libro
+            XLSX.utils.book_append_sheet(wb, ws, `Turno ${shiftName}`);
+
+            // Generar nombre de archivo
             const fecha = new Date().toLocaleDateString('es-ES').replace(/\//g, '-');
-            const filename = `Centro_Salud_Belen_Pacientes_${fecha}.xlsx`;
+            const fileName = `${currentService}_Turno_${shiftName}_${fecha}.xlsx`;
+
             // Descargar archivo
-            XLSX.writeFile(wb, filename);
-            alert(`📊 ¡Exportación exitosa!
-✅ Se han exportado ${allRegisteredPatients.length} pacientes
-📁 Archivo: ${filename}
-El archivo incluye:
-• Registro completo de pacientes
-• Estadísticas por servicio`);
+            XLSX.writeFile(wb, fileName);
+            
+            alert(`✅ Archivo Excel exportado exitosamente:\n${fileName}`);
         }
+
         // Cerrar modal al hacer clic fuera
         window.onclick = function(event) {
             const modal = document.getElementById('appointmentModal');
             if (event.target == modal) {
                 closeAppointmentModal();
             }
-            const loginModal = document.getElementById('loginModal');
-            if (event.target == loginModal) {
-                closeLoginModal();
-            }
         }
-        // Manejar Enter en formularios
+
+        // Eventos del DOM
         document.addEventListener('DOMContentLoaded', function() {
+            // Enter en login
             ['username', 'password'].forEach(id => {
-                const element = document.getElementById(id);
-                if (element) {
-                    element.addEventListener('keypress', function(e) {
-                        if (e.key === 'Enter') {
-                            authenticate();
-                        }
-                    });
-                }
+                document.getElementById(id).addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        authenticate();
+                    }
+                });
             });
+
+            // Enter en formulario de pacientes
             ['patientName', 'patientCI', 'patientPhone'].forEach(id => {
-                const element = document.getElementById(id);
-                if (element) {
-                    element.addEventListener('keypress', function(e) {
-                        if (e.key === 'Enter') {
-                            savePatient();
-                        }
-                    });
-                }
+                document.getElementById(id).addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        savePatient();
+                    }
+                });
             });
         });
-        // Scroll animations
+
+        // Animaciones de scroll
         function animateOnScroll() {
             const elements = document.querySelectorAll('.scroll-animation');
             const windowHeight = window.innerHeight;
+
             elements.forEach(element => {
                 const elementTop = element.getBoundingClientRect().top;
                 const elementVisible = 150;
+
                 if (elementTop < windowHeight - elementVisible) {
                     element.classList.add('visible');
                 }
             });
         }
+
         window.addEventListener('scroll', animateOnScroll);
         window.addEventListener('load', animateOnScroll);
+
         // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -1645,13 +1835,38 @@ El archivo incluye:
                 }
             });
         });
-        // Reclamos form handler
+
+        // Formulario de registro principal
+        document.getElementById('registrationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            const submitBtn = this.querySelector('.form-submit');
+            const originalText = submitBtn.textContent;
+            
+            submitBtn.textContent = 'Registrando...';
+            submitBtn.disabled = true;
+            
+            setTimeout(() => {
+                alert(`¡Paciente registrado exitosamente!\n\nNombre: ${data.nombreCompleto}\nCI: ${data.ci}\nTeléfono: ${data.telefono}\nServicio: ${data.servicio}\nSeguro: ${data.seguro}`);
+                this.reset();
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }, 2000);
+        });
+
+        // Formulario de reclamos
         document.getElementById('reclamosForm').addEventListener('submit', function(e) {
             e.preventDefault();
+            
             const submitBtn = this.querySelector('.reclamos-submit');
             const originalText = submitBtn.textContent;
+            
             submitBtn.textContent = 'Enviando...';
             submitBtn.disabled = true;
+            
             setTimeout(() => {
                 alert('¡Mensaje enviado exitosamente! Te contactaremos pronto.');
                 this.reset();
@@ -1659,7 +1874,8 @@ El archivo incluye:
                 submitBtn.disabled = false;
             }, 2000);
         });
-        // Phone number formatting
+
+        // Formato de teléfono
         document.getElementById('telefono').addEventListener('input', function() {
             let value = this.value.replace(/\D/g, '');
             if (value.length > 0 && !value.startsWith('591')) {
@@ -1667,23 +1883,30 @@ El archivo incluye:
                     value = '591' + value;
                 }
             }
+            
             if (value.length >= 3) {
                 value = '+' + value.slice(0, 3) + ' ' + value.slice(3);
             }
+            
             this.value = value;
         });
-        // Stats counter animation
+
+        // Animación de contadores
         function animateCounters() {
             const counters = document.querySelectorAll('.stat-number');
             const speed = 200;
+
             counters.forEach(counter => {
                 const animate = () => {
                     const value = counter.getAttribute('data-target') || counter.innerText;
                     const data = +value.replace(/[^\d]/g, '');
                     const time = value.replace(/[\d]/g, '').trim();
+                    
                     counter.setAttribute('data-target', value);
+                    
                     const increment = data / speed;
                     let current = 0;
+
                     if (current < data) {
                         const timer = setInterval(() => {
                             current += increment;
@@ -1695,17 +1918,21 @@ El archivo incluye:
                         }, 1);
                     }
                 };
+
                 const observer = new IntersectionObserver((entries) => {
                     if (entries[0].isIntersecting) {
                         animate();
                         observer.unobserve(counter);
                     }
                 });
+
                 observer.observe(counter);
             });
         }
+
         animateCounters();
-        // Loading effect
+
+        // Efecto de carga
         window.addEventListener('load', () => {
             document.body.style.opacity = '0';
             document.body.style.transition = 'opacity 0.5s ease';
@@ -1713,17 +1940,20 @@ El archivo incluye:
                 document.body.style.opacity = '1';
             }, 100);
         });
-        // Service card hover effects
+
+        // Hover en tarjetas de servicios
         document.querySelectorAll('.service-card').forEach(card => {
             card.addEventListener('mouseenter', function() {
                 this.style.transform = 'translateY(-5px)';
                 this.style.transition = 'transform 0.3s ease';
             });
+
             card.addEventListener('mouseleave', function() {
                 this.style.transform = 'translateY(0)';
             });
         });
-        // Click to call functionality
+
+        // Click to call
         document.querySelectorAll('.feature-item').forEach(item => {
             const text = item.querySelector('.feature-text').textContent;
             if (text.includes('+591')) {
@@ -1741,4 +1971,3 @@ El archivo incluye:
     </script>
 </body>
 </html>
-```
