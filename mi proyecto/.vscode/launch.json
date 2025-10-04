@@ -1,18 +1,49 @@
-  {
-  // Configuración para lanzar el sitio estático en Chrome o Edge.
+{
+  // Use IntelliSense para saber los atributos posibles.
+  // Mantenga el puntero para ver las descripciones de los existentes atributos.
+  // Para más información, visite: https://go.microsoft.com/fwlink/?linkid=830387
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Abrir en Chrome (mi proyecto)",
-      "type": "chrome",
+      "name": ".NET Core Launch (web)",
+      "type": "coreclr",
       "request": "launch",
-      "file": "${workspaceFolder}/mi proyecto/index.html"
+      "preLaunchTask": "build",
+      "program": "${workspaceFolder}/bin/Debug/<target-framework>/<project-name.dll>",
+      "args": [],
+      "cwd": "${workspaceFolder}",
+      "stopAtEntry": false,
+      "serverReadyAction": {
+        "action": "openExternally",
+        "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
+      },
+      "env": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "sourceFileMap": {
+        "/Views": "${workspaceFolder}/Views"
+      }
     },
     {
-      "name": "Abrir en Edge (mi proyecto)",
-      "type": "msedge",
+      "name": "Launch Chrome",
       "request": "launch",
-      "file": "${workspaceFolder}/mi proyecto/index.html"
+      "type": "chrome",
+      "url": "http://localhost:8080",
+      "webRoot": "${workspaceFolder}"
+    },
+    {
+      "name": "Launch Edge",
+      "request": "launch",
+      "type": "msedge",
+      "url": "http://localhost:8080",
+      "webRoot": "${workspaceFolder}"
+    },
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "Iniciar Chrome para localhost",
+      "url": "http://localhost:8080",
+      "webRoot": "${workspaceFolder}"
     }
   ]
 }
