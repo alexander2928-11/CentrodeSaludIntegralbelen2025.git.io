@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Centro de Salud Integral BELÉN - Página Completa</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
     <style>
         * {
             margin: 0;
@@ -94,7 +93,6 @@
                 display: flex;
             }
         }
-
         /* Main Hero Section */
         .main-section {
             position: relative;
@@ -1054,10 +1052,7 @@
     </header>
 
     <!-- User Info Display -->
-    <div id="userInfo" class="logged-user-info" style="display: none;">
-        <span id="loggedUser">👤 Personal: </span>
-        <button class="logout-btn" onclick="logout()">🚪 Salir</button>
-    </div>
+    
 
     <!-- Login Modal -->
     <div id="loginModal" class="modal" style="display: none;">
@@ -1257,7 +1252,7 @@
                         <div class="service-info">
                             <div class="service-name">CONSULTA EXTERNA</div>
                             <div class="service-hours">
-                                <div><span class="time-label">Mañana: Dr. Alenkar</span> <span class="time-text">07:00 a 13:00</span></div>
+                                <div><span class="time-label">Mañana:</span> <span class="time-text">07:00 a 13:00</span></div>
                                 <div><span class="time-label">Tarde:</span> <span class="time-text">13:00 a 19:00</span></div>
                             </div>
                             <button class="view-appointments-btn">Ver Fichas y Pacientes</button>
@@ -1971,4 +1966,3 @@
     </script>
 </body>
 </html>
-
