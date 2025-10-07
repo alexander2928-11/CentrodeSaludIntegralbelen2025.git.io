@@ -1,35 +1,19 @@
-.box {
-  background-color: rgba(255, 255, 255, 0.3);
-  border-radius: 5px;
-  font-family: sans-serif;
-  text-align: center;
-  line-height: 1;
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  max-width: 50%;
-  max-height: 50%;
-  padding: 20px 40px;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
 }
 
-html,
-body {
-  height: 100%;
-  width: 100%;
+/* Compensar header fijo para anclas */
+section[id] {
+  scroll-margin-top: 80px; /* Ajusta este valor si tu header es más alto */
 }
 
-body {
-  background-image:
-    url("anemones.jpg"), linear-gradient(rgb(219, 166, 166), rgb(0, 0, 172));
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
+/* Fuentes personalizadas (opcional, si las usas) */
+/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap'); */
 
-.container {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  height: 100%;
-  width: 100%;
-}
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+/* body {
+  font-family: 'Inter', sans-serif;
+} */
